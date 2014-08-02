@@ -1,0 +1,19 @@
+.rui-slider {
+  height: 11px;
+}
+.rui-slider__track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #666;
+}
+.rui-slider__handle {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: #000;
+  cursor: default;
+  border-radius: 3px;
+}

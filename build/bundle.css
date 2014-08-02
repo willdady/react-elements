@@ -1,0 +1,97 @@
+.rui-floating-label-input {
+  position: relative;
+  margin-top: 18px;
+}
+.rui-floating-label-input__input {
+  position: relative;
+  z-index: 1;
+}
+.rui-floating-label-input__label {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: normal;
+  height: 32px;
+  padding: 7px 12px;
+  margin: 0;
+}
+.rui-floating-label-input__label--floated {
+  z-index: 0;
+  font-weight: bold;
+  left: auto;
+  height: auto;
+  padding: 0 12px;
+  bottom: auto;
+  font-size: 11px;
+  opacity: 0;
+  transition: top 250ms, opacity 250ms;
+}
+.rui-floating-label-input__label--floated-active {
+  top: -16px;
+  opacity: 1;
+}
+
+.rui-media-obj {
+  margin: 10px;
+}
+.rui-media-obj__image {
+  float: left;
+  margin-right: 15px;
+}
+.rui-media-obj__image > * {
+  display: block;
+}
+.rui-media-obj__content {
+  overflow: hidden;
+}
+.rui-media-obj--mirror .rui-media-obj__image {
+  float: right;
+  margin-left: 15px;
+}
+.rui-media-obj--flag {
+  display: table;
+  width: 100%;
+}
+.rui-media-obj--flag.rui-media-obj--mirror .rui-media-obj__image {
+  padding-left: 15px;
+  padding-right: 0;
+  margin-left: auto;
+  float: none;
+}
+.rui-media-obj__image--flag-bottom,
+.rui-media-obj__content--flag-bottom {
+  display: table-cell;
+  vertical-align: bottom;
+}
+.rui-media-obj__image--flag-middle,
+.rui-media-obj__content--flag-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+.rui-media-obj__image--flag-middle,
+.rui-media-obj__image--flag-bottom {
+  float: none;
+  margin-left: auto;
+  padding-right: 15px;
+}
+
+.rui-slider {
+  height: 11px;
+}
+.rui-slider__track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #666;
+}
+.rui-slider__handle {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: #000;
+  cursor: default;
+  border-radius: 3px;
+}

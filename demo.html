@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="build/bundle.css">
+
+    <style>
+      .tab-pane {
+        padding: 20px 0;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+          <section>
+            <h1>&lt;MediaObject /&gt;</h1>
+            <p>
+              A simple layout object inspired by Nicole Sullivans <a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/">media object</a> and Harry Roberts' <a href="http://csswizardry.com/2013/05/the-flag-object/">flag object</a> for placing an image (or other elements/components etc.) next to a block of text. The image can be vertically aligned and the component can be mirrored so the image runs to the right of the text.
+            </p>
+
+            <div class="alert alert-info">
+              <b>Note:</b> Order of children is important. The first child element will be treated as the image and all subsequent children will be grouped as the content.
+            </div>
+
+            <h4>Default</h4>
+
+<pre><code>&lt;MediaObject&gt;
+  &lt;img src="example.jpg" alt="example" /&gt;
+  &lt;p&gt;&hellip;&lt;/p&gt;
+&lt;/MediaObject&gt;</code></pre>
+
+            <div class="well">
+              <div id="media-obj-example"></div>
+            </div>
+
+            <h4>Mirrored</h4>
+
+<pre><code>&lt;MediaObject mirror={true} &gt;
+  &lt;img src="example.jpg" alt="example" /&gt;
+  &lt;p&gt;&hellip;&lt;/p&gt;
+&lt;/MediaObject&gt;</code></pre>
+
+            <div class="well">
+              <div id="media-obj-example-mirror"></div>
+            </div>
+
+            <h4>Vertically aligned middle</h4>
+
+<pre><code>&lt;MediaObject valign="middle" &gt;
+  &lt;img src="example.jpg" alt="example" /&gt;
+  &lt;p&gt;&hellip;&lt;/p&gt;
+&lt;/MediaObject&gt;</code></pre>
+
+            <div class="well">
+              <div id="media-obj-example-vmiddle"></div>
+            </div>
+
+            <h4>Vertically aligned bottom</h4>
+
+<pre><code>&lt;MediaObject valign="bottom" &gt;
+  &lt;img src="example.jpg" alt="example" /&gt;
+  &lt;p&gt;&hellip;&lt;/p&gt;
+&lt;/MediaObject&gt;</code></pre>
+
+            <div class="well">
+              <div id="media-obj-example-vbottom"></div>
+            </div>
+
+            <h4>Vertically aligned middle &amp; mirrored</h4>
+
+<pre><code>&lt;MediaObject valign="middle" mirror={true} &gt;
+  &lt;img src="example.jpg" alt="example" /&gt;
+  &lt;p&gt;&hellip;&lt;/p&gt;
+&lt;/MediaObject&gt;</code></pre>
+
+            <div class="well">
+              <div id="media-obj-example-vmiddle-mirror"></div>
+            </div>
+
+          </section>
+
+          <hr>
+
+          <section>
+            <h1>&lt;FloatingLabelInput /&gt;</h1>
+
+            <p>An input field with a floating &lt;label&gt; which animates after the user begins typing. Inspired by <a href="http://bradfrostweb.com/blog/post/float-label-pattern/">float label pattern</a>.</p>
+
+            <div class="alert alert-info">
+              <b>Note:</b> This component uses <a href="http://getbootstrap.com/css/#forms">Bootstrap 3's input styles</a>. If using in a non-BS3 app you will need to tweak this component's stylesheet accordingly.
+            </div>
+
+<pre><code>&lt;FloatingLabelInput id="email-input" name="email" label="Email" /&gt;</code></pre>
+
+            <div class="well">
+              <div id="floating-label-input-example"></div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h1>&lt;YoutubeVideo /&gt;</h1>
+            <div class="well">
+              <div id="youtube-video-example"></div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h1>&lt;VimeoVideo /&gt;</h1>
+            <div class="well">
+              <div id="vimeo-video-example"></div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="build/bundle.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
