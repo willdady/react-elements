@@ -12,7 +12,7 @@ window.jQuery = $;
 React.renderComponent(
   MediaObject({
     children: [
-      React.DOM.img({src: "http://media-cache-ec0.pinimg.com/236x/14/99/6c/14996c3f420530589b7046d1d658121a.jpg"}),
+      React.DOM.img({src: "build/grumpy.jpg"}),
       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
     ]
@@ -24,7 +24,7 @@ React.renderComponent(
   MediaObject({
     mirror: true,
     children: [
-      React.DOM.img({src: "http://media-cache-ec0.pinimg.com/236x/14/99/6c/14996c3f420530589b7046d1d658121a.jpg"}),
+      React.DOM.img({src: "build/grumpy.jpg"}),
       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
     ]
@@ -36,7 +36,7 @@ React.renderComponent(
   MediaObject({
     valign: "middle",
     children: [
-      React.DOM.img({src: "http://media-cache-ec0.pinimg.com/236x/14/99/6c/14996c3f420530589b7046d1d658121a.jpg"}),
+      React.DOM.img({src: "build/grumpy.jpg"}),
       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
     ]
@@ -48,7 +48,7 @@ React.renderComponent(
   MediaObject({
     valign: "bottom",
     children: [
-      React.DOM.img({src: "http://media-cache-ec0.pinimg.com/236x/14/99/6c/14996c3f420530589b7046d1d658121a.jpg"}),
+      React.DOM.img({src: "build/grumpy.jpg"}),
       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
     ]
@@ -61,7 +61,7 @@ React.renderComponent(
     valign: "middle",
     mirror: true,
     children: [
-      React.DOM.img({src: "http://media-cache-ec0.pinimg.com/236x/14/99/6c/14996c3f420530589b7046d1d658121a.jpg"}),
+      React.DOM.img({src: "build/grumpy.jpg"}),
       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
     ]
@@ -75,7 +75,7 @@ React.renderComponent(
 );
 
 React.renderComponent(
-  YoutubeVideo(),
+  YoutubeVideo({src: "http://www.youtube.com/embed/R8XAlSp838Y"}),
   document.getElementById("youtube-video-example")
 );
 

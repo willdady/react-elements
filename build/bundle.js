@@ -13,7 +13,7 @@ window.jQuery = $;
 React.renderComponent(
   MediaObject({
     children: [
-      React.DOM.img({src: "http://media-cache-ec0.pinimg.com/236x/14/99/6c/14996c3f420530589b7046d1d658121a.jpg"}),
+      React.DOM.img({src: "build/grumpy.jpg"}),
       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
     ]
@@ -25,7 +25,7 @@ React.renderComponent(
   MediaObject({
     mirror: true,
     children: [
-      React.DOM.img({src: "http://media-cache-ec0.pinimg.com/236x/14/99/6c/14996c3f420530589b7046d1d658121a.jpg"}),
+      React.DOM.img({src: "build/grumpy.jpg"}),
       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
     ]
@@ -37,7 +37,7 @@ React.renderComponent(
   MediaObject({
     valign: "middle",
     children: [
-      React.DOM.img({src: "http://media-cache-ec0.pinimg.com/236x/14/99/6c/14996c3f420530589b7046d1d658121a.jpg"}),
+      React.DOM.img({src: "build/grumpy.jpg"}),
       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
     ]
@@ -49,7 +49,7 @@ React.renderComponent(
   MediaObject({
     valign: "bottom",
     children: [
-      React.DOM.img({src: "http://media-cache-ec0.pinimg.com/236x/14/99/6c/14996c3f420530589b7046d1d658121a.jpg"}),
+      React.DOM.img({src: "build/grumpy.jpg"}),
       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
     ]
@@ -62,7 +62,7 @@ React.renderComponent(
     valign: "middle",
     mirror: true,
     children: [
-      React.DOM.img({src: "http://media-cache-ec0.pinimg.com/236x/14/99/6c/14996c3f420530589b7046d1d658121a.jpg"}),
+      React.DOM.img({src: "build/grumpy.jpg"}),
       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
     ]
@@ -76,7 +76,7 @@ React.renderComponent(
 );
 
 React.renderComponent(
-  YoutubeVideo(),
+  YoutubeVideo({src: "http://www.youtube.com/embed/R8XAlSp838Y"}),
   document.getElementById("youtube-video-example")
 );
 
@@ -257,21 +257,61 @@ module.exports = VimeoVideo;
 
 var React = require("react");
 
+/* The following params are the defaults as documented at 
+   https://developers.google.com/youtube/player_parameters*/
+var defaultYoutubeParams = {
+  autohide: 2,
+  autoplay: 0,
+  cc_load_policy: 0,
+  color: null,
+  controls: 1,
+  disablekb: 0,
+  enablejsapi: 0,
+  end: null,
+  fs: 1,
+  hl: null,
+  iv_load_policy: 1,
+  list: null,
+  listType: null,
+  loop: 0,
+  modestbranding: null,
+  origin: null,
+  playerapiid: null,
+  playlist: null,
+  playsinline: 0,
+  rel: 1,
+  showinfo: 1,
+  start: null,
+  theme: null
+};
 
 var YouTubeVideo = React.createClass({displayName: 'YouTubeVideo',
 
   getDefaultProps: function() {
-    return {
+    var defProps = {
       width: 560,
       height: 315,
-      frameBorder: 0
+      frameBorder: 0,
+    };
+    for (var k in defaultYoutubeParams) {
+      defProps[k] = defaultYoutubeParams[k];
     }
+    return defProps;
   },
 
   getCleanedSrc: function() {
     var src = this.props.src;
-    // TODO
-    return "http://www.youtube.com/embed/R8XAlSp838Y";
+
+    // TODO: Process src to extract the video ID and clean the URL.
+
+    var params = "", val;
+    for (var k in defaultYoutubeParams) {
+      if (this.props[k] !== defaultYoutubeParams[k]) {
+        params += "&" + k + "=" + String(this.props[k]);
+      }
+    }
+    params = params.replace("&", "?");
+    return src + params;
   },
 
   render: function() {

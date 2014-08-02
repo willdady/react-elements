@@ -10,6 +10,10 @@ module.exports = function(grunt) {
       jsx: {
         files: ['jsx/*.jsx'],
         tasks: ['react', 'browserify']
+      },
+      browserify: {
+        files: ['demo.js'],
+        tasks: ['browserify']
       }
     },
     less: {

@@ -106,6 +106,13 @@
 
           <section>
             <h1>&lt;YoutubeVideo /&gt;</h1>
+
+            <p>Wraps Youtube's embed code in a nicer React interface. All URL parameters are exposed as properties (see the <a href="https://developers.google.com/youtube/player_parameters">parameter docs</a> for possible options).</p>
+            
+            <p>The video URL passed to the src property can be either the page URL (<i>eg. https://www.youtube.com/watch?v=R8XAlSp838Y</i>) or the embed URL (<i>eg. http://www.youtube.com/embed/R8XAlSp838Y</i>). Whichever you provide the URL will be output in the embed style <strong>without</strong> the protocol. The protocol can be set explicitly via the protocol property. You would normally only include this for debugging purposes when you are viewing your page from an "offline" protocol (<i>ie. file://</i>).</p>
+
+            <pre><code>&lt;YoutubeVideo src="//www.youtube.com/embed/R8XAlSp838Y" protocol="http" /&gt;</code></pre>
+
             <div class="well">
               <div id="youtube-video-example"></div>
             </div>
