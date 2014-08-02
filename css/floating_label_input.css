@@ -25,7 +25,8 @@
   bottom: auto;
   font-size: 11px;
   opacity: 0;
-  transition: top 250ms, opacity 250ms;
+  -webkit-transition: top 250ms, opacity 250ms;
+          transition: top 250ms, opacity 250ms;
 }
 .rui-floating-label-input__label--floated-active {
   top: -16px;

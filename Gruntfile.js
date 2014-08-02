@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     watch: {
       less: {
         files: ['less/*.less'],
-        tasks: ['less']
+        tasks: ['less', 'autoprefixer']
       },
       jsx: {
         files: ['jsx/*.jsx'],
@@ -21,6 +21,14 @@ module.exports = function(grunt) {
           "css/floating_label_input.css": "less/floating_label_input.less",
         }
       },
+    },
+    autoprefixer: {
+      multiple_files: {
+        expand: true,
+        flatten: true,
+        src: 'css/*.css',
+        dest: 'css/'
+      }
     },
     browserify: {
       dist: {
@@ -49,7 +57,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-react');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-autoprefixer');
   // Default task(s).
-  grunt.registerTask('default', ['less', 'react', 'browserify']);
+  grunt.registerTask('default', ['less', 'autoprefixer', 'react', 'browserify']);
 
 };
