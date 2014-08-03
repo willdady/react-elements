@@ -81,8 +81,13 @@ React.renderComponent(
 );
 
 React.renderComponent(
-  VimeoVideo(),
+  VimeoVideo({src: "//vimeo.com/33133076", protocol: "http"}),
   document.getElementById("vimeo-video-example")
+);
+
+React.renderComponent(
+  VimeoVideo({src: "//vimeo.com/33133076", protocol: "http", color: "ff0000", badge: 0, byline: 0, portrait: 0, title: 0}),
+  document.getElementById("vimeo-video-example-alt")
 );
 
 },{"./jsx/FloatingLabelInput.jsx":2,"./jsx/MediaObject.jsx":3,"./jsx/VimeoVideo.jsx":4,"./jsx/YoutubeVideo.jsx":5,"jquery":7,"react":151}],2:[function(require,module,exports){
@@ -212,33 +217,67 @@ module.exports = MediaObject;
 
 var React = require("react");
 
+var defaultVimeoParams = {
+  autopause: 1,
+  autoplay: 0,
+  badge: 1,
+  byline: 1,
+  color: "00adef",
+  loop: 0,
+  player_id: null,
+  portrait: 1,
+  title: 1
+};
 
 var VimeoVideo = React.createClass({displayName: 'VimeoVideo',
 
   getDefaultProps: function() {
-    return {
+    var defProps = {
       width: 500,
       height: 281,
       frameBorder: 0,
-      portrait: true,
-      title: true,
-      byline: true,
-      color: "00adef"
+      protocol: null
+    };
+    for (var k in defaultVimeoParams) {
+      defProps[k] = defaultVimeoParams[k];
     }
+    return defProps;
+  },
+
+  propTypes: {
+    src: React.PropTypes.string.isRequired,
+    protocol: React.PropTypes.oneOf(["http", "https"]),
   },
 
   getCleanedSrc: function() {
-    var src = this.props.src;
+    var matches, vidID, src, protocol;
 
-    // TODO: Clean color eg, strip leading #
+    src = this.props.src.trim();
+    protocol = this.props.protocol ? this.props.protocol + ":" : "";
 
-    var params = "";
-    params = !this.props.portrait ? params += "&portrait=0" : params;
-    params = !this.props.title ? params += "&title=0" : params;
-    params = !this.props.byline.title ? params += "&byline=0" : params;
-    params += "&color="+this.props.color;
-    // TODO
-    return "http://player.vimeo.com/video/93491792";
+    // Extract video id from src.
+    var pageURLRegexp = /.*vimeo\.com\/(\w+)$/g;
+    matches = pageURLRegexp.exec(src);
+    if (matches) {
+      vidID = matches[1];
+    } else {
+      var embedURLRegexp = /.*video\/(\w+)$/g;
+      matches = embedURLRegexp.exec(src);
+      if (matches) {
+        vidID = matches[1];
+      }
+    }
+    if (!vidID) throw "Unable to extract Video ID from URL.";
+   // Build URL parameters
+    var params = "", val;
+    for (var k in defaultVimeoParams) {
+      if (this.props[k] !== defaultVimeoParams[k]) {
+        params += "&" + k + "=" + String(this.props[k]);
+      }
+    }
+    params = params.replace("&", "?");
+    
+    return protocol + "//player.vimeo.com/video/" + vidID + params;
   },
 
   render: function() {
