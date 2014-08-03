@@ -85,6 +85,6 @@ React.renderComponent(
 );
 
 React.renderComponent(
-  VimeoVideo({src: "//vimeo.com/33133076", protocol: "http", color: "ff0000", badge: 0, byline: 0, portrait: 0, title: 0}),
+  VimeoVideo({src: "http://player.vimeo.com/video/33133076", protocol: "http", color: "ff0000", badge: 0, byline: 0, portrait: 0, title: 0}),
   document.getElementById("vimeo-video-example-alt")
 );

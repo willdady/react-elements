@@ -109,7 +109,14 @@
 
             <p>Wraps Youtube's embed code in a nicer React interface. All URL parameters are exposed as properties (see the <a href="https://developers.google.com/youtube/player_parameters">parameter docs</a> for possible options).</p>
             
-            <p>The video URL passed to the src property can be either the page URL (<i>eg. https://www.youtube.com/watch?v=R8XAlSp838Y</i>) or the embed URL (<i>eg. http://www.youtube.com/embed/R8XAlSp838Y</i>). Whichever you provide the URL will be output in the embed style <strong>without</strong> the protocol.</p>
+            <p>The src property accepts the following youtube URL types:</p>
+
+            <ul>
+              <li>https://www.youtube.com/watch?v=R8XAlSp838Y</li>
+              <li>http://www.youtube.com/embed/R8XAlSp838Y</li>
+            </ul>
+
+            <p>Whichever you provide the URL will be output in the embed style <strong>without</strong> the protocol.</p>
 
             <p>The protocol can be set explicitly via the protocol property. You would normally only include this for debugging purposes when you are viewing your page from an "offline" protocol (<i>ie. file://</i>).</p>
 
@@ -125,7 +132,18 @@
           <section>
             <h1>&lt;VimeoVideo /&gt;</h1>
 
-            <p class="text-danger">WIP. Coming soon.</p>
+            <p>Like YoutubeVideo, VimeoVideo wraps Vimeo's embed code in a nicer React interface. All URL parameters are exposed as properties (see <a href="http://developer.vimeo.com/player/embedding">vimeo's embedding doc</a> for possible options).</p>
+            
+            <p>The src property accepts the following vimeo URL types:</p>
+
+            <ul>
+              <li>http://vimeo.com/33133076</li>
+              <li>http://player.vimeo.com/video/33133076</li>
+            </ul>
+
+            <p>Whichever you provide the URL will be output in the embed style <strong>without</strong> the protocol.</p>
+
+            <p>The protocol can be set explicitly via the protocol property. You would normally only include this for debugging purposes when you are viewing your page from an "offline" protocol (<i>ie. file://</i>).</p>
 
             <pre><code>&lt;VimeoVideo src="//vimeo.com/33133076" protocol="http" /&gt;</code></pre>
 
@@ -133,7 +151,7 @@
               <div id="vimeo-video-example"></div>
             </div>
 
-            <pre><code>&lt;VimeoVideo src="//vimeo.com/33133076"
+            <pre><code>&lt;VimeoVideo src="//player.vimeo.com/video/33133076"
             protocol="http"
             color="ff0000"
             badge="0"
