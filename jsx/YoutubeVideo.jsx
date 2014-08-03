@@ -39,6 +39,7 @@ var YouTubeVideo = React.createClass({
       width: 560,
       height: 315,
       frameBorder: 0,
+      protocol: null
     };
     for (var k in defaultYoutubeParams) {
       defProps[k] = defaultYoutubeParams[k];
@@ -46,11 +47,30 @@ var YouTubeVideo = React.createClass({
     return defProps;
   },
 
+  propTypes: {
+    protocol: React.PropTypes.oneOf(["http", "https"])
+  },
+
   getCleanedSrc: function() {
-    var src = this.props.src;
+    var matches, vidID, src, protocol;
 
-    // TODO: Process src to extract the video ID and clean the URL.
+    src = this.props.src.trim();
+    protocol = this.props.protocol ? this.props.protocol + ":" : "";
 
+    // Extract video id from src.
+    var pageURLRegexp = /.*watch\?v=(\w+)$/g;
+    matches = pageURLRegexp.exec(src);
+    if (matches) {
+      vidID = matches[1];
+    } else {
+      var embedURLRegexp = /.*embed\/(\w+)$/g;
+      matches = embedURLRegexp.exec(src);
+      if (matches) {
+        vidID = matches[1];
+      }
+    }
+    if (!vidID) throw "Unable to extract Video ID from URL.";
+    // Build URL parameters
     var params = "", val;
     for (var k in defaultYoutubeParams) {
       if (this.props[k] !== defaultYoutubeParams[k]) {
@@ -58,7 +78,8 @@ var YouTubeVideo = React.createClass({
       }
     }
     params = params.replace("&", "?");
-    return src + params;
+
+    return protocol + "//www.youtube.com/embed/" + vidID + params;
   },
 
   render: function() {

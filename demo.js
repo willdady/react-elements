@@ -75,7 +75,7 @@ React.renderComponent(
 );
 
 React.renderComponent(
-  YoutubeVideo({src: "http://www.youtube.com/embed/R8XAlSp838Y"}),
+  YoutubeVideo({src: "//www.youtube.com/watch?v=R8XAlSp838Y", protocol: "http"}),
   document.getElementById("youtube-video-example")
 );
 
