@@ -2,6 +2,12 @@ A library of reusable React components.
 
 See demo.html for examples.
 
+##Installation
+
+```
+npm install --save react-elements
+```
+
 ##Usage
 
 Components are built to work with Browserify/Node. To include a component in your project simply ```require``` the component.
