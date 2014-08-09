@@ -21,8 +21,8 @@ module.exports = function(grunt) {
         files: {
           "build/bundle.css": "less/*.less",
           "css/media_object.css": "less/media_object.less",
-          "css/slider.css": "less/slider.less",
           "css/floating_label_input.css": "less/floating_label_input.less",
+          "css/tags_input.css": "less/tags_input.less"
         }
       },
     },

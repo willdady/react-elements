@@ -1,5 +1,6 @@
 var React = require("react"),
     MediaObject = require("./jsx/MediaObject.jsx"),
+    TagsInput = require("./jsx/TagsInput.jsx"),
     FloatingLabelInput = require("./jsx/FloatingLabelInput.jsx"),
     YoutubeVideo = require("./jsx/YoutubeVideo.jsx"),
     VimeoVideo = require("./jsx/VimeoVideo.jsx"),
@@ -7,6 +8,39 @@ var React = require("react"),
 
 
 window.jQuery = $;
+
+var tagsData = ["technology", "facebook", "javascript"];
+
+var onAddCallback = function(value) {
+  tagsData.push(value);
+  React.renderComponent(
+    TagsInput({onAdd: onAddCallback,
+               onRemove: onRemoveCallback,
+               data: tagsData,
+               max: 5}),
+    document.getElementById("tags-input-example")
+  );
+};
+var onRemoveCallback = function(value) {
+  var index = tagsData.indexOf(value);
+  if (index > -1) {
+    tagsData.splice(index, 1);
+    React.renderComponent(
+      TagsInput({onAdd: onAddCallback,
+               onRemove: onRemoveCallback,
+               data: tagsData,
+               max: 5}),
+      document.getElementById("tags-input-example")
+    );
+  }
+};
+React.renderComponent(
+  TagsInput({onAdd: onAddCallback,
+               onRemove: onRemoveCallback,
+               data: tagsData,
+               max: 5}),
+  document.getElementById("tags-input-example")
+);
 
 
 React.renderComponent(

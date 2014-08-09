@@ -18,6 +18,35 @@
         <div class="col-md-8 col-md-offset-2">
 
           <section>
+            <h1>&lt;TagsInput /&gt;</h1>
+            <p>
+              Accepts an array of strings and renders them as a tags input.
+            </p>
+            <p>
+              You must provide <em>onAdd</em> and <em>onRemove</em> callbacks which both receive the tag value as their single attribute. The callbacks must handle updating of the data model (the array of values passed to the data attribute) and re-render the input. The <em>onAdd</em> callback is a good place to clean the entered tag by converting it to lowercase and/or slugifying the value if neccessary.
+            </p>
+            <p>
+              You may optionally pass a number to the <em>max</em> attribute to limit the number of tags.
+            </p>
+
+            <div class="alert alert-info">
+              <b>Note:</b> Tags passed to the data attribute <strong>must</strong> be unique. The input simply ignores newly created tags if they already exist.
+            </div>
+
+<pre><code>&lt;TagsInput data={['technology', 'facebook', 'javascript']} 
+           onAdd={this.onTagAddCallback}
+           onRemove={this.onTagRemoveCallback}
+           max={5} /&gt;</code></pre>
+
+            <div class="well">
+              <div id="tags-input-example"></div>
+            </div>
+
+          </section>
+
+          <hr>
+
+          <section>
             <h1>&lt;MediaObject /&gt;</h1>
             <p>
               A simple layout object inspired by Nicole Sullivans <a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/">media object</a> and Harry Roberts' <a href="http://csswizardry.com/2013/05/the-flag-object/">flag object</a> for placing an image (or other elements/components etc.) next to a block of text. The image can be vertically aligned and the component can be mirrored so the image runs to the right of the text.
