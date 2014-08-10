@@ -17,7 +17,7 @@ var colorChangeHandler = function(color) {
 };
 
 React.renderComponent(
-  ColorPicker({onChange: colorChangeHandler}),
+  ColorPicker({onChange: colorChangeHandler, color: "#a0d3d3"}),
   document.getElementById("color-picker-example")
 );
 

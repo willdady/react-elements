@@ -68,16 +68,29 @@ var SaturationBrightnessCursor = React.createClass({
 var SaturationBrightnessPicker = React.createClass({
 
   getInitialState: function() {
+    // TODO: Calculate initial cursor pos based on saturation/brightness props
     return {
-      cursorPosition: {x: 0, y: 0},
+      cursorPosition: {
+        x: 0, 
+        y: 0
+      },
       mouseDown: false,
       hue: 0 // A value between 0-1
     }
   },
 
+  getDefaultProps: function() {
+    return {
+      saturation: 1,
+      brightness: 0
+    }
+  },
+
   propTypes: {
     onChange: React.PropTypes.func.isRequired,
-    hue: React.PropTypes.number.isRequired
+    hue: React.PropTypes.number.isRequired,
+    saturation: React.PropTypes.number,
+    brightness: React.PropTypes.number,
   },
 
   onMouseDownHandler: function(e) {
@@ -228,14 +241,19 @@ var HuePicker = React.createClass({
 var ColorPicker = React.createClass({
 
   getInitialState: function() {
+    var hsv = tinycolor(this.props.color).toHsv();
     return {
-      hue: 0,
-      saturation: 0,
-      brightness: 0
+      hue: hsv.h / 360,
+      saturation: hsv.s,
+      brightness: hsv.v
     }
   },
 
   propTypes: {
+    color: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.object
+    ]),
     onChange: React.PropTypes.func.isRequired
   },
 
@@ -258,7 +276,7 @@ var ColorPicker = React.createClass({
     var color = tinycolor({
       h: Math.round(360 * this.state.hue),
       s: this.state.saturation,
-      l: this.state.brightness
+      v: this.state.brightness
     });
     this.props.onChange(color);
   },
@@ -267,7 +285,9 @@ var ColorPicker = React.createClass({
     return(
       <div>
         <SaturationBrightnessPicker onChange={this.saturationBrightnessChangeHandler}
-                                    hue={this.state.hue} />
+                                    hue={this.state.hue}
+                                    saturation={this.state.saturation}
+                                    brightness={this.state.brightness} />
         <HuePicker onChange={this.hueChangeHandler} />
       </div>
     )
