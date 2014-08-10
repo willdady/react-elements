@@ -1,0 +1,85 @@
+.rui-color-picker {
+
+}
+
+.rui-color-picker__sb-picker {
+  display: inline-block;
+  position: relative;
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+  margin-right: 3px;
+}
+
+.rui-color-picker__sb-picker--dragging {
+  cursor: pointer;
+}
+
+.rui-color-picker__sb-picker-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 128px;
+  height: 128px;
+}
+
+.rui-color-picker__sb-picker-cursor {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: rgba(0, 0, 0, 0);
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.rui-color-picker__sb-picker-cursor-circle {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  left: -7px;
+  top: -7px;
+  border-radius: 50%;
+  border: 2px solid black;
+  pointer-events: none;
+  &:before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    border-radius: 50%;
+    border: 1px solid white;
+    pointer-events: none;
+  }
+}
+
+.rui-color-picker__h-picker {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 128px;
+  background: linear-gradient(hsl(0, 100%, 50%) 0%, 
+                              hsl(35, 100%, 50%) 10%, 
+                              hsl(71, 100%, 50%) 20%, 
+                              hsl(107, 100%, 50%) 30%, 
+                              hsl(143, 100%, 50%) 40%, 
+                              hsl(179, 100%, 50%) 50%,
+                              hsl(215, 100%, 50%) 60%,
+                              hsl(252, 100%, 50%) 70%,
+                              hsl(288, 100%, 50%) 80%,
+                              hsl(324, 100%, 50%) 90%,
+                              hsl(359, 100%, 50%) 100%);
+}
+.rui-color-picker__h-picker--dragging {
+  cursor: pointer;
+}
+.rui-color-picker__h-picker-cursor {
+  width: 30px;
+  height: 5px;
+  border: 1px solid white;
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
