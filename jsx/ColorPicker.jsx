@@ -7,6 +7,11 @@ var $ = require("jquery"),
     tinycolor = require("tinycolor2");
 
 
+var SB_PICKER_WIDTH = SB_PICKER_HEIGHT = 128;
+var SB_PICKER_CURSOR_WIDTH = SB_PICKER_CURSOR_HEIGHT = 14;
+var H_PICKER_HEIGHT = 128;
+var H_PICKER_CURSOR_HEIGHT = 3;
+
 
 var TwoStopGradient = React.createClass({
 
@@ -51,14 +56,13 @@ var SaturationBrightnessCursor = React.createClass({
   },
 
   render: function() {
+    // We center the cursor around our x/y position
     var style = {
-      left: this.props.position.x,
-      top: this.props.position.y
+      left: this.props.position.x - Math.round(SB_PICKER_CURSOR_WIDTH * 0.5),
+      top: this.props.position.y - Math.round(SB_PICKER_CURSOR_HEIGHT * 0.5)
     };
     return (
-      <div className="rui-color-picker__sb-picker-cursor" style={style}>
-        <div className="rui-color-picker__sb-picker-cursor-circle"></div>
-      </div>
+      <div className="rui-color-picker__sb-picker-cursor" style={style}></div>
     )
   }
 
@@ -68,14 +72,13 @@ var SaturationBrightnessCursor = React.createClass({
 var SaturationBrightnessPicker = React.createClass({
 
   getInitialState: function() {
-    // TODO: Calculate initial cursor pos based on saturation/brightness props
     return {
       cursorPosition: {
-        x: 0, 
-        y: 0
+        x: Math.round(SB_PICKER_WIDTH * this.props.saturation), 
+        y: Math.round(SB_PICKER_HEIGHT * (1 - this.props.brightness))
       },
       mouseDown: false,
-      hue: 0 // A value between 0-1
+      hue: 0
     }
   },
 
@@ -94,29 +97,23 @@ var SaturationBrightnessPicker = React.createClass({
   },
 
   onMouseDownHandler: function(e) {
+    e.preventDefault();
     window.addEventListener("mouseup", this.onMouseUpHandler);
     window.addEventListener("mousemove", this.onMouseMoveHandler);
-    this.setState({
-      mouseDown: true
-    });
+    this._update(e.nativeEvent.pageX, e.nativeEvent.pageY, true);
   },
 
   onMouseUpHandler: function(e) {
     window.removeEventListener("mouseup", this.onMouseUpHandler);
     window.removeEventListener("mousemove", this.onMouseMoveHandler);
-    this.setState({
-      mouseDown: false,
-      cursorPosition: this._positionCursor(e.pageX, e.pageY)
-    });
+    this._update(e.pageX, e.pageY, false);
   },
 
   onMouseMoveHandler: function(e) {
-    this.setState({
-      cursorPosition: this._positionCursor(e.pageX, e.pageY)
-    })
+    this._update(e.pageX, e.pageY, true);
   },
 
-  _positionCursor: function(pageX, pageY) {
+  _update: function(pageX, pageY, mouseDown) {
     // Get the position of the root element relative to the document.
     var rootPos = this.refs.root.getDOMNode().getBoundingClientRect();
     // Convert coordinates into local space.
@@ -124,14 +121,17 @@ var SaturationBrightnessPicker = React.createClass({
     var y = pageY - rootPos.top;
     // Keep x and y within our bounds
     x = x < 0 ? 0 : x;
-    x = x > 128 ? 128 : x;
+    x = x > SB_PICKER_WIDTH ? SB_PICKER_WIDTH : x;
     y = y < 0 ? 0 : y;
-    y = y > 128 ? 128 : y;
+    y = y > SB_PICKER_HEIGHT ? SB_PICKER_HEIGHT : y;
     // Normalize to saturation and brightness ratios
-    var saturation = x / 128;
-    var brightness = 1 - (y / 128);
+    var saturation = x / SB_PICKER_WIDTH;
+    var brightness = 1 - (y / SB_PICKER_HEIGHT);
+    this.setState({
+      mouseDown: mouseDown,
+      cursorPosition: {x: x, y: y}
+    });
     this.props.onChange(saturation, brightness);
-    return {x: x, y: y};
   },
 
   render: function() {
@@ -168,8 +168,15 @@ var HuePickerCursor = React.createClass({
   },
 
   render: function() {
+    // We vertically center the cursor around our y position and make sure 
+    // we're always within HuePicker's bounds.
+    var y = this.props.position - Math.floor(H_PICKER_CURSOR_HEIGHT * 0.5);
+    y = (y + H_PICKER_CURSOR_HEIGHT) > H_PICKER_HEIGHT ? 
+        H_PICKER_HEIGHT - H_PICKER_CURSOR_HEIGHT : 
+        y;
+    y = y < 0 ? 0 : y;
     var styles = {
-      top: this.props.position
+      top: y
     };
     return (
       <div className="rui-color-picker__h-picker-cursor" style={styles}></div>
@@ -184,46 +191,47 @@ var HuePicker = React.createClass({
   getInitialState: function() {
     return {
       mouseDown: false,
-      cursorPosition: 0
+      cursorPosition: Math.round(H_PICKER_HEIGHT * this.props.hue)
     }
   },
 
+  propTypes: {
+    hue: React.PropTypes.number.isRequired,
+    onChange: React.PropTypes.func.isRequired
+  },
+
   onMouseDownHandler: function(e) {
+    e.preventDefault();
     window.addEventListener("mouseup", this.onMouseUpHandler);
     window.addEventListener("mousemove", this.onMouseMoveHandler);
-    this.setState({
-      mouseDown: true
-    });
+    this._update(e.nativeEvent.pageY, true);
   },
 
   onMouseUpHandler: function(e) {
     window.removeEventListener("mouseup", this.onMouseUpHandler);
     window.removeEventListener("mousemove", this.onMouseMoveHandler);
-    this.setState({
-      mouseDown: false,
-      cursorPosition: this._positionCursor(e.pageY)
-    });
+    this._update(e.pageY, false);
   },
 
   onMouseMoveHandler: function(e) {
-    this.setState({
-      cursorPosition: this._positionCursor(e.pageY)
-    })
+    this._update(e.pageY, true);
   },
 
-  _positionCursor: function(pageY) {
+  _update: function(pageY, mouseDown) {
     // Get the position of the root element relative to the document.
     var rootPos = this.refs.root.getDOMNode().getBoundingClientRect();
     // Convert coordinate into local space.
     var y = pageY - rootPos.top;
     // Keep y within our bounds
     y = y < 0 ? 0 : y;
-    y = y > 128 ? 128 : y;
-    // Normalize a ratio
-    var hue = y / 128;
+    y = y > H_PICKER_HEIGHT ? H_PICKER_HEIGHT : y;
+    // Normalize to a ratio
+    var hue = y / H_PICKER_HEIGHT;
+    this.setState({
+      mouseDown: mouseDown,
+      cursorPosition: y
+    });
     this.props.onChange(hue);
-
-    return y;
   },
 
   render: function() {
@@ -262,17 +270,17 @@ var ColorPicker = React.createClass({
       saturation: saturation,
       brightness: brightness
     });
-    this._change();
+    this._update();
   },
 
   hueChangeHandler: function(hue) {
     this.setState({
       hue: hue
     });
-    this._change();
+    this._update();
   },
 
-  _change: function() {
+  _update: function() {
     var color = tinycolor({
       h: Math.round(360 * this.state.hue),
       s: this.state.saturation,
@@ -288,7 +296,8 @@ var ColorPicker = React.createClass({
                                     hue={this.state.hue}
                                     saturation={this.state.saturation}
                                     brightness={this.state.brightness} />
-        <HuePicker onChange={this.hueChangeHandler} />
+        <HuePicker onChange={this.hueChangeHandler}
+                   hue={this.state.hue} />
       </div>
     )
   }

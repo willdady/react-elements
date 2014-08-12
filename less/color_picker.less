@@ -1,3 +1,12 @@
+@SB_PICKER_WIDTH:             128px;
+@SB_PICKER_HEIGHT:            @SB_PICKER_WIDTH;
+@SB_PICKER_CURSOR_WIDTH:      14px;
+@SB_PICKER_CURSOR_HEIGHT:     @SB_PICKER_CURSOR_WIDTH;
+@H_PICKER_HEIGHT:             128px;
+@H_PICKER_WIDTH:              26px;
+@H_PICKER_CURSOR_HEIGHT:      3px;
+
+
 .rui-color-picker {
 
 }
@@ -5,8 +14,8 @@
 .rui-color-picker__sb-picker {
   display: inline-block;
   position: relative;
-  width: 128px;
-  height: 128px;
+  width: @SB_PICKER_WIDTH;
+  height: @SB_PICKER_HEIGHT;
   overflow: hidden;
   margin-right: 3px;
 }
@@ -19,32 +28,24 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 128px;
-  height: 128px;
+  width: @SB_PICKER_WIDTH;
+  height: @SB_PICKER_HEIGHT;
 }
 
 .rui-color-picker__sb-picker-cursor {
   position: absolute;
-  width: 14px;
-  height: 14px;
+  width: @SB_PICKER_CURSOR_WIDTH;
+  height: @SB_PICKER_CURSOR_HEIGHT;
   background: rgba(0, 0, 0, 0);
   top: 0;
   left: 0;
   pointer-events: none;
-}
-.rui-color-picker__sb-picker-cursor-circle {
-  width: 14px;
-  height: 14px;
-  position: relative;
-  left: -7px;
-  top: -7px;
   border-radius: 50%;
   border: 2px solid black;
-  pointer-events: none;
   &:before {
     content: "";
-    width: 14px;
-    height: 14px;
+    width: @SB_PICKER_CURSOR_WIDTH;
+    height: @SB_PICKER_CURSOR_HEIGHT;
     position: absolute;
     left: -2px;
     top: -2px;
@@ -57,8 +58,8 @@
 .rui-color-picker__h-picker {
   position: relative;
   display: inline-block;
-  width: 30px;
-  height: 128px;
+  width: @H_PICKER_WIDTH;
+  height: @H_PICKER_HEIGHT;
   background: linear-gradient(hsl(0, 100%, 50%) 0%, 
                               hsl(35, 100%, 50%) 10%, 
                               hsl(71, 100%, 50%) 20%, 
@@ -75,11 +76,12 @@
   cursor: pointer;
 }
 .rui-color-picker__h-picker-cursor {
-  width: 30px;
-  height: 5px;
+  width: @H_PICKER_WIDTH;
+  height: @H_PICKER_CURSOR_HEIGHT;
   border: 1px solid white;
   background: rgba(0, 0, 0, 0);
   position: absolute;
   top: 0;
   left: 0;
+  pointer-events: none;
 }

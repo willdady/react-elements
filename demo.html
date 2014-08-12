@@ -17,6 +17,23 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
+           <section>
+            <h1>&lt;ColorPicker /&gt;</h1>
+
+            <p>A simple HSB style color picker similar to the one found in Adobe Photoshop.</p>
+
+            <p>This component takes advantage of the excellent <a href="https://www.npmjs.org/package/tinycolor2">tinycolor</a> library.</p>
+
+            <p>Values passed to the <em>color</em> attribute can be any value parsable by <a href="https://www.npmjs.org/package/tinycolor2">tinycolor</a>. The <em>onChange</em> callback will receive a single value, a <a href="https://www.npmjs.org/package/tinycolor2">tinycolor</a> object, which you can extract colors from eg. <em>obj.toHexString()</em>.</p>
+
+<pre><code>&lt;ColorPicker color="#f5f5f5" onChange={this.onChangeHandler} /&gt;</code></pre>
+
+            <div class="well">
+              <div id="color-picker-example"></div>
+            </div>
+
+          </section>
+
           <section>
             <h1>&lt;TagsInput /&gt;</h1>
             <p>

@@ -18,123 +18,123 @@ var colorChangeHandler = function(color) {
 };
 
 React.renderComponent(
-  ColorPicker({onChange: colorChangeHandler, color: "#a0d3d3"}),
+  ColorPicker({onChange: colorChangeHandler, color: "#f5f5f5"}),
   document.getElementById("color-picker-example")
 );
 
-// var tagsData = ["technology", "facebook", "javascript"];
+var tagsData = ["technology", "facebook", "javascript"];
 
-// var onAddCallback = function(value) {
-//   tagsData.push(value);
-//   React.renderComponent(
-//     TagsInput({onAdd: onAddCallback,
-//                onRemove: onRemoveCallback,
-//                data: tagsData,
-//                max: 5}),
-//     document.getElementById("tags-input-example")
-//   );
-// };
-// var onRemoveCallback = function(value) {
-//   var index = tagsData.indexOf(value);
-//   if (index > -1) {
-//     tagsData.splice(index, 1);
-//     React.renderComponent(
-//       TagsInput({onAdd: onAddCallback,
-//                onRemove: onRemoveCallback,
-//                data: tagsData,
-//                max: 5}),
-//       document.getElementById("tags-input-example")
-//     );
-//   }
-// };
-// React.renderComponent(
-//   TagsInput({onAdd: onAddCallback,
-//                onRemove: onRemoveCallback,
-//                data: tagsData,
-//                max: 5}),
-//   document.getElementById("tags-input-example")
-// );
+var onAddCallback = function(value) {
+  tagsData.push(value);
+  React.renderComponent(
+    TagsInput({onAdd: onAddCallback,
+               onRemove: onRemoveCallback,
+               data: tagsData,
+               max: 5}),
+    document.getElementById("tags-input-example")
+  );
+};
+var onRemoveCallback = function(value) {
+  var index = tagsData.indexOf(value);
+  if (index > -1) {
+    tagsData.splice(index, 1);
+    React.renderComponent(
+      TagsInput({onAdd: onAddCallback,
+               onRemove: onRemoveCallback,
+               data: tagsData,
+               max: 5}),
+      document.getElementById("tags-input-example")
+    );
+  }
+};
+React.renderComponent(
+  TagsInput({onAdd: onAddCallback,
+               onRemove: onRemoveCallback,
+               data: tagsData,
+               max: 5}),
+  document.getElementById("tags-input-example")
+);
 
 
-// React.renderComponent(
-//   MediaObject({
-//     children: [
-//       React.DOM.img({src: "build/grumpy.jpg"}),
-//       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
-//       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
-//     ]
-//   }),
-//   document.getElementById("media-obj-example")
-// );
+React.renderComponent(
+  MediaObject({
+    children: [
+      React.DOM.img({src: "build/grumpy.jpg"}),
+      React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
+      React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+    ]
+  }),
+  document.getElementById("media-obj-example")
+);
 
-// React.renderComponent(
-//   MediaObject({
-//     mirror: true,
-//     children: [
-//       React.DOM.img({src: "build/grumpy.jpg"}),
-//       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
-//       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
-//     ]
-//   }),
-//   document.getElementById("media-obj-example-mirror")
-// );
+React.renderComponent(
+  MediaObject({
+    mirror: true,
+    children: [
+      React.DOM.img({src: "build/grumpy.jpg"}),
+      React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
+      React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+    ]
+  }),
+  document.getElementById("media-obj-example-mirror")
+);
 
-// React.renderComponent(
-//   MediaObject({
-//     valign: "middle",
-//     children: [
-//       React.DOM.img({src: "build/grumpy.jpg"}),
-//       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
-//       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
-//     ]
-//   }),
-//   document.getElementById("media-obj-example-vmiddle")
-// );
+React.renderComponent(
+  MediaObject({
+    valign: "middle",
+    children: [
+      React.DOM.img({src: "build/grumpy.jpg"}),
+      React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
+      React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+    ]
+  }),
+  document.getElementById("media-obj-example-vmiddle")
+);
 
-// React.renderComponent(
-//   MediaObject({
-//     valign: "bottom",
-//     children: [
-//       React.DOM.img({src: "build/grumpy.jpg"}),
-//       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
-//       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
-//     ]
-//   }),
-//   document.getElementById("media-obj-example-vbottom")
-// );
+React.renderComponent(
+  MediaObject({
+    valign: "bottom",
+    children: [
+      React.DOM.img({src: "build/grumpy.jpg"}),
+      React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
+      React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+    ]
+  }),
+  document.getElementById("media-obj-example-vbottom")
+);
 
-// React.renderComponent(
-//   MediaObject({
-//     valign: "middle",
-//     mirror: true,
-//     children: [
-//       React.DOM.img({src: "build/grumpy.jpg"}),
-//       React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
-//       React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
-//     ]
-//   }),
-//   document.getElementById("media-obj-example-vmiddle-mirror")
-// );
+React.renderComponent(
+  MediaObject({
+    valign: "middle",
+    mirror: true,
+    children: [
+      React.DOM.img({src: "build/grumpy.jpg"}),
+      React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
+      React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+    ]
+  }),
+  document.getElementById("media-obj-example-vmiddle-mirror")
+);
 
-// React.renderComponent(
-//   FloatingLabelInput({id: "email-input", label: "Email", name: "email"}),
-//   document.getElementById("floating-label-input-example")
-// );
+React.renderComponent(
+  FloatingLabelInput({id: "email-input", label: "Email", name: "email"}),
+  document.getElementById("floating-label-input-example")
+);
 
-// React.renderComponent(
-//   YoutubeVideo({src: "//www.youtube.com/watch?v=R8XAlSp838Y", protocol: "http"}),
-//   document.getElementById("youtube-video-example")
-// );
+React.renderComponent(
+  YoutubeVideo({src: "//www.youtube.com/watch?v=R8XAlSp838Y", protocol: "http"}),
+  document.getElementById("youtube-video-example")
+);
 
-// React.renderComponent(
-//   VimeoVideo({src: "//vimeo.com/33133076", protocol: "http"}),
-//   document.getElementById("vimeo-video-example")
-// );
+React.renderComponent(
+  VimeoVideo({src: "//vimeo.com/33133076", protocol: "http"}),
+  document.getElementById("vimeo-video-example")
+);
 
-// React.renderComponent(
-//   VimeoVideo({src: "http://player.vimeo.com/video/33133076", protocol: "http", color: "ff0000", badge: 0, byline: 0, portrait: 0, title: 0}),
-//   document.getElementById("vimeo-video-example-alt")
-// );
+React.renderComponent(
+  VimeoVideo({src: "http://player.vimeo.com/video/33133076", protocol: "http", color: "ff0000", badge: 0, byline: 0, portrait: 0, title: 0}),
+  document.getElementById("vimeo-video-example-alt")
+);
 
 },{"./jsx/ColorPicker.jsx":2,"./jsx/FloatingLabelInput.jsx":3,"./jsx/MediaObject.jsx":4,"./jsx/TagsInput.jsx":5,"./jsx/VimeoVideo.jsx":6,"./jsx/YoutubeVideo.jsx":7,"jquery":9,"react":153}],2:[function(require,module,exports){
 /**
@@ -145,6 +145,11 @@ var $ = require("jquery"),
     React = require("react"),
     tinycolor = require("tinycolor2");
 
+
+var SB_PICKER_WIDTH = SB_PICKER_HEIGHT = 128;
+var SB_PICKER_CURSOR_WIDTH = SB_PICKER_CURSOR_HEIGHT = 14;
+var H_PICKER_HEIGHT = 128;
+var H_PICKER_CURSOR_HEIGHT = 3;
 
 
 var TwoStopGradient = React.createClass({displayName: 'TwoStopGradient',
@@ -190,14 +195,13 @@ var SaturationBrightnessCursor = React.createClass({displayName: 'SaturationBrig
   },
 
   render: function() {
+    // We center the cursor around our x/y position
     var style = {
-      left: this.props.position.x,
-      top: this.props.position.y
+      left: this.props.position.x - Math.round(SB_PICKER_CURSOR_WIDTH * 0.5),
+      top: this.props.position.y - Math.round(SB_PICKER_CURSOR_HEIGHT * 0.5)
     };
     return (
-      React.DOM.div({className: "rui-color-picker__sb-picker-cursor", style: style}, 
-        React.DOM.div({className: "rui-color-picker__sb-picker-cursor-circle"})
-      )
+      React.DOM.div({className: "rui-color-picker__sb-picker-cursor", style: style})
     )
   }
 
@@ -207,14 +211,13 @@ var SaturationBrightnessCursor = React.createClass({displayName: 'SaturationBrig
 var SaturationBrightnessPicker = React.createClass({displayName: 'SaturationBrightnessPicker',
 
   getInitialState: function() {
-    // TODO: Calculate initial cursor pos based on saturation/brightness props
     return {
       cursorPosition: {
-        x: 0, 
-        y: 0
+        x: Math.round(SB_PICKER_WIDTH * this.props.saturation), 
+        y: Math.round(SB_PICKER_HEIGHT * (1 - this.props.brightness))
       },
       mouseDown: false,
-      hue: 0 // A value between 0-1
+      hue: 0
     }
   },
 
@@ -233,29 +236,23 @@ var SaturationBrightnessPicker = React.createClass({displayName: 'SaturationBrig
   },
 
   onMouseDownHandler: function(e) {
+    e.preventDefault();
     window.addEventListener("mouseup", this.onMouseUpHandler);
     window.addEventListener("mousemove", this.onMouseMoveHandler);
-    this.setState({
-      mouseDown: true
-    });
+    this._update(e.nativeEvent.pageX, e.nativeEvent.pageY, true);
   },
 
   onMouseUpHandler: function(e) {
     window.removeEventListener("mouseup", this.onMouseUpHandler);
     window.removeEventListener("mousemove", this.onMouseMoveHandler);
-    this.setState({
-      mouseDown: false,
-      cursorPosition: this._positionCursor(e.pageX, e.pageY)
-    });
+    this._update(e.pageX, e.pageY, false);
   },
 
   onMouseMoveHandler: function(e) {
-    this.setState({
-      cursorPosition: this._positionCursor(e.pageX, e.pageY)
-    })
+    this._update(e.pageX, e.pageY, true);
   },
 
-  _positionCursor: function(pageX, pageY) {
+  _update: function(pageX, pageY, mouseDown) {
     // Get the position of the root element relative to the document.
     var rootPos = this.refs.root.getDOMNode().getBoundingClientRect();
     // Convert coordinates into local space.
@@ -263,14 +260,17 @@ var SaturationBrightnessPicker = React.createClass({displayName: 'SaturationBrig
     var y = pageY - rootPos.top;
     // Keep x and y within our bounds
     x = x < 0 ? 0 : x;
-    x = x > 128 ? 128 : x;
+    x = x > SB_PICKER_WIDTH ? SB_PICKER_WIDTH : x;
     y = y < 0 ? 0 : y;
-    y = y > 128 ? 128 : y;
+    y = y > SB_PICKER_HEIGHT ? SB_PICKER_HEIGHT : y;
     // Normalize to saturation and brightness ratios
-    var saturation = x / 128;
-    var brightness = 1 - (y / 128);
+    var saturation = x / SB_PICKER_WIDTH;
+    var brightness = 1 - (y / SB_PICKER_HEIGHT);
+    this.setState({
+      mouseDown: mouseDown,
+      cursorPosition: {x: x, y: y}
+    });
     this.props.onChange(saturation, brightness);
-    return {x: x, y: y};
   },
 
   render: function() {
@@ -307,8 +307,15 @@ var HuePickerCursor = React.createClass({displayName: 'HuePickerCursor',
   },
 
   render: function() {
+    // We vertically center the cursor around our y position and make sure 
+    // we're always within HuePicker's bounds.
+    var y = this.props.position - Math.floor(H_PICKER_CURSOR_HEIGHT * 0.5);
+    y = (y + H_PICKER_CURSOR_HEIGHT) > H_PICKER_HEIGHT ? 
+        H_PICKER_HEIGHT - H_PICKER_CURSOR_HEIGHT : 
+        y;
+    y = y < 0 ? 0 : y;
     var styles = {
-      top: this.props.position
+      top: y
     };
     return (
       React.DOM.div({className: "rui-color-picker__h-picker-cursor", style: styles})
@@ -323,46 +330,47 @@ var HuePicker = React.createClass({displayName: 'HuePicker',
   getInitialState: function() {
     return {
       mouseDown: false,
-      cursorPosition: 0
+      cursorPosition: Math.round(H_PICKER_HEIGHT * this.props.hue)
     }
   },
 
+  propTypes: {
+    hue: React.PropTypes.number.isRequired,
+    onChange: React.PropTypes.func.isRequired
+  },
+
   onMouseDownHandler: function(e) {
+    e.preventDefault();
     window.addEventListener("mouseup", this.onMouseUpHandler);
     window.addEventListener("mousemove", this.onMouseMoveHandler);
-    this.setState({
-      mouseDown: true
-    });
+    this._update(e.nativeEvent.pageY, true);
   },
 
   onMouseUpHandler: function(e) {
     window.removeEventListener("mouseup", this.onMouseUpHandler);
     window.removeEventListener("mousemove", this.onMouseMoveHandler);
-    this.setState({
-      mouseDown: false,
-      cursorPosition: this._positionCursor(e.pageY)
-    });
+    this._update(e.pageY, false);
   },
 
   onMouseMoveHandler: function(e) {
-    this.setState({
-      cursorPosition: this._positionCursor(e.pageY)
-    })
+    this._update(e.pageY, true);
   },
 
-  _positionCursor: function(pageY) {
+  _update: function(pageY, mouseDown) {
     // Get the position of the root element relative to the document.
     var rootPos = this.refs.root.getDOMNode().getBoundingClientRect();
     // Convert coordinate into local space.
     var y = pageY - rootPos.top;
     // Keep y within our bounds
     y = y < 0 ? 0 : y;
-    y = y > 128 ? 128 : y;
-    // Normalize a ratio
-    var hue = y / 128;
+    y = y > H_PICKER_HEIGHT ? H_PICKER_HEIGHT : y;
+    // Normalize to a ratio
+    var hue = y / H_PICKER_HEIGHT;
+    this.setState({
+      mouseDown: mouseDown,
+      cursorPosition: y
+    });
     this.props.onChange(hue);
-
-    return y;
   },
 
   render: function() {
@@ -401,17 +409,17 @@ var ColorPicker = React.createClass({displayName: 'ColorPicker',
       saturation: saturation,
       brightness: brightness
     });
-    this._change();
+    this._update();
   },
 
   hueChangeHandler: function(hue) {
     this.setState({
       hue: hue
     });
-    this._change();
+    this._update();
   },
 
-  _change: function() {
+  _update: function() {
     var color = tinycolor({
       h: Math.round(360 * this.state.hue),
       s: this.state.saturation,
@@ -427,7 +435,8 @@ var ColorPicker = React.createClass({displayName: 'ColorPicker',
                                     hue: this.state.hue, 
                                     saturation: this.state.saturation, 
                                     brightness: this.state.brightness}), 
-        HuePicker({onChange: this.hueChangeHandler})
+        HuePicker({onChange: this.hueChangeHandler, 
+                   hue: this.state.hue})
       )
     )
   }
