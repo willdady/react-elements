@@ -141,8 +141,7 @@ React.renderComponent(
  * @jsx React.DOM
  */
 
-var $ = require("jquery"),
-    React = require("react"),
+var React = require("react"),
     tinycolor = require("tinycolor2");
 
 
@@ -446,13 +445,12 @@ var ColorPicker = React.createClass({displayName: 'ColorPicker',
 
 module.exports = ColorPicker;
 
-},{"jquery":9,"react":153,"tinycolor2":154}],3:[function(require,module,exports){
+},{"react":153,"tinycolor2":154}],3:[function(require,module,exports){
 /**
  * @jsx React.DOM
  */
 
-var $ = require("jquery"),
-    React = require("react");
+var React = require("react");
 
 
 var FloatingLabelInput = React.createClass({displayName: 'FloatingLabelInput',
@@ -507,7 +505,7 @@ var FloatingLabelInput = React.createClass({displayName: 'FloatingLabelInput',
 
 module.exports = FloatingLabelInput;
 
-},{"jquery":9,"react":153}],4:[function(require,module,exports){
+},{"react":153}],4:[function(require,module,exports){
 /**
  * @jsx React.DOM
  */
