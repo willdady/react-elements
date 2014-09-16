@@ -16,7 +16,7 @@ Components are built to work with Browserify/Node. To include a component in you
 var MediaObject = require("react-elements/MediaObject");
 ```
 
-###Component stylesheets
+###Component stylesheets 
 
 Some components have an accompanying stylesheet. When using a component be sure to include the component's stylesheet in your build otherwise the component will fail to display correctly. 
 
