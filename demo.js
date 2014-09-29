@@ -1,5 +1,6 @@
 var React = require("react"),
     MediaObject = require("./jsx/MediaObject.jsx"),
+    Switch = require("./jsx/Switch.jsx"),
     TagsInput = require("./jsx/TagsInput.jsx"),
     FloatingLabelInput = require("./jsx/FloatingLabelInput.jsx"),
     YoutubeVideo = require("./jsx/YoutubeVideo.jsx"),
@@ -64,6 +65,11 @@ React.renderComponent(
     ]
   }),
   document.getElementById("media-obj-example")
+);
+
+React.renderComponent(
+  Switch(),
+  document.getElementById("switch-example")
 );
 
 React.renderComponent(
