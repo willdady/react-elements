@@ -1,4 +1,11 @@
-A library of reusable React components.
+A library of reusable React components consisting of the following:
+
+<ColorPicker />
+<FloatingLabelInput />
+<MediaObject />
+<TagsInput />
+<VimeoVideo />
+<YoutubeVideo />
 
 See demo.html for examples.
 
