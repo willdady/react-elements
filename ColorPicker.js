@@ -117,7 +117,7 @@ var SaturationBrightnessPicker = React.createClass({displayName: 'SaturationBrig
     var rootPos = this.refs.root.getDOMNode().getBoundingClientRect();
     // Convert coordinates into local space.
     var x = pageX - rootPos.left;
-    var y = pageY - rootPos.top;
+    var y = pageY - (rootPos.top + window.scrollY);
     // Keep x and y within our bounds
     x = x < 0 ? 0 : x;
     x = x > SB_PICKER_WIDTH ? SB_PICKER_WIDTH : x;
@@ -220,7 +220,7 @@ var HuePicker = React.createClass({displayName: 'HuePicker',
     // Get the position of the root element relative to the document.
     var rootPos = this.refs.root.getDOMNode().getBoundingClientRect();
     // Convert coordinate into local space.
-    var y = pageY - rootPos.top;
+    var y = pageY - (rootPos.top + window.scrollY);
     // Keep y within our bounds
     y = y < 0 ? 0 : y;
     y = y > H_PICKER_HEIGHT ? H_PICKER_HEIGHT : y;
