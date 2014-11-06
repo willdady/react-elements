@@ -60,9 +60,9 @@ React.render(
 React.render(
   MediaObject({
     children: [
-      React.DOM.img({src: "build/grumpy.jpg"}),
-      React.DOM.p(null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
-      React.DOM.p(null, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+      React.DOM.img({src: "build/grumpy.jpg", key:1}),
+      React.DOM.p({key: 2}, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
+      React.DOM.p({key: 3}, "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
     ]
   }),
   document.getElementById("media-obj-example")
@@ -138,7 +138,7 @@ React.render(
 );
 
 },{"./jsx/ColorPicker.jsx":2,"./jsx/FloatingLabelInput.jsx":3,"./jsx/MediaObject.jsx":4,"./jsx/TagsInput.jsx":5,"./jsx/VimeoVideo.jsx":6,"./jsx/YoutubeVideo.jsx":7,"jquery":9,"react":155}],2:[function(require,module,exports){
-/** @jsx React.DOM */var React = require("react"),
+var React = require("react"),
     tinycolor = require("tinycolor2");
 
 
@@ -168,7 +168,7 @@ var TwoStopGradient = React.createClass({displayName: 'TwoStopGradient',
       background: "linear-gradient("+angle+this.props.color1+", "+this.props.color2+")"
     };
     return (
-      React.DOM.div({className: this.props.className, style: styles})
+      React.createElement("div", {className: this.props.className, style: styles})
     )
   }
 
@@ -197,7 +197,7 @@ var SaturationBrightnessCursor = React.createClass({displayName: 'SaturationBrig
       top: this.props.position.y - Math.round(SB_PICKER_CURSOR_HEIGHT * 0.5)
     };
     return (
-      React.DOM.div({className: "rui-color-picker__sb-picker-cursor", style: style})
+      React.createElement("div", {className: "rui-color-picker__sb-picker-cursor", style: style})
     )
   }
 
@@ -276,17 +276,17 @@ var SaturationBrightnessPicker = React.createClass({displayName: 'SaturationBrig
     var hue = "hsl("+Math.round(360 * this.props.hue)+", 100%, 50%)";
 
     return(
-      React.DOM.div({className: className, 
+      React.createElement("div", {className: className, 
            ref: "root", 
            onMouseDown: this.onMouseDownHandler}, 
-        TwoStopGradient({className: "rui-color-picker__sb-picker-layer", 
+        React.createElement(TwoStopGradient, {className: "rui-color-picker__sb-picker-layer", 
                          color1: "white", 
                          color2: hue, 
                          horizontal: true}), 
-        TwoStopGradient({className: "rui-color-picker__sb-picker-layer", 
+        React.createElement(TwoStopGradient, {className: "rui-color-picker__sb-picker-layer", 
                          color1: "rgba(0, 0, 0, 0)", 
                          color2: "black"}), 
-        SaturationBrightnessCursor({position: this.state.cursorPosition})
+        React.createElement(SaturationBrightnessCursor, {position: this.state.cursorPosition})
       )
     )
   }
@@ -314,7 +314,7 @@ var HuePickerCursor = React.createClass({displayName: 'HuePickerCursor',
       top: y
     };
     return (
-      React.DOM.div({className: "rui-color-picker__h-picker-cursor", style: styles})
+      React.createElement("div", {className: "rui-color-picker__h-picker-cursor", style: styles})
     );
   }
 
@@ -373,8 +373,8 @@ var HuePicker = React.createClass({displayName: 'HuePicker',
     var className = "rui-color-picker__h-picker";
     className += this.state.mouseDown ? " rui-color-picker__h-picker--dragging" : "";
     return (
-      React.DOM.div({className: className, onMouseDown: this.onMouseDownHandler, ref: "root"}, 
-        HuePickerCursor({position: this.state.cursorPosition})
+      React.createElement("div", {className: className, onMouseDown: this.onMouseDownHandler, ref: "root"}, 
+        React.createElement(HuePickerCursor, {position: this.state.cursorPosition})
       )
     );
   }
@@ -426,12 +426,12 @@ var ColorPicker = React.createClass({displayName: 'ColorPicker',
 
   render: function() {
     return(
-      React.DOM.div(null, 
-        SaturationBrightnessPicker({onChange: this.saturationBrightnessChangeHandler, 
+      React.createElement("div", null, 
+        React.createElement(SaturationBrightnessPicker, {onChange: this.saturationBrightnessChangeHandler, 
                                     hue: this.state.hue, 
                                     saturation: this.state.saturation, 
                                     brightness: this.state.brightness}), 
-        HuePicker({onChange: this.hueChangeHandler, 
+        React.createElement(HuePicker, {onChange: this.hueChangeHandler, 
                    hue: this.state.hue})
       )
     )
@@ -443,7 +443,7 @@ var ColorPicker = React.createClass({displayName: 'ColorPicker',
 module.exports = ColorPicker;
 
 },{"react":155,"tinycolor2":156}],3:[function(require,module,exports){
-/** @jsx React.DOM */var React = require("react");
+var React = require("react");
 
 
 var FloatingLabelInput = React.createClass({displayName: 'FloatingLabelInput',
@@ -486,9 +486,9 @@ var FloatingLabelInput = React.createClass({displayName: 'FloatingLabelInput',
     labelClass += this.state.floated ? " rui-floating-label-input__label--floated-active" : "";
 
     return(
-      React.DOM.div({className: "rui-floating-label-input"}, 
-        React.DOM.label({htmlFor: this.props.id, className: labelClass}, this.props.label), 
-        React.DOM.input({id: this.props.id, type: this.props.type, value: this.props.value, name: this.props.name, ref: "input", onChange: this.onChangeHandler, className: "rui-floating-label-input__input form-control"})
+      React.createElement("div", {className: "rui-floating-label-input"}, 
+        React.createElement("label", {htmlFor: this.props.id, className: labelClass}, this.props.label), 
+        React.createElement("input", {id: this.props.id, type: this.props.type, value: this.props.value, name: this.props.name, ref: "input", onChange: this.onChangeHandler, className: "rui-floating-label-input__input form-control"})
       )
     );
   }
@@ -499,7 +499,7 @@ var FloatingLabelInput = React.createClass({displayName: 'FloatingLabelInput',
 module.exports = FloatingLabelInput;
 
 },{"react":155}],4:[function(require,module,exports){
-/** @jsx React.DOM */var React = require("react");
+var React = require("react");
 
 
 var MediaObject = React.createClass({displayName: 'MediaObject',
@@ -527,22 +527,22 @@ var MediaObject = React.createClass({displayName: 'MediaObject',
 
     if ((this.props.valign === "middle" || this.props.valign === "bottom") && this.props.mirror) {
       return (
-        React.DOM.div({className: rootClass}, 
-          React.DOM.div({className: contentClass}, 
+        React.createElement("div", {className: rootClass}, 
+          React.createElement("div", {className: contentClass}, 
             this.props.children.slice(1, this.props.children.length)
           ), 
-          React.DOM.div({className: imageClass}, 
+          React.createElement("div", {className: imageClass}, 
             this.props.children[0]
           )
         )
       );
     } else {
       return (
-        React.DOM.div({className: rootClass}, 
-          React.DOM.div({className: imageClass}, 
+        React.createElement("div", {className: rootClass}, 
+          React.createElement("div", {className: imageClass}, 
             this.props.children[0]
           ), 
-          React.DOM.div({className: contentClass}, 
+          React.createElement("div", {className: contentClass}, 
             this.props.children.slice(1, this.props.children.length)
           )
         )
@@ -555,7 +555,7 @@ var MediaObject = React.createClass({displayName: 'MediaObject',
 module.exports = MediaObject;
 
 },{"react":155}],5:[function(require,module,exports){
-/** @jsx React.DOM */var React = require("react");
+var React = require("react");
 
 
 var TagItem = React.createClass({displayName: 'TagItem',
@@ -566,9 +566,9 @@ var TagItem = React.createClass({displayName: 'TagItem',
 
   render: function() {
     return (
-      React.DOM.span({className: "rui-tags-input__tag"}, this.props.value, 
-        React.DOM.button({type: "button", className: "rui-tags-input__tag-delete-btn", tabIndex: "1", title: "Remove tag", onClick: this.onClickHandler}, 
-          React.DOM.i({className: "rui-tags-input__tag-delete-btn-icon"})
+      React.createElement("span", {className: "rui-tags-input__tag"}, this.props.value, 
+        React.createElement("button", {type: "button", className: "rui-tags-input__tag-delete-btn", tabIndex: "1", title: "Remove tag", onClick: this.onClickHandler}, 
+          React.createElement("i", {className: "rui-tags-input__tag-delete-btn-icon"})
         )
       )
     )
@@ -617,8 +617,8 @@ var TagInputField = React.createClass({displayName: 'TagInputField',
 
   render: function() {
     return (
-      React.DOM.span({className: "rui-tags-input__input-holder"}, 
-        React.DOM.input({type: "text", 
+      React.createElement("span", {className: "rui-tags-input__input-holder"}, 
+        React.createElement("input", {type: "text", 
                className: "rui-tags-input__input", 
                ref: "input", 
                value: this.state.value, 
@@ -626,7 +626,7 @@ var TagInputField = React.createClass({displayName: 'TagInputField',
                onKeyDown: this.onKeyDownHandler, 
                onChange: this.onChangeHandler, 
                onBlur: this.onBlurHandler}), 
-        React.DOM.div({className: "rui-tags-input__input-helper", ref: "helper"})
+        React.createElement("div", {className: "rui-tags-input__input-helper", ref: "helper"})
       )
     )
   }
@@ -680,27 +680,27 @@ var TagsInput = React.createClass({displayName: 'TagsInput',
   render: function() {
     var tagItems = this.props.data.map(function(value) {
       return (
-        TagItem({key: value, value: value, onRemove: this.removeTagCallback})
+        React.createElement(TagItem, {key: value, value: value, onRemove: this.removeTagCallback})
       )
     }, this);
 
     var addButton = !this.state.editing ?
-                    React.DOM.button({type: "button", 
+                    React.createElement("button", {type: "button", 
                             className: "rui-tags-input__new-tag-btn", 
                             tabIndex: "-1", 
                             title: "Add tag", 
                             onClick: this.addTagClickHandler}, 
-                      React.DOM.i({className: "rui-tags-input__new-tag-btn-icon"}), " Add tag"
+                      React.createElement("i", {className: "rui-tags-input__new-tag-btn-icon"}), " Add tag"
                     )
                     : null;
 
     var input = this.state.editing && this.props.data.length < this.props.max ?
-                TagInputField({onInput: this.inputCallback, 
+                React.createElement(TagInputField, {onInput: this.inputCallback, 
                                onComplete: this.finishedInputCallback})
                 : null;
 
     return (
-      React.DOM.div({className: "rui-tags-input"}, 
+      React.createElement("div", {className: "rui-tags-input"}, 
         tagItems, 
         input, 
         addButton
@@ -713,7 +713,7 @@ var TagsInput = React.createClass({displayName: 'TagsInput',
 module.exports = TagsInput;
 
 },{"react":155}],6:[function(require,module,exports){
-/** @jsx React.DOM */var React = require("react");
+var React = require("react");
 
 var defaultVimeoParams = {
   autopause: 1,
@@ -780,7 +780,7 @@ var VimeoVideo = React.createClass({displayName: 'VimeoVideo',
 
   render: function() {
     return (
-      React.DOM.iframe({width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true})
+      React.createElement("iframe", {width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true})
     );
   }
 });
@@ -788,7 +788,7 @@ var VimeoVideo = React.createClass({displayName: 'VimeoVideo',
 module.exports = VimeoVideo;
 
 },{"react":155}],7:[function(require,module,exports){
-/** @jsx React.DOM */var React = require("react");
+var React = require("react");
 
 /* The following params are the defaults as documented at
    https://developers.google.com/youtube/player_parameters*/
@@ -870,7 +870,7 @@ var YouTubeVideo = React.createClass({displayName: 'YouTubeVideo',
 
   render: function() {
     return (
-      React.DOM.iframe({width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true})
+      React.createElement("iframe", {width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true})
     );
   }
 });
