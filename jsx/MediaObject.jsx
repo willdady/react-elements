@@ -18,6 +18,7 @@ var MediaObject = React.createClass({
     var rootClass = "rui-media-obj clearfix";
     rootClass += this.props.mirror ? " rui-media-obj--mirror": "";
     rootClass += this.props.valign === "middle" || this.props.valign === "bottom" ? " rui-media-obj--flag": "";
+    rootClass += this.props.className ? " " + this.props.className : "";
 
     var imageClass = "rui-media-obj__image";
     imageClass += this.props.valign === "middle" ? " rui-media-obj__image--flag-middle": "";
