@@ -1,7 +1,3 @@
-/**
- * @jsx React.DOM
- */
-
 var React = require("react");
 
 var defaultVimeoParams = {
@@ -63,7 +59,7 @@ var VimeoVideo = React.createClass({
       }
     }
     params = params.replace("&", "?");
-    
+
     return protocol + "//player.vimeo.com/video/" + vidID + params;
   },
 

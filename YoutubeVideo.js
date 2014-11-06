@@ -1,10 +1,6 @@
-/**
- * @jsx React.DOM
- */
-
 var React = require("react");
 
-/* The following params are the defaults as documented at 
+/* The following params are the defaults as documented at
    https://developers.google.com/youtube/player_parameters*/
 var defaultYoutubeParams = {
   autohide: 2,
@@ -84,7 +80,7 @@ var YouTubeVideo = React.createClass({displayName: 'YouTubeVideo',
 
   render: function() {
     return (
-      React.DOM.iframe({width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true})
+      React.createElement("iframe", {width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true})
     );
   }
 });

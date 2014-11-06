@@ -1,7 +1,3 @@
-/**
- * @jsx React.DOM
- */
-
 var React = require("react");
 
 
@@ -30,22 +26,22 @@ var MediaObject = React.createClass({displayName: 'MediaObject',
 
     if ((this.props.valign === "middle" || this.props.valign === "bottom") && this.props.mirror) {
       return (
-        React.DOM.div({className: rootClass}, 
-          React.DOM.div({className: contentClass}, 
+        React.createElement("div", {className: rootClass}, 
+          React.createElement("div", {className: contentClass}, 
             this.props.children.slice(1, this.props.children.length)
           ), 
-          React.DOM.div({className: imageClass}, 
+          React.createElement("div", {className: imageClass}, 
             this.props.children[0]
           )
         )
       );
     } else {
       return (
-        React.DOM.div({className: rootClass}, 
-          React.DOM.div({className: imageClass}, 
+        React.createElement("div", {className: rootClass}, 
+          React.createElement("div", {className: imageClass}, 
             this.props.children[0]
           ), 
-          React.DOM.div({className: contentClass}, 
+          React.createElement("div", {className: contentClass}, 
             this.props.children.slice(1, this.props.children.length)
           )
         )

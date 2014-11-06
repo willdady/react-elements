@@ -1,7 +1,3 @@
-/**
- * @jsx React.DOM
- */
-
 var React = require("react");
 
 
@@ -39,7 +35,7 @@ var FloatingLabelInput = React.createClass({
   },
 
   render: function() {
-    
+
     var labelClass = "rui-floating-label-input__label";
     labelClass += this.state.animating ? " rui-floating-label-input__label--floated" : "";
     labelClass += this.state.floated ? " rui-floating-label-input__label--floated-active" : "";

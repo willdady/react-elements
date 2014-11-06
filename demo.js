@@ -1,11 +1,12 @@
 var React = require("react"),
-    MediaObject = require("./jsx/MediaObject.jsx"),
-    TagsInput = require("./jsx/TagsInput.jsx"),
-    FloatingLabelInput = require("./jsx/FloatingLabelInput.jsx"),
-    YoutubeVideo = require("./jsx/YoutubeVideo.jsx"),
-    VimeoVideo = require("./jsx/VimeoVideo.jsx"),
-    ColorPicker = require("./jsx/ColorPicker.jsx"),
     $ = require("jquery");
+
+var MediaObject = React.createFactory(require("./jsx/MediaObject.jsx")),
+    TagsInput = React.createFactory(require("./jsx/TagsInput.jsx")),
+    FloatingLabelInput = React.createFactory(require("./jsx/FloatingLabelInput.jsx")),
+    YoutubeVideo = React.createFactory(require("./jsx/YoutubeVideo.jsx")),
+    VimeoVideo = React.createFactory(require("./jsx/VimeoVideo.jsx")),
+    ColorPicker = React.createFactory(require("./jsx/ColorPicker.jsx"));
 
 
 window.jQuery = $;
@@ -16,7 +17,7 @@ var colorChangeHandler = function(color) {
   });
 };
 
-React.renderComponent(
+React.render(
   ColorPicker({onChange: colorChangeHandler, color: "#f5f5f5"}),
   document.getElementById("color-picker-example")
 );
@@ -25,7 +26,7 @@ var tagsData = ["technology", "facebook", "javascript"];
 
 var onAddCallback = function(value) {
   tagsData.push(value);
-  React.renderComponent(
+  React.render(
     TagsInput({onAdd: onAddCallback,
                onRemove: onRemoveCallback,
                data: tagsData,
@@ -37,7 +38,7 @@ var onRemoveCallback = function(value) {
   var index = tagsData.indexOf(value);
   if (index > -1) {
     tagsData.splice(index, 1);
-    React.renderComponent(
+    React.render(
       TagsInput({onAdd: onAddCallback,
                onRemove: onRemoveCallback,
                data: tagsData,
@@ -46,7 +47,7 @@ var onRemoveCallback = function(value) {
     );
   }
 };
-React.renderComponent(
+React.render(
   TagsInput({onAdd: onAddCallback,
                onRemove: onRemoveCallback,
                data: tagsData,
@@ -55,7 +56,7 @@ React.renderComponent(
 );
 
 
-React.renderComponent(
+React.render(
   MediaObject({
     children: [
       React.DOM.img({src: "build/grumpy.jpg"}),
@@ -66,7 +67,7 @@ React.renderComponent(
   document.getElementById("media-obj-example")
 );
 
-React.renderComponent(
+React.render(
   MediaObject({
     mirror: true,
     children: [
@@ -78,7 +79,7 @@ React.renderComponent(
   document.getElementById("media-obj-example-mirror")
 );
 
-React.renderComponent(
+React.render(
   MediaObject({
     valign: "middle",
     children: [
@@ -90,7 +91,7 @@ React.renderComponent(
   document.getElementById("media-obj-example-vmiddle")
 );
 
-React.renderComponent(
+React.render(
   MediaObject({
     valign: "bottom",
     children: [
@@ -102,7 +103,7 @@ React.renderComponent(
   document.getElementById("media-obj-example-vbottom")
 );
 
-React.renderComponent(
+React.render(
   MediaObject({
     valign: "middle",
     mirror: true,
@@ -115,22 +116,22 @@ React.renderComponent(
   document.getElementById("media-obj-example-vmiddle-mirror")
 );
 
-React.renderComponent(
+React.render(
   FloatingLabelInput({id: "email-input", label: "Email", name: "email"}),
   document.getElementById("floating-label-input-example")
 );
 
-React.renderComponent(
+React.render(
   YoutubeVideo({src: "//www.youtube.com/watch?v=R8XAlSp838Y", protocol: "http"}),
   document.getElementById("youtube-video-example")
 );
 
-React.renderComponent(
+React.render(
   VimeoVideo({src: "//vimeo.com/33133076", protocol: "http"}),
   document.getElementById("vimeo-video-example")
 );
 
-React.renderComponent(
+React.render(
   VimeoVideo({src: "http://player.vimeo.com/video/33133076", protocol: "http", color: "ff0000", badge: 0, byline: 0, portrait: 0, title: 0}),
   document.getElementById("vimeo-video-example-alt")
 );
