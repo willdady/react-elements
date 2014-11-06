@@ -37,11 +37,11 @@ module.exports = function(grunt) {
     },
     browserify: {
       dist: {
+        options: {
+          transform:  [require('grunt-react').browserify]
+        },
         files: {
           'build/bundle.js': ['demo.js'],
-        },
-        options: {
-
         }
       }
     },
