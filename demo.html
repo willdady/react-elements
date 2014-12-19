@@ -20,12 +20,32 @@
           <section>
             <h1>&lt;Switch /&gt;</h1>
 
-            <p>A switch.</p>
+            <p>A simple toggle switch. Uses a hidden checkbox so it can be used inside a form.</p>
 
 <pre><code>&lt;Switch /&gt;</code></pre>
 
             <div class="well">
               <div id="switch-example"></div>
+            </div>
+
+            <p>Various sizes.</p>
+
+<pre><code>&lt;Switch size="xs" /&gt;
+&lt;Switch size="sm" /&gt;
+&lt;Switch size="lg" /&gt;</code></pre>
+
+            <div class="well">
+              <div id="switch-example-xs"></div>
+              <div id="switch-example-sm"></div>
+              <div id="switch-example-lg"></div>
+            </div>
+
+            <p>On by default.</p>
+
+<pre><code>&lt;Switch on={true} /&gt;</code></pre>
+
+            <div class="well">
+              <div id="switch-example-on"></div>
             </div>
 
           </section>
@@ -63,7 +83,7 @@
               <b>Note:</b> Tags passed to the data attribute <strong>must</strong> be unique. The input simply ignores newly created tags if they already exist.
             </div>
 
-<pre><code>&lt;TagsInput data={['technology', 'facebook', 'javascript']} 
+<pre><code>&lt;TagsInput data={['technology', 'facebook', 'javascript']}
            onAdd={this.onTagAddCallback}
            onRemove={this.onTagRemoveCallback}
            max={5} /&gt;</code></pre>
@@ -167,7 +187,7 @@
             <h1>&lt;YoutubeVideo /&gt;</h1>
 
             <p>Wraps Youtube's embed code in a nicer React interface. All URL parameters are exposed as properties (see the <a href="https://developers.google.com/youtube/player_parameters">parameter docs</a> for possible options).</p>
-            
+
             <p>The src property accepts the following youtube URL types:</p>
 
             <ul>
@@ -192,7 +212,7 @@
             <h1>&lt;VimeoVideo /&gt;</h1>
 
             <p>Like YoutubeVideo, VimeoVideo wraps Vimeo's embed code in a nicer React interface. All URL parameters are exposed as properties (see <a href="http://developer.vimeo.com/player/embedding">vimeo's embedding doc</a> for possible options).</p>
-            
+
             <p>The src property accepts the following vimeo URL types:</p>
 
             <ul>

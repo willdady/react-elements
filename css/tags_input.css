@@ -58,8 +58,7 @@
   width: 26px;
   border: 0;
   background: none;
-  -moz-box-sizing: content-box;
-       box-sizing: content-box;
+  box-sizing: content-box;
   padding: 0;
   margin-top: -1px;
 }

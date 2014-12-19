@@ -1,7 +1,3 @@
-/**
- * @jsx React.DOM
- */
-
 var React = require("react"),
     tinycolor = require("tinycolor2");
 
@@ -73,7 +69,7 @@ var SaturationBrightnessPicker = React.createClass({
   getInitialState: function() {
     return {
       cursorPosition: {
-        x: Math.round(SB_PICKER_WIDTH * this.props.saturation), 
+        x: Math.round(SB_PICKER_WIDTH * this.props.saturation),
         y: Math.round(SB_PICKER_HEIGHT * (1 - this.props.brightness))
       },
       mouseDown: false,
@@ -143,7 +139,7 @@ var SaturationBrightnessPicker = React.createClass({
       <div className={className}
            ref="root"
            onMouseDown={this.onMouseDownHandler}>
-        <TwoStopGradient className="rui-color-picker__sb-picker-layer" 
+        <TwoStopGradient className="rui-color-picker__sb-picker-layer"
                          color1="white"
                          color2={hue}
                          horizontal={true}/>
@@ -167,11 +163,11 @@ var HuePickerCursor = React.createClass({
   },
 
   render: function() {
-    // We vertically center the cursor around our y position and make sure 
+    // We vertically center the cursor around our y position and make sure
     // we're always within HuePicker's bounds.
     var y = this.props.position - Math.floor(H_PICKER_CURSOR_HEIGHT * 0.5);
-    y = (y + H_PICKER_CURSOR_HEIGHT) > H_PICKER_HEIGHT ? 
-        H_PICKER_HEIGHT - H_PICKER_CURSOR_HEIGHT : 
+    y = (y + H_PICKER_CURSOR_HEIGHT) > H_PICKER_HEIGHT ?
+        H_PICKER_HEIGHT - H_PICKER_CURSOR_HEIGHT :
         y;
     y = y < 0 ? 0 : y;
     var styles = {

@@ -1,10 +1,6 @@
-/**
- * @jsx React.DOM
- */
-
 var React = require("react");
 
-/* The following params are the defaults as documented at 
+/* The following params are the defaults as documented at
    https://developers.google.com/youtube/player_parameters*/
 var defaultYoutubeParams = {
   autohide: 2,

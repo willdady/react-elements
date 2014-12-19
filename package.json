@@ -1,6 +1,6 @@
 {
   "name": "react-elements",
-  "version": "0.3.3",
+  "version": "0.3.7",
   "description": "A library of reusable React components.",
   "main": "index.js",
   "homepage": "https://github.com/willdady/react-elements",
@@ -24,24 +24,25 @@
   "license": "MIT",
   "dependencies": {
     "jquery": "^2.1.1",
-    "react": "^0.11.2",
     "tinycolor2": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=0.12.2"
   },
   "devDependencies": {
     "browserify": "^5.12.1",
-    "browserify-shim": "^3.7.0",
+    "browserify-shim": "^3.8.0",
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^1.0.1",
     "grunt-browserify": "^3.0.1",
     "grunt-contrib-less": "^0.11.4",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-react": "^0.9.0",
-    "reactify": "^0.14.0"
+    "grunt-react": "^0.10.0",
+    "react": "^0.12.2",
+    "underscore": "^1.7.0"
   },
   "browserify": {
-    "transform": [
-      "reactify"
-    ]
+    "transform": []
   },
   "browserify-shim": {
     "jquery": "$"

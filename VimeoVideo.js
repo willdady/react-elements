@@ -1,7 +1,3 @@
-/**
- * @jsx React.DOM
- */
-
 var React = require("react");
 
 var defaultVimeoParams = {
@@ -16,7 +12,7 @@ var defaultVimeoParams = {
   title: 1
 };
 
-var VimeoVideo = React.createClass({displayName: 'VimeoVideo',
+var VimeoVideo = React.createClass({displayName: "VimeoVideo",
 
   getDefaultProps: function() {
     var defProps = {
@@ -63,13 +59,13 @@ var VimeoVideo = React.createClass({displayName: 'VimeoVideo',
       }
     }
     params = params.replace("&", "?");
-    
+
     return protocol + "//player.vimeo.com/video/" + vidID + params;
   },
 
   render: function() {
     return (
-      React.DOM.iframe({width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true})
+      React.createElement("iframe", {width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true})
     );
   }
 });

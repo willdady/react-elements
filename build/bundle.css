@@ -165,7 +165,7 @@
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
 }
-.rui-toggle-switch__checkbox {
+input[type="checkbox"].rui-toggle-switch__checkbox {
   margin: 0;
   padding: 0;
   position: absolute;
@@ -195,27 +195,27 @@
   width: 18px;
   height: 18px;
 }
-.rui-toggle-switch--xs .rui-toggle-switch__checkbox {
+.rui-toggle-switch--xs input[type="checkbox"].rui-toggle-switch__checkbox {
   width: 30px;
   height: 20px;
 }
 .rui-toggle-switch--xs.rui-toggle-switch--on .rui-toggle-switch__switch {
   left: 10px;
 }
-.rui-toggle-switch--sml {
+.rui-toggle-switch--sm {
   width: 45px;
   height: 30px;
   border-radius: 22.5px;
 }
-.rui-toggle-switch--sml .rui-toggle-switch__switch {
+.rui-toggle-switch--sm .rui-toggle-switch__switch {
   width: 28px;
   height: 28px;
 }
-.rui-toggle-switch--sml .rui-toggle-switch__checkbox {
+.rui-toggle-switch--sm input[type="checkbox"].rui-toggle-switch__checkbox {
   width: 45px;
   height: 30px;
 }
-.rui-toggle-switch--sml.rui-toggle-switch--on .rui-toggle-switch__switch {
+.rui-toggle-switch--sm.rui-toggle-switch--on .rui-toggle-switch__switch {
   left: 15px;
 }
 .rui-toggle-switch--lg {
@@ -227,7 +227,7 @@
   width: 44px;
   height: 44px;
 }
-.rui-toggle-switch--lg .rui-toggle-switch__checkbox {
+.rui-toggle-switch--lg input[type="checkbox"].rui-toggle-switch__checkbox {
   width: 69px;
   height: 46px;
 }

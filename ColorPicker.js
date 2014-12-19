@@ -1,7 +1,3 @@
-/**
- * @jsx React.DOM
- */
-
 var React = require("react"),
     tinycolor = require("tinycolor2");
 
@@ -12,7 +8,7 @@ var H_PICKER_HEIGHT = 128;
 var H_PICKER_CURSOR_HEIGHT = 3;
 
 
-var TwoStopGradient = React.createClass({displayName: 'TwoStopGradient',
+var TwoStopGradient = React.createClass({displayName: "TwoStopGradient",
 
   getDefaultProps: function() {
     return {
@@ -32,14 +28,14 @@ var TwoStopGradient = React.createClass({displayName: 'TwoStopGradient',
       background: "linear-gradient("+angle+this.props.color1+", "+this.props.color2+")"
     };
     return (
-      React.DOM.div({className: this.props.className, style: styles})
+      React.createElement("div", {className: this.props.className, style: styles})
     )
   }
 
 });
 
 
-var SaturationBrightnessCursor = React.createClass({displayName: 'SaturationBrightnessCursor',
+var SaturationBrightnessCursor = React.createClass({displayName: "SaturationBrightnessCursor",
 
   getDefaultProps: function() {
     return {
@@ -61,19 +57,19 @@ var SaturationBrightnessCursor = React.createClass({displayName: 'SaturationBrig
       top: this.props.position.y - Math.round(SB_PICKER_CURSOR_HEIGHT * 0.5)
     };
     return (
-      React.DOM.div({className: "rui-color-picker__sb-picker-cursor", style: style})
+      React.createElement("div", {className: "rui-color-picker__sb-picker-cursor", style: style})
     )
   }
 
 });
 
 
-var SaturationBrightnessPicker = React.createClass({displayName: 'SaturationBrightnessPicker',
+var SaturationBrightnessPicker = React.createClass({displayName: "SaturationBrightnessPicker",
 
   getInitialState: function() {
     return {
       cursorPosition: {
-        x: Math.round(SB_PICKER_WIDTH * this.props.saturation), 
+        x: Math.round(SB_PICKER_WIDTH * this.props.saturation),
         y: Math.round(SB_PICKER_HEIGHT * (1 - this.props.brightness))
       },
       mouseDown: false,
@@ -140,17 +136,17 @@ var SaturationBrightnessPicker = React.createClass({displayName: 'SaturationBrig
     var hue = "hsl("+Math.round(360 * this.props.hue)+", 100%, 50%)";
 
     return(
-      React.DOM.div({className: className, 
+      React.createElement("div", {className: className, 
            ref: "root", 
            onMouseDown: this.onMouseDownHandler}, 
-        TwoStopGradient({className: "rui-color-picker__sb-picker-layer", 
+        React.createElement(TwoStopGradient, {className: "rui-color-picker__sb-picker-layer", 
                          color1: "white", 
                          color2: hue, 
                          horizontal: true}), 
-        TwoStopGradient({className: "rui-color-picker__sb-picker-layer", 
+        React.createElement(TwoStopGradient, {className: "rui-color-picker__sb-picker-layer", 
                          color1: "rgba(0, 0, 0, 0)", 
                          color2: "black"}), 
-        SaturationBrightnessCursor({position: this.state.cursorPosition})
+        React.createElement(SaturationBrightnessCursor, {position: this.state.cursorPosition})
       )
     )
   }
@@ -158,7 +154,7 @@ var SaturationBrightnessPicker = React.createClass({displayName: 'SaturationBrig
 });
 
 
-var HuePickerCursor = React.createClass({displayName: 'HuePickerCursor',
+var HuePickerCursor = React.createClass({displayName: "HuePickerCursor",
 
   getDefaultProps: function() {
     return {
@@ -167,25 +163,25 @@ var HuePickerCursor = React.createClass({displayName: 'HuePickerCursor',
   },
 
   render: function() {
-    // We vertically center the cursor around our y position and make sure 
+    // We vertically center the cursor around our y position and make sure
     // we're always within HuePicker's bounds.
     var y = this.props.position - Math.floor(H_PICKER_CURSOR_HEIGHT * 0.5);
-    y = (y + H_PICKER_CURSOR_HEIGHT) > H_PICKER_HEIGHT ? 
-        H_PICKER_HEIGHT - H_PICKER_CURSOR_HEIGHT : 
+    y = (y + H_PICKER_CURSOR_HEIGHT) > H_PICKER_HEIGHT ?
+        H_PICKER_HEIGHT - H_PICKER_CURSOR_HEIGHT :
         y;
     y = y < 0 ? 0 : y;
     var styles = {
       top: y
     };
     return (
-      React.DOM.div({className: "rui-color-picker__h-picker-cursor", style: styles})
+      React.createElement("div", {className: "rui-color-picker__h-picker-cursor", style: styles})
     );
   }
 
 });
 
 
-var HuePicker = React.createClass({displayName: 'HuePicker',
+var HuePicker = React.createClass({displayName: "HuePicker",
 
   getInitialState: function() {
     return {
@@ -237,15 +233,15 @@ var HuePicker = React.createClass({displayName: 'HuePicker',
     var className = "rui-color-picker__h-picker";
     className += this.state.mouseDown ? " rui-color-picker__h-picker--dragging" : "";
     return (
-      React.DOM.div({className: className, onMouseDown: this.onMouseDownHandler, ref: "root"}, 
-        HuePickerCursor({position: this.state.cursorPosition})
+      React.createElement("div", {className: className, onMouseDown: this.onMouseDownHandler, ref: "root"}, 
+        React.createElement(HuePickerCursor, {position: this.state.cursorPosition})
       )
     );
   }
 
 });
 
-var ColorPicker = React.createClass({displayName: 'ColorPicker',
+var ColorPicker = React.createClass({displayName: "ColorPicker",
 
   getInitialState: function() {
     var hsv = tinycolor(this.props.color).toHsv();
@@ -290,12 +286,12 @@ var ColorPicker = React.createClass({displayName: 'ColorPicker',
 
   render: function() {
     return(
-      React.DOM.div(null, 
-        SaturationBrightnessPicker({onChange: this.saturationBrightnessChangeHandler, 
+      React.createElement("div", null, 
+        React.createElement(SaturationBrightnessPicker, {onChange: this.saturationBrightnessChangeHandler, 
                                     hue: this.state.hue, 
                                     saturation: this.state.saturation, 
                                     brightness: this.state.brightness}), 
-        HuePicker({onChange: this.hueChangeHandler, 
+        React.createElement(HuePicker, {onChange: this.hueChangeHandler, 
                    hue: this.state.hue})
       )
     )

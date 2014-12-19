@@ -1,7 +1,3 @@
-/**
- * @jsx React.DOM
- */
-
 var React = require("react");
 
 
@@ -66,7 +62,7 @@ var TagInputField = React.createClass({
     return (
       <span className="rui-tags-input__input-holder">
         <input type="text"
-               className="rui-tags-input__input" 
+               className="rui-tags-input__input"
                ref="input"
                value={this.state.value}
                style={this.state.inputStyle}
@@ -94,7 +90,7 @@ var TagsInput = React.createClass({
       max: Number.MAX_VALUE
     }
   },
-  
+
   propTypes: {
     data: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
     onAdd: React.PropTypes.func.isRequired,
@@ -132,7 +128,7 @@ var TagsInput = React.createClass({
     }, this);
 
     var addButton = !this.state.editing ?
-                    <button type="button" 
+                    <button type="button"
                             className="rui-tags-input__new-tag-btn"
                             tabIndex="-1"
                             title="Add tag"
