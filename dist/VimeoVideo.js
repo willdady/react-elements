@@ -1,3 +1,5 @@
+"use strict";
+
 var React = require("react");
 
 var defaultVimeoParams = {
@@ -12,9 +14,10 @@ var defaultVimeoParams = {
   title: 1
 };
 
-var VimeoVideo = React.createClass({displayName: "VimeoVideo",
+var VimeoVideo = React.createClass({
+  displayName: "VimeoVideo",
 
-  getDefaultProps: function() {
+  getDefaultProps: function getDefaultProps() {
     var defProps = {
       width: 500,
       height: 281,
@@ -29,10 +32,10 @@ var VimeoVideo = React.createClass({displayName: "VimeoVideo",
 
   propTypes: {
     src: React.PropTypes.string.isRequired,
-    protocol: React.PropTypes.oneOf(["http", "https"]),
+    protocol: React.PropTypes.oneOf(["http", "https"])
   },
 
-  getCleanedSrc: function() {
+  getCleanedSrc: function getCleanedSrc() {
     var matches, vidID, src, protocol;
 
     src = this.props.src.trim();
@@ -51,8 +54,9 @@ var VimeoVideo = React.createClass({displayName: "VimeoVideo",
       }
     }
     if (!vidID) throw "Unable to extract Video ID from URL.";
-   // Build URL parameters
-    var params = "", val;
+    // Build URL parameters
+    var params = "",
+        val;
     for (var k in defaultVimeoParams) {
       if (this.props[k] !== defaultVimeoParams[k]) {
         params += "&" + k + "=" + String(this.props[k]);
@@ -63,11 +67,10 @@ var VimeoVideo = React.createClass({displayName: "VimeoVideo",
     return protocol + "//player.vimeo.com/video/" + vidID + params;
   },
 
-  render: function() {
-    return (
-      React.createElement("iframe", {width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true})
-    );
+  render: function render() {
+    return React.createElement("iframe", { width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true });
   }
 });
 
 module.exports = VimeoVideo;
+//# sourceMappingURL=VimeoVideo.js.map

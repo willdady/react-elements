@@ -1,7 +1,8 @@
+"use strict";
+
 var React = require("react");
 var classSet = require("../utils/ClassSet");
 var _ = require("underscore");
-
 
 var SIZES = {
   EXTRA_SMALL: 'xs',
@@ -9,28 +10,30 @@ var SIZES = {
   LARGE: 'lg'
 };
 
-var Switch = React.createClass({displayName: "Switch",
+var Switch = React.createClass({
+  displayName: "Switch",
 
-  getInitialState: function() {
+  getInitialState: function getInitialState() {
     return {
       on: this.props.on || false
-    }
+    };
   },
 
   propTypes: {
     name: React.PropTypes.string,
     on: React.PropTypes.bool,
-    size: React.PropTypes.oneOf(_.values(SIZES))
+    size: React.PropTypes.oneOf(_.values(SIZES)),
+    onChange: React.PropTypes.func
   },
 
-  checkboxChangeHandler: function() {
+  checkboxChangeHandler: function checkboxChangeHandler() {
     this.setState({
       on: !this.state.on
     });
     if (this.props.onChange) this.props.onChange(this.state.on);
   },
 
-  render: function() {
+  render: function render() {
     var className = classSet({
       "rui-toggle-switch": true,
       "rui-toggle-switch--on": this.state.on,
@@ -39,17 +42,18 @@ var Switch = React.createClass({displayName: "Switch",
       "rui-toggle-switch--lg": this.props.size === SIZES.LARGE
     });
 
-    return (
-      React.createElement("span", {className: className}, 
-        React.createElement("input", {type: "checkbox", 
-               name: this.props.name, 
-               className: "rui-toggle-switch__checkbox", 
-               checked: this.state.on, 
-               onChange: this.checkboxChangeHandler}), 
-        React.createElement("span", {className: "rui-toggle-switch__switch"})
-      )
-    )
+    return React.createElement(
+      "span",
+      { className: className },
+      React.createElement("input", { type: "checkbox",
+        name: this.props.name,
+        className: "rui-toggle-switch__checkbox",
+        checked: this.state.on,
+        onChange: this.checkboxChangeHandler }),
+      React.createElement("span", { className: "rui-toggle-switch__switch" })
+    );
   }
 });
 
 module.exports = Switch;
+//# sourceMappingURL=Switch.js.map

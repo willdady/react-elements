@@ -1,57 +1,53 @@
 .rui-tags-input {
-  font-size: 11px;
-}
-.rui-tags-input__tag,
-.rui-tags-input__new-tag-btn,
-.rui-tags-input__input-holder {
-  color: #FFF;
+  font-size: 11px; }
+
+.rui-tags-input__tag, .rui-tags-input__new-tag-btn, .rui-tags-input__input-holder {
+  color: #fff;
   display: inline-block;
-  border: none;
+  border: 0;
   padding: 4px 22px 4px 8px;
   border-radius: 6px;
   margin-right: 3px;
   background: #67d5ff;
   line-height: 1em;
-  position: relative;
-}
+  position: relative; }
+
 .rui-tags-input__new-tag-btn {
   background: #67d5ff;
   outline: none;
   margin: 0;
   padding-left: 20px;
   padding-right: 8px;
-  position: relative;
-}
+  position: relative; }
+
 .rui-tags-input__new-tag-btn-icon {
   width: 18px;
   height: 14px;
-  background: url(img/tags_input_icons.svg) no-repeat;
+  background: url("img/tags_input_icons.svg") no-repeat;
   position: absolute;
   left: 2px;
-  top: 3px;
-}
+  top: 3px; }
+
 .rui-tags-input__tag-delete-btn {
   background: none;
-  border: none;
+  border: 0;
   margin: 0;
   padding: 0;
   position: absolute;
   right: 1px;
-  top: 3px;
-}
-.rui-tags-input__tag-delete-btn:focus,
-.rui-tags-input__tag-delete-btn:active {
-  outline: none;
-}
+  top: 3px; }
+  .rui-tags-input__tag-delete-btn:focus, .rui-tags-input__tag-delete-btn:active {
+    outline: none; }
+
 .rui-tags-input__tag-delete-btn-icon {
   display: inline-block;
   width: 18px;
   height: 14px;
-  background: url(img/tags_input_icons.svg) no-repeat -18px 0px;
-}
+  background: url("img/tags_input_icons.svg") no-repeat -18px 0; }
+
 .rui-tags-input__input-holder {
-  padding-right: 8px;
-}
+  padding-right: 8px; }
+
 .rui-tags-input__input {
   outline: none;
   min-width: 26px;
@@ -60,9 +56,10 @@
   background: none;
   box-sizing: content-box;
   padding: 0;
-  margin-top: -1px;
-}
+  margin-top: -1px; }
+
 .rui-tags-input__input-helper {
   position: absolute;
-  left: -5000px;
-}
+  left: -5000px; }
+
+/*# sourceMappingURL=TagsInput.css.map */

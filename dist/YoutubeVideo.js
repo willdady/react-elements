@@ -1,3 +1,5 @@
+"use strict";
+
 var React = require("react");
 
 /* The following params are the defaults as documented at
@@ -28,9 +30,10 @@ var defaultYoutubeParams = {
   theme: null
 };
 
-var YouTubeVideo = React.createClass({displayName: "YouTubeVideo",
+var YouTubeVideo = React.createClass({
+  displayName: "YouTubeVideo",
 
-  getDefaultProps: function() {
+  getDefaultProps: function getDefaultProps() {
     var defProps = {
       width: 560,
       height: 315,
@@ -47,7 +50,7 @@ var YouTubeVideo = React.createClass({displayName: "YouTubeVideo",
     protocol: React.PropTypes.oneOf(["http", "https"])
   },
 
-  getCleanedSrc: function() {
+  getCleanedSrc: function getCleanedSrc() {
     var matches, vidID, src, protocol;
 
     src = this.props.src.trim();
@@ -67,7 +70,8 @@ var YouTubeVideo = React.createClass({displayName: "YouTubeVideo",
     }
     if (!vidID) throw "Unable to extract Video ID from URL.";
     // Build URL parameters
-    var params = "", val;
+    var params = "",
+        val;
     for (var k in defaultYoutubeParams) {
       if (this.props[k] !== defaultYoutubeParams[k]) {
         params += "&" + k + "=" + String(this.props[k]);
@@ -78,11 +82,10 @@ var YouTubeVideo = React.createClass({displayName: "YouTubeVideo",
     return protocol + "//www.youtube.com/embed/" + vidID + params;
   },
 
-  render: function() {
-    return (
-      React.createElement("iframe", {width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true})
-    );
+  render: function render() {
+    return React.createElement("iframe", { width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true });
   }
 });
 
 module.exports = YouTubeVideo;
+//# sourceMappingURL=YoutubeVideo.js.map

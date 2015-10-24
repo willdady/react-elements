@@ -2,10 +2,12 @@
   position: relative;
   margin-top: 18px;
 }
+
 .rui-floating-label-input__input {
   position: relative;
   z-index: 1;
 }
+
 .rui-floating-label-input__label {
   z-index: 2;
   position: absolute;
@@ -16,6 +18,7 @@
   padding: 7px 12px;
   margin: 0;
 }
+
 .rui-floating-label-input__label--floated {
   z-index: 0;
   font-weight: bold;
@@ -27,6 +30,7 @@
   opacity: 0;
   transition: top 250ms, opacity 250ms;
 }
+
 .rui-floating-label-input__label--floated-active {
   top: -16px;
   opacity: 1;
