@@ -4,26 +4,28 @@ import Switch from '../Switch';
 
 
 storiesOf('Switch', module)
-  .add('extra small', () => (
-    <Switch name="Sample"
-            on={true}
-            size="xs"
-            onChange={action('onChange')} />
-  ))
   .add('default', () => (
-    <Switch name="Sample"
-            on={true}
-            onChange={action('onChange')} />
+    getComponent()
   ))
-  .add('small', () => (
-    <Switch name="Sample"
-            on={true}
-            size="sm"
-            onChange={action('onChange')} />
+  .add('on', () => (
+    getComponent(null, true)
   ))
-  .add('large', () => (
-    <Switch name="Sample"
-            on={true}
-            size="lg"
-            onChange={action('onChange')} />
+  .add('size - extra small', () => (
+    getComponent('xs')
+  ))
+  .add('size - small', () => (
+    getComponent('sm')
+  ))
+  .add('size - large', () => (
+    getComponent('lg')
   ));
+
+
+function getComponent(size = null, value = false) {
+  return (
+    <Switch name="Sample"
+            value={value}
+            size={size}
+            onClick={action('onClick')} />
+  );
+};
