@@ -47,6 +47,7 @@
     "grunt-postcss": "^0.7.0",
     "grunt-webpack": "^1.0.11",
     "load-grunt-tasks": "^3.3.0",
+    "lodash.assign": "^4.0.8",
     "lodash.values": "^4.1.0",
     "node-sass": "^3.3.3",
     "react": "^15.0.1",

@@ -1,6 +1,8 @@
 var React = require("react");
+var _assign = require("lodash.assign");
 
-var defaultVimeoParams = {
+
+const DEFAULT_VIMEO_PARAMS = {
   autopause: 1,
   autoplay: 0,
   badge: 1,
@@ -12,19 +14,19 @@ var defaultVimeoParams = {
   title: 1
 };
 
+
 var VimeoVideo = React.createClass({
 
   getDefaultProps: function() {
-    var defProps = {
-      width: 500,
-      height: 281,
-      frameBorder: 0,
-      protocol: null
-    };
-    for (var k in defaultVimeoParams) {
-      defProps[k] = defaultVimeoParams[k];
-    }
-    return defProps;
+    return _assign(
+      {
+        width: 500,
+        height: 281,
+        frameBorder: 0,
+        protocol: null
+      },
+      DEFAULT_VIMEO_PARAMS
+    );
   },
 
   propTypes: {
@@ -53,8 +55,8 @@ var VimeoVideo = React.createClass({
     if (!vidID) throw "Unable to extract Video ID from URL.";
    // Build URL parameters
     var params = "", val;
-    for (var k in defaultVimeoParams) {
-      if (this.props[k] !== defaultVimeoParams[k]) {
+    for (var k in DEFAULT_VIMEO_PARAMS) {
+      if (this.props[k] !== DEFAULT_VIMEO_PARAMS[k]) {
         params += "&" + k + "=" + String(this.props[k]);
       }
     }
@@ -65,7 +67,11 @@ var VimeoVideo = React.createClass({
 
   render: function() {
     return (
-      <iframe width={this.props.width} height={this.props.height} src={this.getCleanedSrc()} frameBorder={this.props.frameBorder} allowFullScreen></iframe>
+      <iframe width={this.props.width}
+              height={this.props.height}
+              src={this.getCleanedSrc()}
+              frameBorder={this.props.frameBorder}
+              allowFullScreen></iframe>
     );
   }
 });
