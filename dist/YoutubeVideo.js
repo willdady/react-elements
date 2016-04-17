@@ -33,6 +33,7 @@ var defaultYoutubeParams = {
 var YouTubeVideo = React.createClass({
   displayName: "YouTubeVideo",
 
+
   getDefaultProps: function getDefaultProps() {
     var defProps = {
       width: 560,
@@ -83,9 +84,12 @@ var YouTubeVideo = React.createClass({
   },
 
   render: function render() {
-    return React.createElement("iframe", { width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true });
+    return React.createElement("iframe", { width: this.props.width,
+      height: this.props.height,
+      src: this.getCleanedSrc(),
+      frameBorder: this.props.frameBorder,
+      allowFullScreen: true });
   }
 });
 
 module.exports = YouTubeVideo;
-//# sourceMappingURL=YoutubeVideo.js.map

@@ -13,6 +13,7 @@ var SIZES = {
 var Switch = React.createClass({
   displayName: "Switch",
 
+
   getInitialState: function getInitialState() {
     return {
       on: this.props.on || false
@@ -56,4 +57,3 @@ var Switch = React.createClass({
 });
 
 module.exports = Switch;
-//# sourceMappingURL=Switch.js.map

@@ -80,7 +80,11 @@ var YouTubeVideo = React.createClass({
 
   render: function() {
     return (
-      <iframe width={this.props.width} height={this.props.height} src={this.getCleanedSrc()} frameBorder={this.props.frameBorder} allowFullScreen></iframe>
+      <iframe width={this.props.width}
+              height={this.props.height}
+              src={this.getCleanedSrc()}
+              frameBorder={this.props.frameBorder}
+              allowFullScreen></iframe>
     );
   }
 });

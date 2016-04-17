@@ -3,7 +3,6 @@ A library of reusable React components consisting of the following:
 ```
 <Switch />
 <ColorPicker />
-<FloatingLabelInput />
 <TagsInput />
 <VimeoVideo />
 <YoutubeVideo />

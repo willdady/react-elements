@@ -17,6 +17,7 @@ var defaultVimeoParams = {
 var VimeoVideo = React.createClass({
   displayName: "VimeoVideo",
 
+
   getDefaultProps: function getDefaultProps() {
     var defProps = {
       width: 500,
@@ -73,4 +74,3 @@ var VimeoVideo = React.createClass({
 });
 
 module.exports = VimeoVideo;
-//# sourceMappingURL=VimeoVideo.js.map

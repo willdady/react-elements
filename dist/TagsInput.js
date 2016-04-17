@@ -5,6 +5,7 @@ var React = require("react");
 var TagItem = React.createClass({
   displayName: "TagItem",
 
+
   onClickHandler: function onClickHandler() {
     this.props.onRemove(this.props.value);
   },
@@ -26,6 +27,7 @@ var TagItem = React.createClass({
 
 var TagInputField = React.createClass({
   displayName: "TagInputField",
+
 
   getInitialState: function getInitialState() {
     return {
@@ -83,6 +85,7 @@ var TagInputField = React.createClass({
 
 var TagsInput = React.createClass({
   displayName: "TagsInput",
+
 
   getInitialState: function getInitialState() {
     return {
@@ -156,4 +159,3 @@ var TagsInput = React.createClass({
 });
 
 module.exports = TagsInput;
-//# sourceMappingURL=TagsInput.js.map

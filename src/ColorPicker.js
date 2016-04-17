@@ -13,7 +13,7 @@ var TwoStopGradient = React.createClass({
   getDefaultProps: function() {
     return {
       horizontal: false
-    }
+    };
   },
 
   propTypes: {
@@ -29,7 +29,7 @@ var TwoStopGradient = React.createClass({
     };
     return (
       <div className={this.props.className} style={styles}></div>
-    )
+    );
   }
 
 });
@@ -40,7 +40,7 @@ var SaturationBrightnessCursor = React.createClass({
   getDefaultProps: function() {
     return {
       position: {x: 0, y: 0}
-    }
+    };
   },
 
   propTypes: {
@@ -58,7 +58,7 @@ var SaturationBrightnessCursor = React.createClass({
     };
     return (
       <div className="rui-color-picker__sb-picker-cursor" style={style}></div>
-    )
+    );
   }
 
 });
@@ -74,14 +74,14 @@ var SaturationBrightnessPicker = React.createClass({
       },
       mouseDown: false,
       hue: 0
-    }
+    };
   },
 
   getDefaultProps: function() {
     return {
       saturation: 1,
       brightness: 0
-    }
+    };
   },
 
   propTypes: {
@@ -148,7 +148,7 @@ var SaturationBrightnessPicker = React.createClass({
                          color2="black" />
         <SaturationBrightnessCursor position={this.state.cursorPosition} />
       </div>
-    )
+    );
   }
 
 });
@@ -159,7 +159,7 @@ var HuePickerCursor = React.createClass({
   getDefaultProps: function() {
     return {
       position: 0
-    }
+    };
   },
 
   render: function() {
@@ -187,7 +187,7 @@ var HuePicker = React.createClass({
     return {
       mouseDown: false,
       cursorPosition: Math.round(H_PICKER_HEIGHT * this.props.hue)
-    }
+    };
   },
 
   propTypes: {
@@ -249,7 +249,7 @@ var ColorPicker = React.createClass({
       hue: hsv.h / 360,
       saturation: hsv.s,
       brightness: hsv.v
-    }
+    };
   },
 
   propTypes: {
@@ -294,7 +294,7 @@ var ColorPicker = React.createClass({
         <HuePicker onChange={this.hueChangeHandler}
                    hue={this.state.hue} />
       </div>
-    )
+    );
   }
 
 });

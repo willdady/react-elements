@@ -14,7 +14,7 @@ var Switch = React.createClass({
   getInitialState: function() {
     return {
       on: this.props.on || false
-    }
+    };
   },
 
   propTypes: {
@@ -49,7 +49,7 @@ var Switch = React.createClass({
                onChange={this.checkboxChangeHandler} />
         <span className="rui-toggle-switch__switch"></span>
       </span>
-    )
+    );
   }
 });
 

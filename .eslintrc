@@ -1,5 +1,6 @@
 {
     "ecmaFeatures": {
+        "arrowFunctions": true,
         "blockBindings": true,
         "forOf": true,
         "jsx": true,

@@ -11,6 +11,7 @@ var H_PICKER_CURSOR_HEIGHT = 3;
 var TwoStopGradient = React.createClass({
   displayName: "TwoStopGradient",
 
+
   getDefaultProps: function getDefaultProps() {
     return {
       horizontal: false
@@ -35,6 +36,7 @@ var TwoStopGradient = React.createClass({
 
 var SaturationBrightnessCursor = React.createClass({
   displayName: "SaturationBrightnessCursor",
+
 
   getDefaultProps: function getDefaultProps() {
     return {
@@ -62,6 +64,7 @@ var SaturationBrightnessCursor = React.createClass({
 
 var SaturationBrightnessPicker = React.createClass({
   displayName: "SaturationBrightnessPicker",
+
 
   getInitialState: function getInitialState() {
     return {
@@ -153,6 +156,7 @@ var SaturationBrightnessPicker = React.createClass({
 var HuePickerCursor = React.createClass({
   displayName: "HuePickerCursor",
 
+
   getDefaultProps: function getDefaultProps() {
     return {
       position: 0
@@ -175,6 +179,7 @@ var HuePickerCursor = React.createClass({
 
 var HuePicker = React.createClass({
   displayName: "HuePicker",
+
 
   getInitialState: function getInitialState() {
     return {
@@ -237,6 +242,7 @@ var HuePicker = React.createClass({
 var ColorPicker = React.createClass({
   displayName: "ColorPicker",
 
+
   getInitialState: function getInitialState() {
     var hsv = tinycolor(this.props.color).toHsv();
     return {
@@ -291,4 +297,3 @@ var ColorPicker = React.createClass({
 });
 
 module.exports = ColorPicker;
-//# sourceMappingURL=ColorPicker.js.map

@@ -6,19 +6,22 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+    clean: [
+      'dist/'
+    ],
+
     babel: {
       options: {
-        sourceMap: true
+        babelrc: '.babelrc'
       },
       dist: {
-        files: {
-          'dist/ColorPicker.js': 'src/ColorPicker.js',
-          'dist/FloatingLabelinput.js': 'src/FloatingLabelinput.js',
-          'dist/Switch.js': 'src/Switch.js',
-          'dist/TagsInput.js': 'src/TagsInput.js',
-          'dist/VimeoVideo.js': 'src/VimeoVideo.js',
-          'dist/YoutubeVideo.js': 'src/YoutubeVideo.js',
-        }
+        files: [{
+          "expand": true,
+          "cwd": "src/",
+          "src": ["**/*.js", "!**/main.js", "!**/stories/*.js"],
+          "dest": "dist/",
+          "ext": ".js"
+        }]
       }
     },
 
@@ -50,11 +53,25 @@ module.exports = function(grunt) {
       }
     },
 
+    copy: {
+      main: {
+        files: [
+          {
+            expand: true,
+            cwd: 'styles/img/',
+            src: ['**'],
+            dest: 'dist/css/img/',
+            filter: 'isFile'
+          }
+        ]
+      }
+    },
+
     webpack: {
       app: webpackConfig
     }
 
   });
 
-  grunt.registerTask('default', ['babel', 'sass:dist', 'postcss',]);
-}
+  grunt.registerTask('default', ['clean', 'babel', 'sass:dist', 'postcss', 'copy']);
+};
