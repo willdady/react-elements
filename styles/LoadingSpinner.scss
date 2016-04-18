@@ -1,0 +1,74 @@
+@mixin loading-spinner-mixin($size, $bg-color: rgba(#ccc, .2), $fg-color: red) {
+  $border-width: $size * .2;
+
+  animation-name: spinner;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  border-bottom-color: $bg-color;
+  border-left-color: $fg-color;
+  border-right-color: $bg-color;
+  border-top-color: $bg-color;
+  border-width: $border-width;
+  border-style: solid;
+
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  overflow: hidden;
+
+  &,
+  &:after {
+    border-radius: 50%;
+    height: $size;
+    width: $size;
+  }
+}
+
+.loading-spinner {
+  @include loading-spinner-mixin(80px);
+
+  &--small {
+    $size: 40px;
+    $border-width: $size * .2;
+    border-width: $border-width;
+
+    &,
+    &:after {
+      height: $size;
+      width: $size;
+    }
+  }
+
+  &--mini {
+    $size: 20px;
+    $border-width: $size * .2;
+    border-width: $border-width;
+
+    &,
+    &:after {
+      height: $size;
+      width: $size;
+    }
+  }
+
+  &--slow {
+    animation-duration: 2s;
+  }
+
+  &--fast {
+    animation-duration: .5s;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

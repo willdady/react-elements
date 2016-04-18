@@ -3,5 +3,6 @@ module.exports = {
   ColorPicker: require("./ColorPicker"),
   TagsInput: require("./TagsInput"),
   YoutubeVideo: require("./YoutubeVideo"),
-  VimeoVideo: require("./VimeoVideo")
+  VimeoVideo: require("./VimeoVideo"),
+  LoadingSpinner: require("./LoadingSpinner"),
 };

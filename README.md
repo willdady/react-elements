@@ -6,6 +6,7 @@ A library of reusable React components consisting of the following:
 <TagsInput />
 <VimeoVideo />
 <YoutubeVideo />
+<LoadingSpinner />
 ```
 
 See demo.html for examples.
