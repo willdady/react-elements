@@ -7,6 +7,7 @@
           animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
+  box-sizing: border-box;
   border-bottom-color: rgba(204, 204, 204, 0.2);
   border-left-color: #5bc0de;
   border-right-color: rgba(204, 204, 204, 0.2);

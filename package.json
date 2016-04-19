@@ -25,6 +25,7 @@
     "classnames": "^2.2.3",
     "lodash.assign": "^4.0.8",
     "lodash.filter": "^4.3.0",
+    "lodash.omit": "^4.2.1",
     "lodash.values": "^4.1.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",

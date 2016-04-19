@@ -6,6 +6,8 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 
+  box-sizing: border-box;
+
   border-bottom-color: $bg-color;
   border-left-color: $fg-color;
   border-right-color: $bg-color;
