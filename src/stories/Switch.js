@@ -10,13 +10,13 @@ storiesOf('Switch', module)
   .add('on', () => (
     getComponent(null, true)
   ))
-  .add('size - extra small', () => (
+  .add('extra small', () => (
     getComponent('xs')
   ))
-  .add('size - small', () => (
+  .add('small', () => (
     getComponent('sm')
   ))
-  .add('size - large', () => (
+  .add('large', () => (
     getComponent('lg')
   ));
 

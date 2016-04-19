@@ -21,4 +21,7 @@ storiesOf('LoadingSpinner', module)
   ))
   .add('custom color', () => (
     <LoadingSpinner color="#00ff00" />
+  ))
+  .add('custom background color', () => (
+    <LoadingSpinner backgroundColor="rgba(254, 22, 86, 0.25)" />
   ));

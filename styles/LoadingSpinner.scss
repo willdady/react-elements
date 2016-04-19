@@ -1,4 +1,4 @@
-@mixin loading-spinner-mixin($size, $bg-color: rgba(#ccc, .2), $fg-color: red) {
+@mixin loading-spinner-mixin($size, $bg-color: rgba(#ccc, .2), $fg-color: #5bc0de) {
   $border-width: $size * .2;
 
   animation-name: spinner;

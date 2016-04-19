@@ -1,8 +1,9 @@
 "use strict";
 
 var React = require("react");
+var _assign = require("lodash.assign");
 
-var defaultVimeoParams = {
+var DEFAULT_VIMEO_PARAMS = {
   autopause: 1,
   autoplay: 0,
   badge: 1,
@@ -19,16 +20,12 @@ var VimeoVideo = React.createClass({
 
 
   getDefaultProps: function getDefaultProps() {
-    var defProps = {
+    return _assign({
       width: 500,
       height: 281,
       frameBorder: 0,
       protocol: null
-    };
-    for (var k in defaultVimeoParams) {
-      defProps[k] = defaultVimeoParams[k];
-    }
-    return defProps;
+    }, DEFAULT_VIMEO_PARAMS);
   },
 
   propTypes: {
@@ -58,8 +55,8 @@ var VimeoVideo = React.createClass({
     // Build URL parameters
     var params = "",
         val;
-    for (var k in defaultVimeoParams) {
-      if (this.props[k] !== defaultVimeoParams[k]) {
+    for (var k in DEFAULT_VIMEO_PARAMS) {
+      if (this.props[k] !== DEFAULT_VIMEO_PARAMS[k]) {
         params += "&" + k + "=" + String(this.props[k]);
       }
     }
@@ -69,7 +66,11 @@ var VimeoVideo = React.createClass({
   },
 
   render: function render() {
-    return React.createElement("iframe", { width: this.props.width, height: this.props.height, src: this.getCleanedSrc(), frameBorder: this.props.frameBorder, allowFullScreen: true });
+    return React.createElement("iframe", { width: this.props.width,
+      height: this.props.height,
+      src: this.getCleanedSrc(),
+      frameBorder: this.props.frameBorder,
+      allowFullScreen: true });
   }
 });
 

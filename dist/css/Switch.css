@@ -1,4 +1,4 @@
-.rui-toggle-switch {
+.re-switch {
   display: inline-block;
   width: 51px;
   height: 34px;
@@ -10,76 +10,70 @@
   border-style: solid;
   transition: background-color 80ms ease-in-out, border-color 80ms ease-in-out;
   box-sizing: border-box; }
-
-.rui-toggle-switch__switch {
-  display: block;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #fff;
-  z-index: 1;
-  position: relative;
-  left: 0;
-  transition: left 80ms ease-in-out;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box; }
-
-input[type="checkbox"].rui-toggle-switch__checkbox {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  z-index: 2;
-  width: 51px;
-  height: 34px;
-  top: -1px;
-  left: -1px;
-  box-sizing: border-box;
-  opacity: 0;
-  cursor: pointer; }
-
-.rui-toggle-switch--on {
-  border-color: #0f0;
-  background-color: #0f0; }
-  .rui-toggle-switch--on .rui-toggle-switch__switch {
-    left: 17px; }
-
-.rui-toggle-switch--xs {
-  width: 30px;
-  height: 20px;
-  border-radius: 15px; }
-  .rui-toggle-switch--xs .rui-toggle-switch__switch {
-    width: 18px;
-    height: 18px; }
-  .rui-toggle-switch--xs input[type="checkbox"].rui-toggle-switch__checkbox {
+  .re-switch--xs {
     width: 30px;
-    height: 20px; }
-  .rui-toggle-switch--xs.rui-toggle-switch--on .rui-toggle-switch__switch {
-    left: 10px; }
-
-.rui-toggle-switch--sm {
-  width: 45px;
-  height: 30px;
-  border-radius: 22.5px; }
-  .rui-toggle-switch--sm .rui-toggle-switch__switch {
-    width: 28px;
-    height: 28px; }
-  .rui-toggle-switch--sm input[type="checkbox"].rui-toggle-switch__checkbox {
+    height: 20px;
+    border-radius: 15px; }
+    .re-switch--xs .re-switch__switch {
+      width: 18px;
+      height: 18px; }
+    .re-switch--xs .re-switch__checkbox {
+      width: 30px;
+      height: 20px; }
+    .re-switch--xs.re-switch--on .re-switch__switch {
+      left: 10px; }
+  .re-switch--sm {
     width: 45px;
-    height: 30px; }
-  .rui-toggle-switch--sm.rui-toggle-switch--on .rui-toggle-switch__switch {
-    left: 15px; }
-
-.rui-toggle-switch--lg {
-  width: 69px;
-  height: 46px;
-  border-radius: 34.5px; }
-  .rui-toggle-switch--lg .rui-toggle-switch__switch {
-    width: 44px;
-    height: 44px; }
-  .rui-toggle-switch--lg input[type="checkbox"].rui-toggle-switch__checkbox {
+    height: 30px;
+    border-radius: 22.5px; }
+    .re-switch--sm .re-switch__switch {
+      width: 28px;
+      height: 28px; }
+    .re-switch--sm .re-switch__checkbox {
+      width: 45px;
+      height: 30px; }
+    .re-switch--sm.re-switch--on .re-switch__switch {
+      left: 15px; }
+  .re-switch--lg {
     width: 69px;
-    height: 46px; }
-  .rui-toggle-switch--lg.rui-toggle-switch--on .rui-toggle-switch__switch {
-    left: 23px; }
+    height: 46px;
+    border-radius: 34.5px; }
+    .re-switch--lg .re-switch__switch {
+      width: 44px;
+      height: 44px; }
+    .re-switch--lg .re-switch__checkbox {
+      width: 69px;
+      height: 46px; }
+    .re-switch--lg.re-switch--on .re-switch__switch {
+      left: 23px; }
+  .re-switch__switch {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 1;
+    position: relative;
+    left: 0;
+    transition: left 80ms ease-in-out;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box; }
+  .re-switch__checkbox {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 2;
+    width: 51px;
+    height: 34px;
+    top: -1px;
+    left: -1px;
+    box-sizing: border-box;
+    opacity: 0;
+    cursor: pointer; }
+  .re-switch--on {
+    border-color: #0f0;
+    background-color: #0f0; }
+    .re-switch--on .re-switch__switch {
+      left: 17px; }
 
 /*# sourceMappingURL=Switch.css.map */

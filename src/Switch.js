@@ -26,22 +26,22 @@ var Switch = React.createClass({
 
   render: function() {
     var className = classNames({
-      "re-toggle-switch": true,
-      "re-toggle-switch--on": this.props.value,
-      "re-toggle-switch--xs": this.props.size === SIZES.EXTRA_SMALL,
-      "re-toggle-switch--sm": this.props.size === SIZES.SMALL,
-      "re-toggle-switch--lg": this.props.size === SIZES.LARGE
+      "re-switch": true,
+      "re-switch--on": this.props.value,
+      "re-switch--xs": this.props.size === SIZES.EXTRA_SMALL,
+      "re-switch--sm": this.props.size === SIZES.SMALL,
+      "re-switch--lg": this.props.size === SIZES.LARGE
     });
 
     return (
       <span className={className}>
         <input type="checkbox"
                name={this.props.name}
-               className="re-toggle-switch__checkbox"
+               className="re-switch__checkbox"
                checked={this.props.value}
                onClick={this.onClick}
                readOnly />
-             <span className="re-toggle-switch__switch"></span>
+             <span className="re-switch__switch"></span>
       </span>
     );
   }

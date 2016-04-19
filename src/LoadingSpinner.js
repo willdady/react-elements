@@ -10,6 +10,7 @@ var LoadingSpinner = React.createClass({
     slow: React.PropTypes.bool,
     fast: React.PropTypes.bool,
     color: React.PropTypes.string,
+    backgroundColor: React.PropTypes.string,
   },
 
   render: function() {
@@ -24,7 +25,14 @@ var LoadingSpinner = React.createClass({
       this.props.className
     );
     var style = {};
+
     if (this.props.color) style.borderLeftColor = this.props.color;
+    if (this.props.backgroundColor) {
+      style.borderBottomColor = this.props.backgroundColor;
+      style.borderRightColor = this.props.backgroundColor;
+      style.borderTopColor = this.props.backgroundColor;
+    }
+
     return(
       <div className={className}
            style={style}>Loading</div>

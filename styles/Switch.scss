@@ -4,25 +4,25 @@
     height: $height;
     border-radius: $width * .5;
 
-    .re-toggle-switch__switch {
+    .re-switch__switch {
       width: $height - ($border-width * 2);
       height: $height - ($border-width * 2);
     }
 
-    .re-toggle-switch__checkbox {
+    .re-switch__checkbox {
       width: $width;
       height: $height;
     }
 
-    &.re-toggle-switch--on {
-      .re-toggle-switch__switch {
+    &.re-switch--on {
+      .re-switch__switch {
         left: $width - $height;
       }
     }
   }
 }
 
-.re-toggle-switch {
+.re-switch {
   $border-width: 1px;
   $off-color: #999;
   $on-color: #0f0;
@@ -87,7 +87,7 @@
     border-color: $on-color;
     background-color: $on-color;
 
-    .re-toggle-switch__switch {
+    .re-switch__switch {
       left: $width-default - $height-default;
     }
   }

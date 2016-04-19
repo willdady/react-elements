@@ -7,3 +7,5 @@
 * Updated React dependency to v15.0.1.
 * Switch is now a controlled component. Previously it was uncontrolled, maintaining it's own state.
 * Added LoadingSpinner component
+* Removed TagsInput. [React Select](http://jedwatson.github.io/react-select/) is a better alternative.
+* Changed css prefix from `rui-` to `re-`.
