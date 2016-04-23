@@ -35,7 +35,7 @@
     font-size: 14px;
   }
 
-  &__item-link--active {
+  &__item--active &__item-link {
     background: $pagination__item-link--active-background;
     color: $pagination__item-link--active-color;
   }

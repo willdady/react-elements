@@ -9,6 +9,27 @@ storiesOf('Pagination', module)
                 currentPage={3}
                 onClick={action('onClick')} />
   ))
+  .add('with next and previous', () => (
+    <Pagination totalPages={8}
+                currentPage={3}
+                onClick={action('onClick')}
+                onNext={action('onNext')}
+                onPrevious={action('onPrevious')} />
+  ))
+  .add('with next and previous, first selected', () => (
+    <Pagination totalPages={8}
+                currentPage={1}
+                onClick={action('onClick')}
+                onNext={action('onNext')}
+                onPrevious={action('onPrevious')} />
+  ))
+  .add('with next and previous, last selected', () => (
+    <Pagination totalPages={8}
+                currentPage={8}
+                onClick={action('onClick')}
+                onNext={action('onNext')}
+                onPrevious={action('onPrevious')} />
+  ))
   .add('3 of 13', () => (
     <Pagination totalPages={13}
                 currentPage={3}

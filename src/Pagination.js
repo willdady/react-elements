@@ -13,15 +13,16 @@ var PaginationItem = React.createClass({
 
   render: function() {
     let className = classNames(
-      'pagination__item-link',
+      'pagination__item',
       {
-        'pagination__item-link--active': this.props.active
-      }
+        'pagination__item--active': this.props.active
+      },
+      this.props.className
     );
     return (
-      <li className="pagination__item"
+      <li className={className}
           key={this.props.value}>
-        <a className={className}
+        <a className="pagination__item-link"
            href="#"
            onClick={this.onClick}>
           {Array.isArray(this.props.value) ? '\u2026' : this.props.value}
@@ -39,6 +40,14 @@ var Pagination = React.createClass({
     totalPages: React.PropTypes.number.isRequired,
     currentPage: React.PropTypes.number.isRequired,
     onClick: React.PropTypes.func.isRequired,
+  },
+
+  onPrevious: function () {
+    this.props.onPrevious(this.props.currentPage - 1);
+  },
+
+  onNext: function () {
+    this.props.onNext(this.props.currentPage + 1);
   },
 
   render: function() {
@@ -82,6 +91,19 @@ var Pagination = React.createClass({
                         onClick={this.props.onClick} />
       );
     });
+
+    if (this.props.onPrevious && this.props.currentPage !== 1) {
+      items.unshift(
+        <PaginationItem value="«"
+                        onClick={this.onPrevious} />
+      );
+    }
+    if (this.props.onNext && this.props.currentPage !== this.props.totalPages) {
+      items.push(
+        <PaginationItem value="»"
+                        onClick={this.onNext} />
+      );
+    }
 
     let className = classNames('pagination', this.props.className);
     return (
