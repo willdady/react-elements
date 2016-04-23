@@ -51,12 +51,12 @@ var Pagination = React.createClass({
     if (this.props.totalPages > maxSize) {
       // Last, Second-last, Third-last or Forth-last page selected
       if (this.props.currentPage >= lastPageNumber - 6) {
-        pageNumbers = _range(lastPageNumber - (maxSize - 1), lastPageNumber);
-        pageNumbers.unshift([1, lastPageNumber - (maxSize - 1) - 1]);
+        pageNumbers = _range(lastPageNumber - (maxSize - 2), lastPageNumber);
+        pageNumbers.unshift(1, [2, lastPageNumber - (maxSize - 2) - 1]);
       // First, Second, Third or Forth page selected
       } else if (this.props.currentPage <= 6) {
-        pageNumbers = _range(1, maxSize);
-        pageNumbers.push([maxSize, this.props.totalPages]);
+        pageNumbers = _range(1, maxSize - 1);
+        pageNumbers.push([maxSize - 1, this.props.totalPages-1], this.props.totalPages);
       // Everything else
       } else {
         pageNumbers = [

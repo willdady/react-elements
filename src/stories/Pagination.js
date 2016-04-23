@@ -9,6 +9,16 @@ storiesOf('Pagination', module)
                 currentPage={3}
                 onClick={action('onClick')} />
   ))
+  .add('3 of 13', () => (
+    <Pagination totalPages={13}
+                currentPage={3}
+                onClick={action('onClick')} />
+  ))
+  .add('11 of 13', () => (
+    <Pagination totalPages={13}
+                currentPage={11}
+                onClick={action('onClick')} />
+  ))
   .add('big range', () => (
     <Pagination totalPages={300}
                 currentPage={21}
