@@ -13,16 +13,16 @@ var PaginationItem = React.createClass({
 
   render: function() {
     let className = classNames(
-      'pagination__item',
+      're-pagination__item',
       {
-        'pagination__item--active': this.props.active
+        're-pagination__item--active': this.props.active
       },
       this.props.className
     );
     return (
       <li className={className}
           key={this.props.value}>
-        <a className="pagination__item-link"
+        <a className="re-pagination__item-link"
            href="#"
            onClick={this.onClick}>
           {Array.isArray(this.props.value) ? '\u2026' : this.props.value}
@@ -105,7 +105,7 @@ var Pagination = React.createClass({
       );
     }
 
-    let className = classNames('pagination', this.props.className);
+    let className = classNames('re-pagination', this.props.className);
     return (
       <ul className={className}>
         {items}

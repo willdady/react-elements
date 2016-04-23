@@ -9,11 +9,11 @@ var PanelHeader = React.createClass({
     let children = this.props.children;
     if (_isString(children)) {
       children = (
-        <h3 className="panel__header-heading">{ children }</h3>
+        <h3 className="re-panel__header-heading">{ children }</h3>
       );
     }
     return (
-      <header className="panel__header">
+      <header className="re-panel__header">
         {children}
       </header>
     );
@@ -26,7 +26,7 @@ var PanelFooter = React.createClass({
 
   render: function() {
     return (
-      <footer className="panel__footer">
+      <footer className="re-panel__footer">
         {this.props.children}
       </footer>
     );
@@ -38,7 +38,7 @@ var PanelFooter = React.createClass({
 var Panel = React.createClass({
 
   render: function() {
-    let className = classNames('panel', this.props.className);
+    let className = classNames('re-panel', this.props.className);
 
     let header;
     if (this.props.header) {
@@ -53,7 +53,7 @@ var Panel = React.createClass({
     return (
       <section className={className}>
         {header}
-        <div className="panel__content">
+        <div className="re-panel__content">
           {this.props.children}
         </div>
         {footer}

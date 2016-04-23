@@ -29,7 +29,7 @@
   }
 }
 
-.loading-spinner {
+.re-loading-spinner {
   @include loading-spinner-mixin(80px);
 
   &--small {
