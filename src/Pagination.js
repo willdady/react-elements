@@ -87,6 +87,7 @@ var Pagination = React.createClass({
     let items = _map(pageNumbers, (value) => {
       return (
         <PaginationItem value={value}
+                        key={value}
                         active={this.props.currentPage === value}
                         onClick={this.props.onClick} />
       );
@@ -95,12 +96,14 @@ var Pagination = React.createClass({
     if (this.props.onPrevious && this.props.currentPage !== 1) {
       items.unshift(
         <PaginationItem value="«"
+                        key="«"
                         onClick={this.onPrevious} />
       );
     }
     if (this.props.onNext && this.props.currentPage !== this.props.totalPages) {
       items.push(
         <PaginationItem value="»"
+                        key="»"
                         onClick={this.onNext} />
       );
     }
