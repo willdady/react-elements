@@ -1,22 +1,19 @@
-.rui-color-picker__sb-picker {
+.re-color-picker__sb-picker {
   display: inline-block;
   position: relative;
   width: 128px;
   height: 128px;
   overflow: hidden;
   margin-right: 3px; }
-
-.rui-color-picker__sb-picker--dragging {
+.re-color-picker__sb-picker--dragging {
   cursor: pointer; }
-
-.rui-color-picker__sb-picker-layer {
+.re-color-picker__sb-picker-layer {
   position: absolute;
   top: 0;
   left: 0;
   width: 128px;
   height: 128px; }
-
-.rui-color-picker__sb-picker-cursor {
+.re-color-picker__sb-picker-cursor {
   position: absolute;
   width: 14px;
   height: 14px;
@@ -26,8 +23,8 @@
   pointer-events: none;
   border-radius: 50%;
   border: 2px solid black; }
-  .rui-color-picker__sb-picker-cursor:before {
-    content: "";
+  .re-color-picker__sb-picker-cursor:before {
+    content: '';
     width: 14px;
     height: 14px;
     position: absolute;
@@ -36,18 +33,15 @@
     border-radius: 50%;
     border: 1px solid white;
     pointer-events: none; }
-
-.rui-color-picker__h-picker {
+.re-color-picker__h-picker {
   position: relative;
   display: inline-block;
   width: 26px;
   height: 128px;
   background: linear-gradient(red 0%, #ff9500 10%, #d0ff00 20%, #37ff00 30%, #00ff62 40%, #00fffb 50%, #006aff 60%, #3300ff 70%, #cc00ff 80%, #ff0099 90%, #ff0004 100%); }
-
-.rui-color-picker__h-picker--dragging {
+.re-color-picker__h-picker--dragging {
   cursor: pointer; }
-
-.rui-color-picker__h-picker-cursor {
+.re-color-picker__h-picker-cursor {
   width: 26px;
   height: 3px;
   border: 1px solid white;

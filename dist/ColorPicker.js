@@ -64,7 +64,7 @@ var SaturationBrightnessCursor = React.createClass({
       left: this.props.position.x - Math.round(SB_PICKER_CURSOR_WIDTH * 0.5),
       top: this.props.position.y - Math.round(SB_PICKER_CURSOR_HEIGHT * 0.5)
     };
-    return React.createElement("div", { className: "rui-color-picker__sb-picker-cursor",
+    return React.createElement("div", { className: "re-color-picker__sb-picker-cursor",
       style: style });
   }
 
@@ -145,8 +145,8 @@ var SaturationBrightnessPicker = React.createClass({
     var _this2 = this;
 
     var className = classNames({
-      "rui-color-picker__sb-picker": true,
-      "rui-color-picker__sb-picker--dragging": this.state.mouseDown
+      "re-color-picker__sb-picker": true,
+      "re-color-picker__sb-picker--dragging": this.state.mouseDown
     });
 
     var hue = "hsl(" + Math.round(360 * this.props.hue) + ", 100%, 50%)";
@@ -158,11 +158,11 @@ var SaturationBrightnessPicker = React.createClass({
           return _this2._root = c;
         },
         onMouseDown: this.onMouseDownHandler },
-      React.createElement(TwoStopGradient, { className: "rui-color-picker__sb-picker-layer",
+      React.createElement(TwoStopGradient, { className: "re-color-picker__sb-picker-layer",
         color1: "white",
         color2: hue,
         horizontal: true }),
-      React.createElement(TwoStopGradient, { className: "rui-color-picker__sb-picker-layer",
+      React.createElement(TwoStopGradient, { className: "re-color-picker__sb-picker-layer",
         color1: "rgba(0, 0, 0, 0)",
         color2: "black" }),
       React.createElement(SaturationBrightnessCursor, { position: this.state.cursorPosition })
@@ -190,7 +190,7 @@ var HuePickerCursor = React.createClass({
     var styles = {
       top: y
     };
-    return React.createElement("div", { className: "rui-color-picker__h-picker-cursor",
+    return React.createElement("div", { className: "re-color-picker__h-picker-cursor",
       style: styles });
   }
 
@@ -253,8 +253,8 @@ var HuePicker = React.createClass({
     var _this4 = this;
 
     var className = classNames({
-      "rui-color-picker__h-picker": true,
-      "rui-color-picker__h-picker--dragging": this.state.mouseDown
+      "re-color-picker__h-picker": true,
+      "re-color-picker__h-picker--dragging": this.state.mouseDown
     });
 
     return React.createElement(
@@ -319,9 +319,10 @@ var ColorPicker = React.createClass({
   },
 
   render: function render() {
+    var className = classNames('re-color-picker', this.props.className);
     return React.createElement(
       "div",
-      null,
+      { className: className },
       React.createElement(SaturationBrightnessPicker, { onChange: this.saturationBrightnessChangeHandler,
         hue: this.state.hue,
         saturation: this.state.saturation,

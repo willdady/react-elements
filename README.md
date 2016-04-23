@@ -6,6 +6,7 @@ A library of reusable React components consisting of the following:
 <VimeoVideo />
 <YoutubeVideo />
 <LoadingSpinner />
+<Button />
 <Pagination />
 <Panel />
 <ProgressBar />
@@ -34,4 +35,4 @@ to include the component's stylesheet in your build otherwise the component
 will fail to display correctly.
 
 Stylesheets are written using BEM syntax and all classes are prefixed
-with ```rui-```.
+with ```re-```.

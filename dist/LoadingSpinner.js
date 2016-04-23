@@ -28,11 +28,11 @@ var LoadingSpinner = _react2.default.createClass({
   },
 
   render: function render() {
-    var className = (0, _classnames2.default)('loading-spinner', {
-      'loading-spinner--mini': this.props.mini,
-      'loading-spinner--small': this.props.small,
-      'loading-spinner--slow': this.props.slow,
-      'loading-spinner--fast': this.props.fast
+    var className = (0, _classnames2.default)('re-loading-spinner', {
+      're-loading-spinner--mini': this.props.mini,
+      're-loading-spinner--small': this.props.small,
+      're-loading-spinner--slow': this.props.slow,
+      're-loading-spinner--fast': this.props.fast
     }, this.props.className);
     var style = {};
 

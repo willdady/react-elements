@@ -1,4 +1,4 @@
-.loading-spinner {
+.re-loading-spinner {
   -webkit-animation-name: spinner;
           animation-name: spinner;
   -webkit-animation-duration: 1s;
@@ -20,24 +20,24 @@
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   overflow: hidden; }
-  .loading-spinner, .loading-spinner:after {
+  .re-loading-spinner, .re-loading-spinner:after {
     border-radius: 50%;
     height: 80px;
     width: 80px; }
-  .loading-spinner--small {
+  .re-loading-spinner--small {
     border-width: 8px; }
-    .loading-spinner--small, .loading-spinner--small:after {
+    .re-loading-spinner--small, .re-loading-spinner--small:after {
       height: 40px;
       width: 40px; }
-  .loading-spinner--mini {
+  .re-loading-spinner--mini {
     border-width: 4px; }
-    .loading-spinner--mini, .loading-spinner--mini:after {
+    .re-loading-spinner--mini, .re-loading-spinner--mini:after {
       height: 20px;
       width: 20px; }
-  .loading-spinner--slow {
+  .re-loading-spinner--slow {
     -webkit-animation-duration: 2s;
             animation-duration: 2s; }
-  .loading-spinner--fast {
+  .re-loading-spinner--fast {
     -webkit-animation-duration: .5s;
             animation-duration: .5s; }
 
