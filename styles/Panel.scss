@@ -1,0 +1,47 @@
+.panel {
+  $light-grey: #efefef;
+  $panel-background: #fafafa;
+  $panel-border: 1px solid $light-grey;
+  $panel-padding: 15px;
+  $panel-border-radius: 4px;
+  $panel-header-background: darken($panel-background, 5%);
+  $panel-footer-background: darken($panel-background, 5%);
+
+  background: $panel-background;
+  border: $panel-border;
+  border-radius: $panel-border-radius;
+  margin-bottom: 20px;
+  font-family: Arial, serif;
+
+  &__header {
+    padding: $panel-padding;
+    border-top-left-radius: $panel-border-radius;
+    border-top-right-radius: $panel-border-radius;
+    background: $panel-header-background;
+  }
+
+  &__header-heading {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__content {
+    padding: $panel-padding;
+
+    p {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__footer {
+    padding: $panel-padding;
+    border-bottom-left-radius: $panel-border-radius;
+    border-bottom-right-radius: $panel-border-radius;
+    background: $panel-footer-background;
+  }
+
+}

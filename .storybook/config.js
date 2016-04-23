@@ -4,6 +4,7 @@ import '../styles/Switch.scss';
 import '../styles/LoadingSpinner.scss';
 import '../styles/Button.scss';
 import '../styles/Pagination.scss';
+import '../styles/Panel.scss';
 
 function loadStories() {
   require('../src/stories/Switch');
@@ -13,6 +14,7 @@ function loadStories() {
   require('../src/stories/LoadingSpinner');
   require('../src/stories/Button');
   require('../src/stories/Pagination');
+  require('../src/stories/Panel');
 }
 
 configure(loadStories, module);

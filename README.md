@@ -7,6 +7,7 @@ A library of reusable React components consisting of the following:
 <YoutubeVideo />
 <LoadingSpinner />
 <Pagination />
+<Panel />
 ```
 
 See demo.html for examples.
