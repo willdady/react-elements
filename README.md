@@ -8,6 +8,7 @@ A library of reusable React components consisting of the following:
 <LoadingSpinner />
 <Pagination />
 <Panel />
+<ProgressBar />
 ```
 
 See demo.html for examples.
