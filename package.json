@@ -25,7 +25,9 @@
     "classnames": "^2.2.3",
     "lodash.assign": "^4.0.8",
     "lodash.filter": "^4.3.0",
+    "lodash.map": "^4.3.0",
     "lodash.omit": "^4.2.1",
+    "lodash.range": "^3.1.4",
     "lodash.values": "^4.1.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
@@ -35,7 +37,7 @@
     "react": ">=0.14.0"
   },
   "devDependencies": {
-    "@kadira/storybook": "^1.12.0",
+    "@kadira/storybook": "^1.16.1",
     "autoprefixer": "^6.0.3",
     "autoprefixer-loader": "^3.1.0",
     "babel-cli": "^6.7.5",

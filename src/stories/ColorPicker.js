@@ -5,5 +5,5 @@ import ColorPicker from '../ColorPicker';
 
 storiesOf('ColorPicker', module)
   .add('default', () => (
-    <ColorPicker onChange={(color) => console.log(color)} />
+    <ColorPicker onChange={action('onChange')} />
   ));
