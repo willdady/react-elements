@@ -35,10 +35,10 @@ Most components have an accompanying stylesheet. When using a component be sure
 to include the component's stylesheet in your build otherwise the component
 will fail to render correctly.
 
-Stylesheets are written using BEM syntax and all classes are prefixed
+Stylesheets are written using [BEM syntax](https://css-tricks.com/bem-101/) and all classes are prefixed
 with ```re-```.
 
-Pre-build CSS files can be found in `dist/css`. Source SCSS can be found in
+Pre-built CSS files can be found in `dist/css`. Source SCSS can be found in
 the `styles` directory in the project's root.
 
 ### Storybook
