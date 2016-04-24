@@ -1,18 +1,22 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _assign = require('lodash/assign');
+
+var _assign2 = _interopRequireDefault(_assign);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* The following params are the defaults as documented at
    https://developers.google.com/youtube/player_parameters*/
-var defaultYoutubeParams = {
+var DEFAULT_YOUTUBE_PARAMS = {
   autohide: 2,
   autoplay: 0,
   cc_load_policy: 0,
@@ -39,20 +43,16 @@ var defaultYoutubeParams = {
 };
 
 var YouTubeVideo = _react2.default.createClass({
-  displayName: "YouTubeVideo",
+  displayName: 'YouTubeVideo',
 
 
   getDefaultProps: function getDefaultProps() {
-    var defProps = {
+    return (0, _assign2.default)({}, DEFAULT_YOUTUBE_PARAMS, {
       width: 560,
       height: 315,
       frameBorder: 0,
       protocol: null
-    };
-    for (var k in defaultYoutubeParams) {
-      defProps[k] = defaultYoutubeParams[k];
-    }
-    return defProps;
+    });
   },
 
   propTypes: {
@@ -60,39 +60,36 @@ var YouTubeVideo = _react2.default.createClass({
   },
 
   getCleanedSrc: function getCleanedSrc() {
-    var matches, vidID, src, protocol;
-
-    src = this.props.src.trim();
-    protocol = this.props.protocol ? this.props.protocol + ":" : "";
+    // var matches, vidID, src, protocol;
+    var vidID = void 0;
+    var src = this.props.src.trim();
+    var protocol = this.props.protocol ? this.props.protocol + ":" : "";
 
     // Extract video id from src.
     var pageURLRegexp = /.*watch\?v=(\w+)$/g;
-    matches = pageURLRegexp.exec(src);
+    var matches = pageURLRegexp.exec(src);
     if (matches) {
       vidID = matches[1];
     } else {
       var embedURLRegexp = /.*embed\/(\w+)$/g;
       matches = embedURLRegexp.exec(src);
-      if (matches) {
-        vidID = matches[1];
-      }
+      if (matches) vidID = matches[1];
     }
-    if (!vidID) throw "Unable to extract Video ID from URL.";
+    if (!vidID) throw 'Unable to extract Video ID from URL.';
     // Build URL parameters
-    var params = "",
-        val;
-    for (var k in defaultYoutubeParams) {
-      if (this.props[k] !== defaultYoutubeParams[k]) {
+    var params = '';
+    for (var k in DEFAULT_YOUTUBE_PARAMS) {
+      if (this.props[k] !== DEFAULT_YOUTUBE_PARAMS[k]) {
         params += "&" + k + "=" + String(this.props[k]);
       }
     }
     params = params.replace("&", "?");
 
-    return protocol + "//www.youtube.com/embed/" + vidID + params;
+    return protocol + '//www.youtube.com/embed/' + vidID + params;
   },
 
   render: function render() {
-    return _react2.default.createElement("iframe", { width: this.props.width,
+    return _react2.default.createElement('iframe', { width: this.props.width,
       height: this.props.height,
       src: this.getCleanedSrc(),
       frameBorder: this.props.frameBorder,

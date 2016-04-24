@@ -48,7 +48,6 @@ var Switch = _react2.default.createClass({
       "re-switch--sm": this.props.size === SIZES.SMALL,
       "re-switch--lg": this.props.size === SIZES.LARGE
     });
-
     return _react2.default.createElement(
       'span',
       { className: className },

@@ -1,10 +1,11 @@
 .re-tabs {
-  $brand-primary: #fd1555;
-  $tab-selected-background: $brand-primary;
-  $tab-border-color: #eee;
-  $tab-border-radius: 4px;
-  $tab-background: #fff;
-  $tab-background-hover: $tab-border-color;
+  $re-tab-selected-background: #fd1555 !default;
+  $re-tab-border-color: #eee !default;
+  $re-tab-border-radius: 4px !default;
+  $re-tab-background: #fff !default;
+  $re-tab-background-hover: $re-tab-border-color !default;
+  $re-tab-padding: .5em 1em;
+  $re-tab-margin: 0 2px;
 
   list-style: none;
   margin: 0;
@@ -16,30 +17,30 @@
     margin: 0;
 
     &:first-child {
-      border-top-right-radius: $tab-border-radius;
-      border-top-left-radius: $tab-border-radius;
+      border-top-right-radius: $re-tab-border-radius;
+      border-top-left-radius: $re-tab-border-radius;
     }
 
     &:last-child {
-      border-bottom-right-radius: $tab-border-radius;
-      border-bottom-left-radius: $tab-border-radius;
-      border-bottom: 1px solid $tab-border-color;
+      border-bottom-right-radius: $re-tab-border-radius;
+      border-bottom-left-radius: $re-tab-border-radius;
+      border-bottom: 1px solid $re-tab-border-color;
     }
   }
 
   &__tab {
     display: inline-block;
-    border-left: 1px solid $tab-border-color;
-    border-right: 1px solid $tab-border-color;
-    border-top: 1px solid $tab-border-color;
-    border-top-right-radius: $tab-border-radius;
-    border-top-left-radius: $tab-border-radius;
+    border-left: 1px solid $re-tab-border-color;
+    border-right: 1px solid $re-tab-border-color;
+    border-top: 1px solid $re-tab-border-color;
+    border-top-right-radius: $re-tab-border-radius;
+    border-top-left-radius: $re-tab-border-radius;
     cursor: pointer;
-    margin: 0 2px;
-    padding: .5em 1em;
+    margin: $re-tab-margin;
+    padding: $re-tab-padding;
     user-select: none;
     font-family: Arial, serif;
-    background: $tab-background;
+    background: $re-tab-background;
 
     &:first-child {
       margin-left: 0;
@@ -50,15 +51,15 @@
     }
 
     &:hover {
-      background: $tab-background-hover;
+      background: $re-tab-background-hover;
     }
   }
 
   &__tab--selected {
-    background: $tab-selected-background;
+    background: $re-tab-selected-background;
 
     &:hover {
-      background: darken($tab-selected-background, 5%);
+      background: darken($re-tab-selected-background, 5%);
     }
   }
 }

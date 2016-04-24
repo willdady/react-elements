@@ -10,3 +10,7 @@
 * Removed TagsInput. [React Select](http://jedwatson.github.io/react-select/) is a better alternative.
 * Changed css prefix from `rui-` to `re-`.
 * Added Button component.
+* Added Pagination component.
+* Added Panel component.
+* Added ProgressBar component.
+* Added Tabs component.

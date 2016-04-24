@@ -13,3 +13,9 @@ linters:
 
   PropertySortOrder:
     enabled: false
+
+  ColorVariable:
+    enabled: false
+
+  ImportantRule:
+    enabled: false

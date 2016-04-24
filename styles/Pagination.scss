@@ -1,14 +1,11 @@
 .re-pagination {
-  $brand-primary: #fd1555;
-  $grey: #999;
-  $light-grey: #efefef;
-  $pagination__item-margin: 0 5px 0 0;
-  $pagination__item-link-background: #fff;
-  $pagination__item-link-color: $grey;
-  $pagination__item-link-border: 1px solid $light-grey;
-  $pagination__item-link-padding: 4px 8px;
-  $pagination__item-link--active-background: $brand-primary;
-  $pagination__item-link--active-color: #fff;
+  $re-pagination__item-margin: 0 5px 0 0 !default;
+  $re-pagination__item-link-background: #fff !default;
+  $re-pagination__item-link-color: #999 !default;
+  $re-pagination__item-link-border: 1px solid #efefef !default;
+  $re-pagination__item-link-padding: 4px 8px !default;
+  $re-pagination__item-link--active-background: #fd1555 !default;
+  $re-pagination__item-link--active-color: #fff !default;
 
   list-style: none;
   margin: 0;
@@ -17,7 +14,7 @@
 
   &__item {
     display: inline-block;
-    margin: $pagination__item-margin;
+    margin: $re-pagination__item-margin;
 
     &:last-child {
       margin-right: 0;
@@ -25,19 +22,19 @@
   }
 
   &__item-link {
-    background: $pagination__item-link-background;
-    border: $pagination__item-link-border;
-    color: $pagination__item-link-color;
+    background: $re-pagination__item-link-background;
+    border: $re-pagination__item-link-border;
+    color: $re-pagination__item-link-color;
     display: block;
-    padding: $pagination__item-link-padding;
+    padding: $re-pagination__item-link-padding;
     font-family: Arial, serif;
     text-decoration: none;
     font-size: 14px;
   }
 
   &__item--active &__item-link {
-    background: $pagination__item-link--active-background;
-    color: $pagination__item-link--active-color;
+    background: $re-pagination__item-link--active-background;
+    color: $re-pagination__item-link--active-color;
   }
 
 }

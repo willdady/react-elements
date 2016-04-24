@@ -1,23 +1,21 @@
 .re-progress-bar {
-  $brand-primary: #fd1555;
-  $brand-success: #9dda83;
-  $progress-bar-track-background: rgba(0, 0, 0, .1);
-  $progress-bar-background: $brand-primary;
-  $progress-bar-background-complete: $brand-success;
+  $re-progress-bar-track-background: rgba(0, 0, 0, .1) !default;
+  $re-progress-bar-background: #fd1555 !default;
+  $re-progress-bar-background-complete: #9dda83 !default;
 
-  background: $progress-bar-track-background;
+  background: $re-progress-bar-track-background;
   border-radius: 5px;
   height: 10px;
   overflow: hidden;
 
   &__bar {
-    background: $progress-bar-background;
+    background: $re-progress-bar-background;
     height: 100%;
     transition: width 350ms ease-out;
   }
 
   &--complete &__bar {
-    background: $progress-bar-background-complete;
+    background: $re-progress-bar-background-complete;
     transition: none;
   }
 }

@@ -37,7 +37,7 @@ var Button = _react2.default.createClass({
     var props = (0, _omit2.default)(this.props, ['btnStyle', 'block', 'processing']);
     props.type = props.type ? props.type : 'button';
 
-    var spinner;
+    var spinner = void 0;
     if (this.props.processing) {
       spinner = _react2.default.createElement(_LoadingSpinner2.default, { className: 're-btn__spinner', mini: true, white: true });
     }

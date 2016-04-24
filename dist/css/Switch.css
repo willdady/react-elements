@@ -56,7 +56,7 @@
     position: relative;
     left: 0;
     transition: left 80ms ease-in-out;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     box-sizing: border-box; }
   .re-switch__checkbox {
     margin: 0;

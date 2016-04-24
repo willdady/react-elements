@@ -35,14 +35,12 @@ var LoadingSpinner = _react2.default.createClass({
       're-loading-spinner--fast': this.props.fast
     }, this.props.className);
     var style = {};
-
     if (this.props.color) style.borderLeftColor = this.props.color;
     if (this.props.backgroundColor) {
       style.borderBottomColor = this.props.backgroundColor;
       style.borderRightColor = this.props.backgroundColor;
       style.borderTopColor = this.props.backgroundColor;
     }
-
     return _react2.default.createElement(
       'div',
       { className: className,

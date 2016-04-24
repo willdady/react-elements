@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'styles',
-          src: ['*.scss'],
+          src: ['*.scss', '!mixins.scss'],
           dest: 'dist/css',
           ext: '.css'
         }]

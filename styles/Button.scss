@@ -1,50 +1,32 @@
-@mixin button-background($bg: #666, $color: #fff) {
-  background: $bg;
-  border-color: darken($bg, 5%);
-  color: $color;
-
-  &:hover {
-    background: lighten($bg, 5%);
-    border-color: $bg;
-  }
-
-  &:disabled {
-    color: rgba($color, .55);
-
-    &:hover {
-      background: $bg;
-      border-color: darken($bg, 5%);
-    }
-  }
-}
+@import 'mixins';
 
 .re-btn {
-  $btn-padding: 6px 12px !default;
+  $re-btn-padding: 6px 12px !default;
 
-  $btn-default-bg: #f7f7f7 !default;
-  $btn-default-color: #444 !default;
+  $re-btn-default-bg: #f7f7f7 !default;
+  $re-btn-default-color: #444 !default;
 
-  $btn-primary-bg: #337ab7 !default;
-  $btn-primary-color: #fff !default;
+  $re-btn-primary-bg: #337ab7 !default;
+  $re-btn-primary-color: #fff !default;
 
-  $btn-danger-bg: #d9534f !default;
-  $btn-danger-color: #fff !default;
+  $re-btn-danger-bg: #d9534f !default;
+  $re-btn-danger-color: #fff !default;
 
-  $btn-link-bg: transparent !default;
-  $btn-link-color: #000 !default;
+  $re-btn-link-bg: transparent !default;
+  $re-btn-link-color: #000 !default;
 
-  $btn-border-radius: 4px !default;
+  $re-btn-border-radius: 4px !default;
 
   background-image: none;
   border: 1px solid transparent;
-  border-radius: $btn-border-radius;
+  border-radius: $re-btn-border-radius;
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
   margin-bottom: 0;
-  padding: $btn-padding;
+  padding: $re-btn-padding;
   position: relative;
   text-align: center;
   touch-action: manipulation;
@@ -61,19 +43,19 @@
   }
 
   &--default {
-    @include button-background($btn-default-bg, $btn-default-color);
+    @include button-background($re-btn-default-bg, $re-btn-default-color);
   }
 
   &--primary {
-    @include button-background($btn-primary-bg, $btn-primary-color);
+    @include button-background($re-btn-primary-bg, $re-btn-primary-color);
   }
 
   &--danger {
-    @include button-background($btn-danger-bg, $btn-danger-color);
+    @include button-background($re-btn-danger-bg, $re-btn-danger-color);
   }
 
   &--link {
-    @include button-background($btn-link-bg, $btn-link-color);
+    @include button-background($re-btn-link-bg, $re-btn-link-color);
   }
 
   &--block {
@@ -81,10 +63,8 @@
     width: 100%;
   }
 
-  &--processing {
-    .re-btn__content {
-      visibility: hidden;
-    }
+  &--processing &__content {
+    visibility: hidden;
   }
 
 }
