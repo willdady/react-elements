@@ -1,6 +1,6 @@
-var React = require("react");
-var tinycolor = require("tinycolor2");
-var classNames = require("classnames");
+import React from "react";
+import tinycolor from "tinycolor2";
+import classNames from "classnames";
 
 
 var SB_PICKER_WIDTH = 128;
@@ -326,4 +326,4 @@ var ColorPicker = React.createClass({
 });
 
 
-module.exports = ColorPicker;
+export default ColorPicker;

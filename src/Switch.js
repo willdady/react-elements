@@ -1,6 +1,6 @@
-var React = require("react");
-var classNames = require('classnames');
-var _values = require('lodash.values');
+import React from 'react';
+import classNames from 'classnames';
+import _values from 'lodash.values';
 
 
 const SIZES = {
@@ -47,4 +47,4 @@ var Switch = React.createClass({
   }
 });
 
-module.exports = Switch;
+export default Switch;

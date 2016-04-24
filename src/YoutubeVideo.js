@@ -1,4 +1,4 @@
-var React = require("react");
+import React from 'react';
 
 /* The following params are the defaults as documented at
    https://developers.google.com/youtube/player_parameters*/
@@ -89,4 +89,4 @@ var YouTubeVideo = React.createClass({
   }
 });
 
-module.exports = YouTubeVideo;
+export default YouTubeVideo;

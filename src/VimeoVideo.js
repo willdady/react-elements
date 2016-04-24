@@ -1,5 +1,5 @@
-var React = require("react");
-var _assign = require("lodash.assign");
+import React from 'react';
+import _assign from 'lodash.assign';
 
 
 const DEFAULT_VIMEO_PARAMS = {
@@ -76,4 +76,4 @@ var VimeoVideo = React.createClass({
   }
 });
 
-module.exports = VimeoVideo;
+export default VimeoVideo;
