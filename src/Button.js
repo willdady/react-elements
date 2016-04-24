@@ -7,8 +7,8 @@ import omit from 'lodash/omit';
 var Button = React.createClass({
 
   render: function() {
-    var btnStyle = this.props.btnStyle;
-    var className = classNames(
+    let btnStyle = this.props.btnStyle;
+    let className = classNames(
       're-btn',
       {
         're-btn--default': !btnStyle || btnStyle === 'default',
@@ -20,10 +20,10 @@ var Button = React.createClass({
       },
       this.props.className
     );
-    var props = omit(this.props, ['btnStyle', 'block', 'processing']);
+    let props = omit(this.props, ['btnStyle', 'block', 'processing']);
     props.type = props.type ? props.type : 'button';
 
-    var spinner;
+    let spinner;
     if (this.props.processing) {
       spinner = (
         <LoadingSpinner className="re-btn__spinner" mini white />

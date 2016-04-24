@@ -1,8 +1,9 @@
 import React from 'react';
+import assign from 'lodash/assign';
 
 /* The following params are the defaults as documented at
    https://developers.google.com/youtube/player_parameters*/
-var defaultYoutubeParams = {
+const DEFAULT_YOUTUBE_PARAMS = {
   autohide: 2,
   autoplay: 0,
   cc_load_policy: 0,
@@ -31,16 +32,16 @@ var defaultYoutubeParams = {
 var YouTubeVideo = React.createClass({
 
   getDefaultProps: function() {
-    var defProps = {
-      width: 560,
-      height: 315,
-      frameBorder: 0,
-      protocol: null
-    };
-    for (var k in defaultYoutubeParams) {
-      defProps[k] = defaultYoutubeParams[k];
-    }
-    return defProps;
+    return assign(
+      {},
+      DEFAULT_YOUTUBE_PARAMS,
+      {
+        width: 560,
+        height: 315,
+        frameBorder: 0,
+        protocol: null
+      }
+    );
   },
 
   propTypes: {
@@ -48,34 +49,32 @@ var YouTubeVideo = React.createClass({
   },
 
   getCleanedSrc: function() {
-    var matches, vidID, src, protocol;
-
-    src = this.props.src.trim();
-    protocol = this.props.protocol ? this.props.protocol + ":" : "";
+    // var matches, vidID, src, protocol;
+    let vidID;
+    let src = this.props.src.trim();
+    let protocol = this.props.protocol ? this.props.protocol + ":" : "";
 
     // Extract video id from src.
-    var pageURLRegexp = /.*watch\?v=(\w+)$/g;
-    matches = pageURLRegexp.exec(src);
+    let pageURLRegexp = /.*watch\?v=(\w+)$/g;
+    let matches = pageURLRegexp.exec(src);
     if (matches) {
       vidID = matches[1];
     } else {
-      var embedURLRegexp = /.*embed\/(\w+)$/g;
+      let embedURLRegexp = /.*embed\/(\w+)$/g;
       matches = embedURLRegexp.exec(src);
-      if (matches) {
-        vidID = matches[1];
-      }
+      if (matches) vidID = matches[1];
     }
-    if (!vidID) throw "Unable to extract Video ID from URL.";
+    if (!vidID) throw 'Unable to extract Video ID from URL.';
     // Build URL parameters
-    var params = "", val;
-    for (var k in defaultYoutubeParams) {
-      if (this.props[k] !== defaultYoutubeParams[k]) {
+    let params = '';
+    for (let k in DEFAULT_YOUTUBE_PARAMS) {
+      if (this.props[k] !== DEFAULT_YOUTUBE_PARAMS[k]) {
         params += "&" + k + "=" + String(this.props[k]);
       }
     }
     params = params.replace("&", "?");
 
-    return protocol + "//www.youtube.com/embed/" + vidID + params;
+    return `${protocol}//www.youtube.com/embed/${vidID}${params}`;
   },
 
   render: function() {

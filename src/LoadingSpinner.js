@@ -14,7 +14,7 @@ var LoadingSpinner = React.createClass({
   },
 
   render: function() {
-    var className = classNames(
+    let className = classNames(
       're-loading-spinner',
       {
         're-loading-spinner--mini': this.props.mini,
@@ -24,15 +24,13 @@ var LoadingSpinner = React.createClass({
       },
       this.props.className
     );
-    var style = {};
-
+    let style = {};
     if (this.props.color) style.borderLeftColor = this.props.color;
     if (this.props.backgroundColor) {
       style.borderBottomColor = this.props.backgroundColor;
       style.borderRightColor = this.props.backgroundColor;
       style.borderTopColor = this.props.backgroundColor;
     }
-
     return(
       <div className={className}
            style={style}>Loading</div>

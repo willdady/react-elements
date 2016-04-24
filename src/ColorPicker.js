@@ -3,12 +3,12 @@ import tinycolor from "tinycolor2";
 import classNames from "classnames";
 
 
-var SB_PICKER_WIDTH = 128;
-var SB_PICKER_HEIGHT = 128;
-var SB_PICKER_CURSOR_WIDTH = 14;
-var SB_PICKER_CURSOR_HEIGHT = 14;
-var H_PICKER_HEIGHT = 128;
-var H_PICKER_CURSOR_HEIGHT = 3;
+const SB_PICKER_WIDTH = 128;
+const SB_PICKER_HEIGHT = 128;
+const SB_PICKER_CURSOR_WIDTH = 14;
+const SB_PICKER_CURSOR_HEIGHT = 14;
+const H_PICKER_HEIGHT = 128;
+const H_PICKER_CURSOR_HEIGHT = 3;
 
 
 var TwoStopGradient = React.createClass({
@@ -26,8 +26,8 @@ var TwoStopGradient = React.createClass({
   },
 
   render: function() {
-    var angle = this.props.horizontal ? "to right, " : "";
-    var styles = {
+    let angle = this.props.horizontal ? "to right, " : "";
+    let styles = {
       background: `linear-gradient(${angle}${this.props.color1}, ${this.props.color2})`
     };
     return (
@@ -59,7 +59,7 @@ var SaturationBrightnessCursor = React.createClass({
 
   render: function() {
     // We center the cursor around our x/y position
-    var style = {
+    let style = {
       left: this.props.position.x - Math.round(SB_PICKER_CURSOR_WIDTH * 0.5),
       top: this.props.position.y - Math.round(SB_PICKER_CURSOR_HEIGHT * 0.5)
     };
@@ -119,18 +119,18 @@ var SaturationBrightnessPicker = React.createClass({
   _update: function(pageX, pageY, mouseDown) {
     // Get the position of the root element relative to the document.
     // var rootPos = this.refs.root.getDOMNode().getBoundingClientRect();
-    var rootPos = this._root.getBoundingClientRect();
+    let rootPos = this._root.getBoundingClientRect();
     // Convert coordinates into local space.
-    var x = pageX - rootPos.left;
-    var y = pageY - (rootPos.top + window.scrollY);
+    let x = pageX - rootPos.left;
+    let y = pageY - (rootPos.top + window.scrollY);
     // Keep x and y within our bounds
     x = x < 0 ? 0 : x;
     x = x > SB_PICKER_WIDTH ? SB_PICKER_WIDTH : x;
     y = y < 0 ? 0 : y;
     y = y > SB_PICKER_HEIGHT ? SB_PICKER_HEIGHT : y;
     // Normalize to saturation and brightness ratios
-    var saturation = x / SB_PICKER_WIDTH;
-    var brightness = 1 - (y / SB_PICKER_HEIGHT);
+    let saturation = x / SB_PICKER_WIDTH;
+    let brightness = 1 - (y / SB_PICKER_HEIGHT);
     this.setState(
       {
         mouseDown: mouseDown,
@@ -141,12 +141,12 @@ var SaturationBrightnessPicker = React.createClass({
   },
 
   render: function() {
-    var className = classNames({
+    let className = classNames({
       "re-color-picker__sb-picker": true,
       "re-color-picker__sb-picker--dragging": this.state.mouseDown
     });
 
-    var hue = "hsl("+Math.round(360 * this.props.hue)+", 100%, 50%)";
+    let hue = "hsl("+Math.round(360 * this.props.hue)+", 100%, 50%)";
 
     return(
       <div className={className}
@@ -178,12 +178,12 @@ var HuePickerCursor = React.createClass({
   render: function() {
     // We vertically center the cursor around our y position and make sure
     // we're always within HuePicker's bounds.
-    var y = this.props.position - Math.floor(H_PICKER_CURSOR_HEIGHT * 0.5);
+    let y = this.props.position - Math.floor(H_PICKER_CURSOR_HEIGHT * 0.5);
     y = (y + H_PICKER_CURSOR_HEIGHT) > H_PICKER_HEIGHT ?
         H_PICKER_HEIGHT - H_PICKER_CURSOR_HEIGHT :
         y;
     y = y < 0 ? 0 : y;
-    var styles = {
+    let styles = {
       top: y
     };
     return (
@@ -228,14 +228,14 @@ var HuePicker = React.createClass({
 
   _update: function(pageY, mouseDown) {
     // Get the position of the root element relative to the document.
-    var rootPos = this._root.getBoundingClientRect();
+    let rootPos = this._root.getBoundingClientRect();
     // Convert coordinate into local space.
-    var y = pageY - (rootPos.top + window.scrollY);
+    let y = pageY - (rootPos.top + window.scrollY);
     // Keep y within our bounds
     y = y < 0 ? 0 : y;
     y = y > H_PICKER_HEIGHT ? H_PICKER_HEIGHT : y;
     // Normalize to a ratio
-    var hue = y / H_PICKER_HEIGHT;
+    let hue = y / H_PICKER_HEIGHT;
     this.setState(
       {
         mouseDown: mouseDown,
@@ -246,7 +246,7 @@ var HuePicker = React.createClass({
   },
 
   render: function() {
-    var className = classNames({
+    let className = classNames({
       "re-color-picker__h-picker": true,
       "re-color-picker__h-picker--dragging": this.state.mouseDown
     });
@@ -265,7 +265,7 @@ var HuePicker = React.createClass({
 var ColorPicker = React.createClass({
 
   getInitialState: function() {
-    var hsv = tinycolor(this.props.color).toHsv();
+    let hsv = tinycolor(this.props.color).toHsv();
     return {
       hue: hsv.h / 360,
       saturation: hsv.s,
@@ -301,7 +301,7 @@ var ColorPicker = React.createClass({
   },
 
   _update: function() {
-    var color = tinycolor({
+    let color = tinycolor({
       h: Math.round(360 * this.state.hue),
       s: this.state.saturation,
       v: this.state.brightness
