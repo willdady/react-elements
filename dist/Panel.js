@@ -8,9 +8,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _lodash = require('lodash.isstring');
+var _isString = require('lodash/isString');
 
-var _lodash2 = _interopRequireDefault(_lodash);
+var _isString2 = _interopRequireDefault(_isString);
 
 var _classnames = require('classnames');
 
@@ -24,7 +24,7 @@ var PanelHeader = _react2.default.createClass({
 
   render: function render() {
     var children = this.props.children;
-    if ((0, _lodash2.default)(children)) {
+    if ((0, _isString2.default)(children)) {
       children = _react2.default.createElement(
         'h3',
         { className: 're-panel__header-heading' },

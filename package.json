@@ -23,13 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.3",
-    "lodash.assign": "^4.0.8",
-    "lodash.filter": "^4.3.0",
-    "lodash.isstring": "^4.0.1",
-    "lodash.map": "^4.3.0",
-    "lodash.omit": "^4.2.1",
-    "lodash.range": "^3.1.4",
-    "lodash.values": "^4.1.0",
+    "lodash": "^4.11.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "tinycolor2": "^1.0.0"

@@ -1,7 +1,18 @@
-"use strict";
+'use strict';
 
-var React = require("react");
-var _assign = require("lodash.assign");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _assign = require('lodash/assign');
+
+var _assign2 = _interopRequireDefault(_assign);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DEFAULT_VIMEO_PARAMS = {
   autopause: 1,
@@ -15,12 +26,12 @@ var DEFAULT_VIMEO_PARAMS = {
   title: 1
 };
 
-var VimeoVideo = React.createClass({
-  displayName: "VimeoVideo",
+var VimeoVideo = _react2.default.createClass({
+  displayName: 'VimeoVideo',
 
 
   getDefaultProps: function getDefaultProps() {
-    return _assign({
+    return (0, _assign2.default)({
       width: 500,
       height: 281,
       frameBorder: 0,
@@ -29,8 +40,8 @@ var VimeoVideo = React.createClass({
   },
 
   propTypes: {
-    src: React.PropTypes.string.isRequired,
-    protocol: React.PropTypes.oneOf(["http", "https"])
+    src: _react2.default.PropTypes.string.isRequired,
+    protocol: _react2.default.PropTypes.oneOf(["http", "https"])
   },
 
   getCleanedSrc: function getCleanedSrc() {
@@ -66,7 +77,7 @@ var VimeoVideo = React.createClass({
   },
 
   render: function render() {
-    return React.createElement("iframe", { width: this.props.width,
+    return _react2.default.createElement('iframe', { width: this.props.width,
       height: this.props.height,
       src: this.getCleanedSrc(),
       frameBorder: this.props.frameBorder,
@@ -74,4 +85,4 @@ var VimeoVideo = React.createClass({
   }
 });
 
-module.exports = VimeoVideo;
+exports.default = VimeoVideo;

@@ -1,5 +1,5 @@
 import React from 'react';
-import _isString from 'lodash.isstring';
+import isString from 'lodash/isString';
 import classNames from 'classnames';
 
 
@@ -7,7 +7,7 @@ var PanelHeader = React.createClass({
 
   render: function() {
     let children = this.props.children;
-    if (_isString(children)) {
+    if (isString(children)) {
       children = (
         <h3 className="re-panel__header-heading">{ children }</h3>
       );

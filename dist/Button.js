@@ -14,9 +14,9 @@ var _LoadingSpinner = require('./LoadingSpinner');
 
 var _LoadingSpinner2 = _interopRequireDefault(_LoadingSpinner);
 
-var _lodash = require('lodash.omit');
+var _omit = require('lodash/omit');
 
-var _lodash2 = _interopRequireDefault(_lodash);
+var _omit2 = _interopRequireDefault(_omit);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34,7 +34,7 @@ var Button = _react2.default.createClass({
       're-btn--block': this.props.block,
       're-btn--processing': this.props.processing
     }, this.props.className);
-    var props = (0, _lodash2.default)(this.props, ['btnStyle', 'block', 'processing']);
+    var props = (0, _omit2.default)(this.props, ['btnStyle', 'block', 'processing']);
     props.type = props.type ? props.type : 'button';
 
     var spinner;

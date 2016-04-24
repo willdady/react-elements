@@ -1,6 +1,14 @@
 "use strict";
 
-var React = require("react");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* The following params are the defaults as documented at
    https://developers.google.com/youtube/player_parameters*/
@@ -30,7 +38,7 @@ var defaultYoutubeParams = {
   theme: null
 };
 
-var YouTubeVideo = React.createClass({
+var YouTubeVideo = _react2.default.createClass({
   displayName: "YouTubeVideo",
 
 
@@ -48,7 +56,7 @@ var YouTubeVideo = React.createClass({
   },
 
   propTypes: {
-    protocol: React.PropTypes.oneOf(["http", "https"])
+    protocol: _react2.default.PropTypes.oneOf(["http", "https"])
   },
 
   getCleanedSrc: function getCleanedSrc() {
@@ -84,7 +92,7 @@ var YouTubeVideo = React.createClass({
   },
 
   render: function render() {
-    return React.createElement("iframe", { width: this.props.width,
+    return _react2.default.createElement("iframe", { width: this.props.width,
       height: this.props.height,
       src: this.getCleanedSrc(),
       frameBorder: this.props.frameBorder,
@@ -92,4 +100,4 @@ var YouTubeVideo = React.createClass({
   }
 });
 
-module.exports = YouTubeVideo;
+exports.default = YouTubeVideo;

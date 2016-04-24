@@ -1,5 +1,5 @@
 import React from 'react';
-import _assign from 'lodash.assign';
+import assign from 'lodash/assign';
 
 
 const DEFAULT_VIMEO_PARAMS = {
@@ -18,7 +18,7 @@ const DEFAULT_VIMEO_PARAMS = {
 var VimeoVideo = React.createClass({
 
   getDefaultProps: function() {
-    return _assign(
+    return assign(
       {
         width: 500,
         height: 281,

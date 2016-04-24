@@ -1,6 +1,5 @@
 import React from 'react';
-import _map from 'lodash.map';
-import _range from 'lodash.range';
+import range from 'lodash/range';
 import classNames from 'classnames';
 
 
@@ -55,16 +54,16 @@ var Pagination = React.createClass({
     if (this.props.totalPages === 1) return null;
 
     let lastPageNumber = this.props.totalPages + 1;
-    let pageNumbers = _range(1, lastPageNumber);
+    let pageNumbers = range(1, lastPageNumber);
     let maxSize = 12;  // Must not be < 12.
     if (this.props.totalPages > maxSize) {
       // Last, Second-last, Third-last or Forth-last page selected
       if (this.props.currentPage >= lastPageNumber - 6) {
-        pageNumbers = _range(lastPageNumber - (maxSize - 2), lastPageNumber);
+        pageNumbers = range(lastPageNumber - (maxSize - 2), lastPageNumber);
         pageNumbers.unshift(1, [2, lastPageNumber - (maxSize - 2) - 1]);
       // First, Second, Third or Forth page selected
       } else if (this.props.currentPage <= 6) {
-        pageNumbers = _range(1, maxSize - 1);
+        pageNumbers = range(1, maxSize - 1);
         pageNumbers.push([maxSize - 1, this.props.totalPages-1], this.props.totalPages);
       // Everything else
       } else {
@@ -84,7 +83,7 @@ var Pagination = React.createClass({
       }
     }
 
-    let items = _map(pageNumbers, (value) => {
+    let items = pageNumbers.map((value) => {
       return (
         <PaginationItem value={value}
                         key={value}

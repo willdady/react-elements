@@ -1,8 +1,22 @@
 "use strict";
 
-var React = require("react");
-var tinycolor = require("tinycolor2");
-var classNames = require("classnames");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _tinycolor = require("tinycolor2");
+
+var _tinycolor2 = _interopRequireDefault(_tinycolor);
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SB_PICKER_WIDTH = 128;
 var SB_PICKER_HEIGHT = 128;
@@ -11,7 +25,7 @@ var SB_PICKER_CURSOR_HEIGHT = 14;
 var H_PICKER_HEIGHT = 128;
 var H_PICKER_CURSOR_HEIGHT = 3;
 
-var TwoStopGradient = React.createClass({
+var TwoStopGradient = _react2.default.createClass({
   displayName: "TwoStopGradient",
 
 
@@ -22,9 +36,9 @@ var TwoStopGradient = React.createClass({
   },
 
   propTypes: {
-    color1: React.PropTypes.string.isRequired,
-    color2: React.PropTypes.string.isRequired,
-    horizontal: React.PropTypes.bool
+    color1: _react2.default.PropTypes.string.isRequired,
+    color2: _react2.default.PropTypes.string.isRequired,
+    horizontal: _react2.default.PropTypes.bool
   },
 
   render: function render() {
@@ -32,13 +46,13 @@ var TwoStopGradient = React.createClass({
     var styles = {
       background: "linear-gradient(" + angle + this.props.color1 + ", " + this.props.color2 + ")"
     };
-    return React.createElement("div", { className: this.props.className,
+    return _react2.default.createElement("div", { className: this.props.className,
       style: styles });
   }
 
 });
 
-var SaturationBrightnessCursor = React.createClass({
+var SaturationBrightnessCursor = _react2.default.createClass({
   displayName: "SaturationBrightnessCursor",
 
 
@@ -52,9 +66,9 @@ var SaturationBrightnessCursor = React.createClass({
   },
 
   propTypes: {
-    position: React.PropTypes.shape({
-      x: React.PropTypes.number,
-      y: React.PropTypes.number
+    position: _react2.default.PropTypes.shape({
+      x: _react2.default.PropTypes.number,
+      y: _react2.default.PropTypes.number
     }).isRequired
   },
 
@@ -64,13 +78,13 @@ var SaturationBrightnessCursor = React.createClass({
       left: this.props.position.x - Math.round(SB_PICKER_CURSOR_WIDTH * 0.5),
       top: this.props.position.y - Math.round(SB_PICKER_CURSOR_HEIGHT * 0.5)
     };
-    return React.createElement("div", { className: "re-color-picker__sb-picker-cursor",
+    return _react2.default.createElement("div", { className: "re-color-picker__sb-picker-cursor",
       style: style });
   }
 
 });
 
-var SaturationBrightnessPicker = React.createClass({
+var SaturationBrightnessPicker = _react2.default.createClass({
   displayName: "SaturationBrightnessPicker",
 
 
@@ -93,10 +107,10 @@ var SaturationBrightnessPicker = React.createClass({
   },
 
   propTypes: {
-    onChange: React.PropTypes.func.isRequired,
-    hue: React.PropTypes.number.isRequired,
-    saturation: React.PropTypes.number,
-    brightness: React.PropTypes.number
+    onChange: _react2.default.PropTypes.func.isRequired,
+    hue: _react2.default.PropTypes.number.isRequired,
+    saturation: _react2.default.PropTypes.number,
+    brightness: _react2.default.PropTypes.number
   },
 
   onMouseDownHandler: function onMouseDownHandler(e) {
@@ -144,34 +158,34 @@ var SaturationBrightnessPicker = React.createClass({
   render: function render() {
     var _this2 = this;
 
-    var className = classNames({
+    var className = (0, _classnames2.default)({
       "re-color-picker__sb-picker": true,
       "re-color-picker__sb-picker--dragging": this.state.mouseDown
     });
 
     var hue = "hsl(" + Math.round(360 * this.props.hue) + ", 100%, 50%)";
 
-    return React.createElement(
+    return _react2.default.createElement(
       "div",
       { className: className,
         ref: function ref(c) {
           return _this2._root = c;
         },
         onMouseDown: this.onMouseDownHandler },
-      React.createElement(TwoStopGradient, { className: "re-color-picker__sb-picker-layer",
+      _react2.default.createElement(TwoStopGradient, { className: "re-color-picker__sb-picker-layer",
         color1: "white",
         color2: hue,
         horizontal: true }),
-      React.createElement(TwoStopGradient, { className: "re-color-picker__sb-picker-layer",
+      _react2.default.createElement(TwoStopGradient, { className: "re-color-picker__sb-picker-layer",
         color1: "rgba(0, 0, 0, 0)",
         color2: "black" }),
-      React.createElement(SaturationBrightnessCursor, { position: this.state.cursorPosition })
+      _react2.default.createElement(SaturationBrightnessCursor, { position: this.state.cursorPosition })
     );
   }
 
 });
 
-var HuePickerCursor = React.createClass({
+var HuePickerCursor = _react2.default.createClass({
   displayName: "HuePickerCursor",
 
 
@@ -190,13 +204,13 @@ var HuePickerCursor = React.createClass({
     var styles = {
       top: y
     };
-    return React.createElement("div", { className: "re-color-picker__h-picker-cursor",
+    return _react2.default.createElement("div", { className: "re-color-picker__h-picker-cursor",
       style: styles });
   }
 
 });
 
-var HuePicker = React.createClass({
+var HuePicker = _react2.default.createClass({
   displayName: "HuePicker",
 
 
@@ -208,8 +222,8 @@ var HuePicker = React.createClass({
   },
 
   propTypes: {
-    hue: React.PropTypes.number.isRequired,
-    onChange: React.PropTypes.func.isRequired
+    hue: _react2.default.PropTypes.number.isRequired,
+    onChange: _react2.default.PropTypes.func.isRequired
   },
 
   onMouseDownHandler: function onMouseDownHandler(e) {
@@ -252,30 +266,30 @@ var HuePicker = React.createClass({
   render: function render() {
     var _this4 = this;
 
-    var className = classNames({
+    var className = (0, _classnames2.default)({
       "re-color-picker__h-picker": true,
       "re-color-picker__h-picker--dragging": this.state.mouseDown
     });
 
-    return React.createElement(
+    return _react2.default.createElement(
       "div",
       { className: className,
         onMouseDown: this.onMouseDownHandler,
         ref: function ref(c) {
           return _this4._root = c;
         } },
-      React.createElement(HuePickerCursor, { position: this.state.cursorPosition })
+      _react2.default.createElement(HuePickerCursor, { position: this.state.cursorPosition })
     );
   }
 
 });
 
-var ColorPicker = React.createClass({
+var ColorPicker = _react2.default.createClass({
   displayName: "ColorPicker",
 
 
   getInitialState: function getInitialState() {
-    var hsv = tinycolor(this.props.color).toHsv();
+    var hsv = (0, _tinycolor2.default)(this.props.color).toHsv();
     return {
       hue: hsv.h / 360,
       saturation: hsv.s,
@@ -284,8 +298,8 @@ var ColorPicker = React.createClass({
   },
 
   propTypes: {
-    color: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.object]),
-    onChange: React.PropTypes.func.isRequired
+    color: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.object]),
+    onChange: _react2.default.PropTypes.func.isRequired
   },
 
   saturationBrightnessChangeHandler: function saturationBrightnessChangeHandler(saturation, brightness) {
@@ -310,7 +324,7 @@ var ColorPicker = React.createClass({
   },
 
   _update: function _update() {
-    var color = tinycolor({
+    var color = (0, _tinycolor2.default)({
       h: Math.round(360 * this.state.hue),
       s: this.state.saturation,
       v: this.state.brightness
@@ -319,19 +333,19 @@ var ColorPicker = React.createClass({
   },
 
   render: function render() {
-    var className = classNames('re-color-picker', this.props.className);
-    return React.createElement(
+    var className = (0, _classnames2.default)('re-color-picker', this.props.className);
+    return _react2.default.createElement(
       "div",
       { className: className },
-      React.createElement(SaturationBrightnessPicker, { onChange: this.saturationBrightnessChangeHandler,
+      _react2.default.createElement(SaturationBrightnessPicker, { onChange: this.saturationBrightnessChangeHandler,
         hue: this.state.hue,
         saturation: this.state.saturation,
         brightness: this.state.brightness }),
-      React.createElement(HuePicker, { onChange: this.hueChangeHandler,
+      _react2.default.createElement(HuePicker, { onChange: this.hueChangeHandler,
         hue: this.state.hue })
     );
   }
 
 });
 
-module.exports = ColorPicker;
+exports.default = ColorPicker;

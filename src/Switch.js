@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import _values from 'lodash.values';
+import values from 'lodash/values';
 
 
 const SIZES = {
@@ -15,7 +15,7 @@ var Switch = React.createClass({
   propTypes: {
     name: React.PropTypes.string,
     value: React.PropTypes.bool.isRequired,
-    size: React.PropTypes.oneOf(_values(SIZES)),
+    size: React.PropTypes.oneOf(values(SIZES)),
     onClick: React.PropTypes.func
   },
 

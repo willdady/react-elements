@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import LoadingSpinner from './LoadingSpinner';
-import _omit from 'lodash.omit';
+import omit from 'lodash/omit';
 
 
 var Button = React.createClass({
@@ -20,7 +20,7 @@ var Button = React.createClass({
       },
       this.props.className
     );
-    var props = _omit(this.props, ['btnStyle', 'block', 'processing']);
+    var props = omit(this.props, ['btnStyle', 'block', 'processing']);
     props.type = props.type ? props.type : 'button';
 
     var spinner;

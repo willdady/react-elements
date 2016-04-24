@@ -8,13 +8,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _lodash = require('lodash.map');
+var _range = require('lodash/range');
 
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _lodash3 = require('lodash.range');
-
-var _lodash4 = _interopRequireDefault(_lodash3);
+var _range2 = _interopRequireDefault(_range);
 
 var _classnames = require('classnames');
 
@@ -76,16 +72,16 @@ var Pagination = _react2.default.createClass({
     if (this.props.totalPages === 1) return null;
 
     var lastPageNumber = this.props.totalPages + 1;
-    var pageNumbers = (0, _lodash4.default)(1, lastPageNumber);
+    var pageNumbers = (0, _range2.default)(1, lastPageNumber);
     var maxSize = 12; // Must not be < 12.
     if (this.props.totalPages > maxSize) {
       // Last, Second-last, Third-last or Forth-last page selected
       if (this.props.currentPage >= lastPageNumber - 6) {
-        pageNumbers = (0, _lodash4.default)(lastPageNumber - (maxSize - 2), lastPageNumber);
+        pageNumbers = (0, _range2.default)(lastPageNumber - (maxSize - 2), lastPageNumber);
         pageNumbers.unshift(1, [2, lastPageNumber - (maxSize - 2) - 1]);
         // First, Second, Third or Forth page selected
       } else if (this.props.currentPage <= 6) {
-          pageNumbers = (0, _lodash4.default)(1, maxSize - 1);
+          pageNumbers = (0, _range2.default)(1, maxSize - 1);
           pageNumbers.push([maxSize - 1, this.props.totalPages - 1], this.props.totalPages);
           // Everything else
         } else {
@@ -93,18 +89,21 @@ var Pagination = _react2.default.createClass({
           }
     }
 
-    var items = (0, _lodash2.default)(pageNumbers, function (value) {
+    var items = pageNumbers.map(function (value) {
       return _react2.default.createElement(PaginationItem, { value: value,
+        key: value,
         active: _this.props.currentPage === value,
         onClick: _this.props.onClick });
     });
 
     if (this.props.onPrevious && this.props.currentPage !== 1) {
       items.unshift(_react2.default.createElement(PaginationItem, { value: '«',
+        key: '«',
         onClick: this.onPrevious }));
     }
     if (this.props.onNext && this.props.currentPage !== this.props.totalPages) {
       items.push(_react2.default.createElement(PaginationItem, { value: '»',
+        key: '»',
         onClick: this.onNext }));
     }
 
