@@ -10,6 +10,7 @@ A library of reusable React components consisting of the following:
 <Pagination />
 <Panel />
 <ProgressBar />
+<Tabs />
 ```
 
 See demo.html for examples.

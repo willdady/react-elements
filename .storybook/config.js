@@ -6,6 +6,7 @@ import '../styles/Button.scss';
 import '../styles/Pagination.scss';
 import '../styles/Panel.scss';
 import '../styles/ProgressBar.scss';
+import '../styles/Tabs.scss';
 
 function loadStories() {
   require('../src/stories/Switch');
@@ -17,6 +18,7 @@ function loadStories() {
   require('../src/stories/Pagination');
   require('../src/stories/Panel');
   require('../src/stories/ProgressBar');
+  require('../src/stories/Tabs');
 }
 
 configure(loadStories, module);
