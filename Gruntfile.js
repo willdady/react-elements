@@ -2,7 +2,6 @@
 module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
-  var webpackConfig = require('./webpack.config');
 
   grunt.initConfig({
 
@@ -67,11 +66,8 @@ module.exports = function(grunt) {
       }
     },
 
-    webpack: {
-      app: webpackConfig
-    }
-
   });
 
   grunt.registerTask('default', ['clean', 'babel', 'sass:dist', 'postcss', 'copy']);
+  grunt.registerTask('build', ['default']);
 };
