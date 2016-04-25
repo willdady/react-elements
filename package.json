@@ -14,10 +14,15 @@
   "keywords": [
     "react",
     "react-component",
-    "color-picker",
+    "color picker",
     "video",
-    "tags-input",
-    "input"
+    "input",
+    "loading spinner",
+    "pagination",
+    "panel",
+    "progress bar",
+    "switch",
+    "tabs"
   ],
   "author": "Will Dady",
   "license": "MIT",
