@@ -22,6 +22,21 @@ storiesOf('Button', module)
   .add('block', () => (
     <Button block>Click me</Button>
   ))
-  .add('processing', () => (
-    <Button processing>Click me</Button>
-  ));
+  .add('default - processing', () => (
+    <Button loadingSpinnerColor="#999"
+            processing>Click me</Button>
+  ))
+  .add('primary - processing', () => (
+    <Button btnStyle="primary"
+            processing>Click me</Button>
+  ))
+  .add('danger - processing', () => (
+    <Button btnStyle="danger"
+            processing>Click me</Button>
+  ))
+  .add('block - processing', () => (
+    <Button block
+            loadingSpinnerColor="#999"
+            processing>Click me</Button>
+  ))
+  ;

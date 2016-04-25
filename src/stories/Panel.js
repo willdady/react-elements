@@ -21,4 +21,7 @@ storiesOf('Panel', module)
   .add('with footer', () => (
     <Panel footer="I'm a footer">{TEXT}</Panel>
   ))
-  ;
+  .add('with header and footer', () => (
+    <Panel header="I'm a header"
+           footer="I'm a footer">{TEXT}</Panel>
+  ));

@@ -24,6 +24,14 @@ var Button = _react2.default.createClass({
   displayName: 'Button',
 
 
+  propTypes: {
+    btnStyle: _react2.default.PropTypes.string,
+    block: _react2.default.PropTypes.bool,
+    processing: _react2.default.PropTypes.bool,
+    loadingSpinnerColor: _react2.default.PropTypes.string,
+    loadingSpinnerBackgroundColor: _react2.default.PropTypes.string
+  },
+
   render: function render() {
     var btnStyle = this.props.btnStyle;
     var className = (0, _classnames2.default)('re-btn', {
@@ -39,7 +47,10 @@ var Button = _react2.default.createClass({
 
     var spinner = void 0;
     if (this.props.processing) {
-      spinner = _react2.default.createElement(_LoadingSpinner2.default, { className: 're-btn__spinner', mini: true, white: true });
+      spinner = _react2.default.createElement(_LoadingSpinner2.default, { className: 're-btn__spinner',
+        color: this.props.loadingSpinnerColor || '#fff',
+        backgroundColor: this.props.loadingSpinnerBackgroundColor,
+        mini: true });
     }
 
     return _react2.default.createElement(

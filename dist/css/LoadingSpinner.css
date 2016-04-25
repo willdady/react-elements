@@ -1,6 +1,6 @@
 .re-loading-spinner {
-  -webkit-animation-name: spinner;
-          animation-name: spinner;
+  -webkit-animation-name: re-spinner-animation;
+          animation-name: re-spinner-animation;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-timing-function: linear;
@@ -9,7 +9,7 @@
           animation-iteration-count: infinite;
   box-sizing: border-box;
   border-bottom-color: rgba(204, 204, 204, 0.2);
-  border-left-color: #5bc0de;
+  border-left-color: #337ab7;
   border-right-color: rgba(204, 204, 204, 0.2);
   border-top-color: rgba(204, 204, 204, 0.2);
   border-width: 16px;
@@ -41,7 +41,7 @@
     -webkit-animation-duration: .5s;
             animation-duration: .5s; }
 
-@-webkit-keyframes spinner {
+@-webkit-keyframes re-spinner-animation {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg); }
@@ -49,7 +49,7 @@
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
-@keyframes spinner {
+@keyframes re-spinner-animation {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg); }

@@ -1,20 +1,20 @@
 .re-loading-spinner {
   $re-loading-spinner-size: 80px !default;
   $re-loading-spinner-border-width: $re-loading-spinner-size * .2 !default;
-  $re-loading-spinner-bg-color: rgba(#ccc, .2) !default;
-  $re-loading-spinner-fg-color: #5bc0de !default;
+  $re-loading-spinner-background-color: rgba(#ccc, .2) !default;
+  $re-loading-spinner-foreground-color: #337ab7 !default;
 
-  animation-name: spinner;
+  animation-name: re-spinner-animation;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 
   box-sizing: border-box;
 
-  border-bottom-color: $re-loading-spinner-bg-color;
-  border-left-color: $re-loading-spinner-fg-color;
-  border-right-color: $re-loading-spinner-bg-color;
-  border-top-color: $re-loading-spinner-bg-color;
+  border-bottom-color: $re-loading-spinner-background-color;
+  border-left-color: $re-loading-spinner-foreground-color;
+  border-right-color: $re-loading-spinner-background-color;
+  border-top-color: $re-loading-spinner-background-color;
   border-width: $re-loading-spinner-border-width;
   border-style: solid;
 
@@ -64,7 +64,7 @@
   }
 }
 
-@keyframes spinner {
+@keyframes re-spinner-animation {
   0% {
     transform: rotate(0deg);
   }

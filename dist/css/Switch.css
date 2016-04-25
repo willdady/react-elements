@@ -3,9 +3,9 @@
   width: 51px;
   height: 34px;
   border-radius: 25.5px;
-  background: #999;
+  background: #ccc;
   position: relative;
-  border-color: #999;
+  border-color: #ccc;
   border-width: 1px;
   border-style: solid;
   transition: background-color 80ms ease-in-out, border-color 80ms ease-in-out;
@@ -71,8 +71,8 @@
     opacity: 0;
     cursor: pointer; }
   .re-switch--on {
-    border-color: #0f0;
-    background-color: #0f0; }
+    border-color: #9dda83;
+    background-color: #9dda83; }
     .re-switch--on .re-switch__switch {
       left: 17px; }
 

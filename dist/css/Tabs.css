@@ -1,7 +1,8 @@
 .re-tabs {
   list-style: none;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: Arial, serif; }
   .re-tabs--block .re-tabs__tab {
     display: block;
     border-radius: 0;
@@ -27,17 +28,16 @@
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-    font-family: Arial, serif;
     background: #fff; }
     .re-tabs__tab:first-child {
       margin-left: 0; }
     .re-tabs__tab:last-child {
       margin-right: 0; }
     .re-tabs__tab:hover {
-      background: #eee; }
+      background: #f7f7f7; }
   .re-tabs__tab--selected {
-    background: #fd1555; }
+    background: #e7e7e7; }
     .re-tabs__tab--selected:hover {
-      background: #f60245; }
+      background: #e7e7e7; }
 
 /*# sourceMappingURL=Tabs.css.map */

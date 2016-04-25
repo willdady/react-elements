@@ -6,6 +6,14 @@ import omit from 'lodash/omit';
 
 var Button = React.createClass({
 
+  propTypes: {
+    btnStyle: React.PropTypes.string,
+    block: React.PropTypes.bool,
+    processing: React.PropTypes.bool,
+    loadingSpinnerColor: React.PropTypes.string,
+    loadingSpinnerBackgroundColor: React.PropTypes.string,
+  },
+
   render: function() {
     let btnStyle = this.props.btnStyle;
     let className = classNames(
@@ -26,7 +34,10 @@ var Button = React.createClass({
     let spinner;
     if (this.props.processing) {
       spinner = (
-        <LoadingSpinner className="re-btn__spinner" mini white />
+        <LoadingSpinner className="re-btn__spinner"
+                        color={this.props.loadingSpinnerColor || '#fff'}
+                        backgroundColor={this.props.loadingSpinnerBackgroundColor}
+                        mini />
       );
     }
 

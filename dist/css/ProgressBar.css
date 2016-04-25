@@ -4,7 +4,7 @@
   height: 10px;
   overflow: hidden; }
   .re-progress-bar__bar {
-    background: #fd1555;
+    background: #337ab7;
     height: 100%;
     transition: width 350ms ease-out; }
   .re-progress-bar--complete .re-progress-bar__bar {
