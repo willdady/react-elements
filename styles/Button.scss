@@ -1,0 +1,70 @@
+@import 'mixins';
+
+.re-btn {
+  $re-btn-padding: 6px 12px !default;
+
+  $re-btn-default-bg: #f7f7f7 !default;
+  $re-btn-default-color: #444 !default;
+
+  $re-btn-primary-bg: #337ab7 !default;
+  $re-btn-primary-color: #fff !default;
+
+  $re-btn-danger-bg: #d9534f !default;
+  $re-btn-danger-color: #fff !default;
+
+  $re-btn-link-bg: transparent !default;
+  $re-btn-link-color: #000 !default;
+
+  $re-btn-border-radius: 4px !default;
+
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: $re-btn-border-radius;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  margin-bottom: 0;
+  padding: $re-btn-padding;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &__spinner {
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    position: absolute !important;
+    top: 50%;
+  }
+
+  &--default {
+    @include button-background($re-btn-default-bg, $re-btn-default-color);
+  }
+
+  &--primary {
+    @include button-background($re-btn-primary-bg, $re-btn-primary-color);
+  }
+
+  &--danger {
+    @include button-background($re-btn-danger-bg, $re-btn-danger-color);
+  }
+
+  &--link {
+    @include button-background($re-btn-link-bg, $re-btn-link-color);
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  &--processing &__content {
+    visibility: hidden;
+  }
+
+}

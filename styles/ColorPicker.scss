@@ -1,0 +1,81 @@
+.re-color-picker {
+  // scss-lint:disable SpaceAfterComma
+  $re-color-picker-sb-width: 128px !default;
+  $re-color-picker-sb-height: $re-color-picker-sb-width !default;
+  $re-color-picker-sb-cursor-width: 14px !default;
+  $re-color-picker-sb-cursor-height: $re-color-picker-sb-cursor-width !default;
+  $re-color-picker-h-height: 128px !default;
+  $re-color-picker-h-width: 26px !default;
+  $re-color-picker-h-cursor-height: 3px !default;
+
+  &__sb-picker {
+    display: inline-block;
+    position: relative;
+    width: $re-color-picker-sb-width;
+    height: $re-color-picker-sb-height;
+    overflow: hidden;
+    margin-right: 3px;
+  }
+
+  &__sb-picker--dragging {
+    cursor: pointer;
+  }
+
+  &__sb-picker-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $re-color-picker-sb-width;
+    height: $re-color-picker-sb-height;
+  }
+
+
+  &__sb-picker-cursor {
+    position: absolute;
+    width: $re-color-picker-sb-cursor-width;
+    height: $re-color-picker-sb-cursor-height;
+    background: transparent;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-shadow: 0 0 0 1px #000;
+  }
+
+  &__h-picker {
+    position: relative;
+    display: inline-block;
+    width: $re-color-picker-h-width;
+    height: $re-color-picker-h-height;
+    background: linear-gradient(
+      hsl(0, 100%, 50%) 0%,
+      hsl(35, 100%, 50%) 10%,
+      hsl(71, 100%, 50%) 20%,
+      hsl(107, 100%, 50%) 30%,
+      hsl(143, 100%, 50%) 40%,
+      hsl(179, 100%, 50%) 50%,
+      hsl(215, 100%, 50%) 60%,
+      hsl(252, 100%, 50%) 70%,
+      hsl(288, 100%, 50%) 80%,
+      hsl(324, 100%, 50%) 90%,
+      hsl(359, 100%, 50%) 100%
+    );
+  }
+
+  &__h-picker--dragging {
+    cursor: pointer;
+  }
+
+  &__h-picker-cursor {
+    width: $re-color-picker-h-width;
+    height: $re-color-picker-h-cursor-height;
+    border: 1px solid white;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+}

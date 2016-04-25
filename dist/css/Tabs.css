@@ -1,0 +1,43 @@
+.re-tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, serif; }
+  .re-tabs--block .re-tabs__tab {
+    display: block;
+    border-radius: 0;
+    margin: 0; }
+    .re-tabs--block .re-tabs__tab:first-child {
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px; }
+    .re-tabs--block .re-tabs__tab:last-child {
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-bottom: 1px solid #eee; }
+  .re-tabs__tab {
+    display: inline-block;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-top: 1px solid #eee;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    cursor: pointer;
+    margin: 0 2px;
+    padding: 0.5em 1em;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background: #fff; }
+    .re-tabs__tab:first-child {
+      margin-left: 0; }
+    .re-tabs__tab:last-child {
+      margin-right: 0; }
+    .re-tabs__tab:hover {
+      background: #f7f7f7; }
+  .re-tabs__tab--selected {
+    background: #e7e7e7; }
+    .re-tabs__tab--selected:hover {
+      background: #e7e7e7; }
+
+/*# sourceMappingURL=Tabs.css.map */

@@ -1,33 +1,46 @@
+# React Elements
+
 A library of reusable React components consisting of the following:
 
 ```
-<Switch />
+<Button />
 <ColorPicker />
-<FloatingLabelInput />
-<MediaObject />
-<TagsInput />
+<LoadingSpinner />
+<Pagination />
+<Panel />
+<ProgressBar />
+<Switch />
+<Tabs />
 <VimeoVideo />
 <YoutubeVideo />
 ```
 
-See demo.html for examples.
-
-##Installation
+## Installation
 
 ```
 npm install --save react-elements
 ```
 
-##Usage
+## Usage
 
-Components are built to work with Browserify/Node. To include a component in your project simply ```require``` the component.
+To include a component in your project simply ```require``` the component.
 
 ```javascript
-var MediaObject = require("react-elements/MediaObject");
+import Switch from 'react-elements/Switch';
 ```
 
-###Component stylesheets
+### Component stylesheets
 
-Some components have an accompanying stylesheet. When using a component be sure to include the component's stylesheet in your build otherwise the component will fail to display correctly.
+Most components have an accompanying stylesheet. When using a component be sure
+to include the component's stylesheet in your build otherwise the component
+will fail to render correctly.
 
-Stylesheets are written using BEM syntax and all classes are prefixed with ```rui-```. You can either include the .less or .css file in your project, however the .less files do NOT include vendor prefixes. You will need to run the resulting CSS through something like [grunt-autoprefixer](https://github.com/nDmitry/grunt-autoprefixer) if including the less files in your build. The precompiled .css files have vendor prefixes already applied so are often a better choice.
+Stylesheets are written using [BEM syntax](https://css-tricks.com/bem-101/) and all classes are prefixed
+with ```re-```.
+
+Pre-built CSS files can be found in `dist/css`. Source SCSS can be found in
+the `styles` directory in the project's root.
+
+### Storybook
+
+This project uses the excellent [React Storybook](https://github.com/kadirahq/react-storybook) dev tool. From the project root first run `npm install` then launch storybook with `npm run storybook`.

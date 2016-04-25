@@ -1,0 +1,66 @@
+.re-tabs {
+  $re-tab-border-color: #eee !default;
+  $re-tab-border-radius: 4px !default;
+  $re-tab-background: #fff !default;
+  $re-tab-background-selected: #e7e7e7 !default;
+  $re-tab-background-hover: #f7f7f7 !default;
+  $re-tab-padding: .5em 1em !default;
+  $re-tab-margin: 0 2px !default;
+  $re-tab-font-family: Arial, serif !default;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: $re-tab-font-family;
+
+  &--block &__tab {
+    display: block;
+    border-radius: 0;
+    margin: 0;
+
+    &:first-child {
+      border-top-right-radius: $re-tab-border-radius;
+      border-top-left-radius: $re-tab-border-radius;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: $re-tab-border-radius;
+      border-bottom-left-radius: $re-tab-border-radius;
+      border-bottom: 1px solid $re-tab-border-color;
+    }
+  }
+
+  &__tab {
+    display: inline-block;
+    border-left: 1px solid $re-tab-border-color;
+    border-right: 1px solid $re-tab-border-color;
+    border-top: 1px solid $re-tab-border-color;
+    border-top-right-radius: $re-tab-border-radius;
+    border-top-left-radius: $re-tab-border-radius;
+    cursor: pointer;
+    margin: $re-tab-margin;
+    padding: $re-tab-padding;
+    user-select: none;
+    background: $re-tab-background;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background: $re-tab-background-hover;
+    }
+  }
+
+  &__tab--selected {
+    background: $re-tab-background-selected;
+
+    &:hover {
+      background: $re-tab-background-selected;
+    }
+  }
+}

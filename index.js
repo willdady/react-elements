@@ -1,9 +1,12 @@
 module.exports = {
-  Switch: require("./Switch"),
+  Button: require("./Button"),
   ColorPicker: require("./ColorPicker"),
-  MediaObject: require("./MediaObject"),
-  TagsInput: require("./TagsInput"),
-  FloatingLabelInput: require("./FloatingLabelInput"),
+  LoadingSpinner: require("./LoadingSpinner"),
+  Pagination: require("./Pagination"),
+  Panel: require("./Panel"),
+  ProgressBar: require("./ProgressBar"),
+  Switch: require("./Switch"),
+  Tabs: require("./Tabs"),
   YoutubeVideo: require("./YoutubeVideo"),
-  VimeoVideo: require("./VimeoVideo")
+  VimeoVideo: require("./VimeoVideo"),
 };

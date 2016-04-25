@@ -1,0 +1,72 @@
+@import 'mixins';
+
+.re-switch {
+  $re-switch-border-width: 1px !default;
+  $re-switch-off-color: #ccc !default;
+  $re-switch-on-color: #9dda83 !default;
+  // Default
+  $re-switch-height: 34px !default;
+  $re-switch-width: $re-switch-height * 1.5 !default;
+  // Extra small
+  $re-switch-height-xs: 20px !default;
+  $re-switch-width-xs: $re-switch-height-xs * 1.5 !default;
+  // Small
+  $re-switch-height-sm: 30px !default;
+  $re-switch-width-sm: $re-switch-height-sm * 1.5 !default;
+  // Large
+  $re-switch-height-lg: 46px !default;
+  $re-switch-width-lg: $re-switch-height-lg * 1.5 !default;
+
+  @include re-switch('xs', $re-switch-width-xs, $re-switch-height-xs, $re-switch-border-width);
+  @include re-switch('sm', $re-switch-width-sm, $re-switch-height-sm, $re-switch-border-width);
+  @include re-switch('lg', $re-switch-width-lg, $re-switch-height-lg, $re-switch-border-width);
+
+  display: inline-block;
+  width: $re-switch-width;
+  height: $re-switch-height;
+  border-radius: $re-switch-width * .5;
+  background: $re-switch-off-color;
+  position: relative;
+  border-color: $re-switch-off-color;
+  border-width: $re-switch-border-width;
+  border-style: solid;
+  transition: background-color 80ms ease-in-out, border-color 80ms ease-in-out;
+  box-sizing: border-box;
+
+  &__switch {
+    display: block;
+    width: $re-switch-height - ($re-switch-border-width * 2);
+    height: $re-switch-height - ($re-switch-border-width * 2);
+    border-radius: 50%;
+    background: #fff;
+    z-index: 1;
+    position: relative;
+    left: 0;
+    transition: left 80ms ease-in-out;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    box-sizing: border-box;
+  }
+
+  &__checkbox {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 2;
+    width: $re-switch-width;
+    height: $re-switch-height;
+    top: -$re-switch-border-width;
+    left: -$re-switch-border-width;
+    box-sizing: border-box;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &--on {
+    border-color: $re-switch-on-color;
+    background-color: $re-switch-on-color;
+
+    .re-switch__switch {
+      left: $re-switch-width - $re-switch-height;
+    }
+  }
+}

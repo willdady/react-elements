@@ -1,0 +1,48 @@
+.re-panel {
+  $re-panel-background: #fff !default;
+  $re-panel-border: 1px solid #eee !default;
+  $re-panel-padding: 15px !default;
+  $re-panel-border-radius: 4px !default;
+  $re-panel-header-background: #e7e7e7 !default;
+  $re-panel-footer-background: #e7e7e7 !default;
+  $re-panel-font-family: Arial, serif !default;
+  $re-panel-margin-bottom: 20px !default;
+
+  background: $re-panel-background;
+  border: $re-panel-border;
+  border-radius: $re-panel-border-radius;
+  margin-bottom: $re-panel-margin-bottom;
+  font-family: $re-panel-font-family;
+
+  &__header {
+    padding: $re-panel-padding;
+    border-top-left-radius: $re-panel-border-radius;
+    border-top-right-radius: $re-panel-border-radius;
+    background: $re-panel-header-background;
+  }
+
+  &__header-heading {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__content {
+    padding: $re-panel-padding;
+
+    p {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__footer {
+    padding: $re-panel-padding;
+    border-bottom-left-radius: $re-panel-border-radius;
+    border-bottom-right-radius: $re-panel-border-radius;
+    background: $re-panel-footer-background;
+  }
+
+}

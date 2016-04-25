@@ -1,0 +1,17 @@
+{
+    "ecmaFeatures": {
+        "arrowFunctions": true,
+        "blockBindings": true,
+        "forOf": true,
+        "jsx": true,
+        "modules": true,
+        "classes": true,
+        "templateStrings": true,
+        "defaultParams": true,
+        "destructuring": true,
+        "spread": true,
+    },
+    "rules": {
+        "semi": 2
+    }
+}

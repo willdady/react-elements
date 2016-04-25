@@ -1,0 +1,21 @@
+linters:
+
+  SelectorFormat:
+    enabled: true
+    convention: hyphenated_BEM
+
+  Indentation:
+    enabled: true
+    allow_non_nested_indentation: true
+
+  NameFormat:
+    enabled: false
+
+  PropertySortOrder:
+    enabled: false
+
+  ColorVariable:
+    enabled: false
+
+  ImportantRule:
+    enabled: false

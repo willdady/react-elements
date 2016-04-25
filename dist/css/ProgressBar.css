@@ -1,0 +1,14 @@
+.re-progress-bar {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  height: 10px;
+  overflow: hidden; }
+  .re-progress-bar__bar {
+    background: #337ab7;
+    height: 100%;
+    transition: width 350ms ease-out; }
+  .re-progress-bar--complete .re-progress-bar__bar {
+    background: #9dda83;
+    transition: none; }
+
+/*# sourceMappingURL=ProgressBar.css.map */

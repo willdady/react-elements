@@ -1,0 +1,24 @@
+.re-pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+  .re-pagination__item {
+    display: inline-block;
+    margin: 0 5px 0 0; }
+    .re-pagination__item:last-child {
+      margin-right: 0; }
+  .re-pagination__item-link {
+    background: #fff;
+    border: 1px solid #efefef;
+    color: #999;
+    display: block;
+    padding: 4px 8px;
+    font-family: Arial, serif;
+    text-decoration: none;
+    font-size: 14px; }
+  .re-pagination__item--active .re-pagination__item-link {
+    background: #337ab7;
+    color: #fff; }
+
+/*# sourceMappingURL=Pagination.css.map */
