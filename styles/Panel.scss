@@ -3,8 +3,10 @@
   $re-panel-border: 1px solid #eee !default;
   $re-panel-padding: 15px !default;
   $re-panel-border-radius: 4px !default;
+  $re-panel-header-color: inherit !default;
   $re-panel-header-background: #e7e7e7 !default;
   $re-panel-footer-background: #e7e7e7 !default;
+  $re-panel-footer-color: inherit !default;
   $re-panel-font-family: Arial, serif !default;
   $re-panel-margin-bottom: 20px !default;
 
@@ -15,6 +17,7 @@
   font-family: $re-panel-font-family;
 
   &__header {
+    color: $re-panel-header-color;
     padding: $re-panel-padding;
     border-top-left-radius: $re-panel-border-radius;
     border-top-right-radius: $re-panel-border-radius;
@@ -39,6 +42,7 @@
   }
 
   &__footer {
+    color: $re-panel-footer-color;
     padding: $re-panel-padding;
     border-bottom-left-radius: $re-panel-border-radius;
     border-bottom-right-radius: $re-panel-border-radius;
