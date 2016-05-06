@@ -3,7 +3,6 @@
   $re-loading-spinner-border-width: $re-loading-spinner-size * .2 !default;
   $re-loading-spinner-background-color: rgba(#ccc, .2) !default;
   $re-loading-spinner-foreground-color: #337ab7 !default;
-  $re-loading-spinner-position: static !default;
 
   animation-name: re-spinner-animation;
   animation-duration: 1s;
@@ -20,7 +19,6 @@
   border-style: solid;
 
   font-size: 10px;
-  position: $re-loading-spinner-position;
   text-indent: -9999em;
   transform: translateZ(0);
   overflow: hidden;
