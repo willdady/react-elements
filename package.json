@@ -1,6 +1,6 @@
 {
   "name": "react-elements",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A library of reusable React components.",
   "main": "index.js",
   "homepage": "https://github.com/willdady/react-elements",
