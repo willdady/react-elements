@@ -40,8 +40,11 @@ var VimeoVideo = _react2.default.createClass({
   },
 
   propTypes: {
-    src: _react2.default.PropTypes.string.isRequired,
-    protocol: _react2.default.PropTypes.oneOf(['http', 'https'])
+    src: _react.PropTypes.string.isRequired,
+    width: _react.PropTypes.number,
+    height: _react.PropTypes.number,
+    frameBorder: _react.PropTypes.number,
+    protocol: _react.PropTypes.oneOf(['http', 'https'])
   },
 
   getCleanedSrc: function getCleanedSrc() {
@@ -64,8 +67,7 @@ var VimeoVideo = _react2.default.createClass({
     }
     if (!vidID) throw 'Unable to extract Video ID from URL.';
     // Build URL parameters
-    var params = '',
-        val;
+    var params = '';
     for (var k in DEFAULT_VIMEO_PARAMS) {
       if (this.props[k] !== DEFAULT_VIMEO_PARAMS[k]) {
         params += '&' + k + '=' + String(this.props[k]);

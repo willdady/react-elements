@@ -56,7 +56,11 @@ var YouTubeVideo = _react2.default.createClass({
   },
 
   propTypes: {
-    protocol: _react2.default.PropTypes.oneOf(['http', 'https'])
+    src: _react.PropTypes.string.isRequired,
+    width: _react.PropTypes.number,
+    height: _react.PropTypes.number,
+    frameBorder: _react.PropTypes.number,
+    protocol: _react.PropTypes.oneOf(['http', 'https'])
   },
 
   getCleanedSrc: function getCleanedSrc() {

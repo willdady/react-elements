@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import assign from 'lodash/assign';
 
 
@@ -30,8 +30,11 @@ var VimeoVideo = React.createClass({
   },
 
   propTypes: {
-    src: React.PropTypes.string.isRequired,
-    protocol: React.PropTypes.oneOf(['http', 'https'])
+    src: PropTypes.string.isRequired,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    frameBorder: PropTypes.number,
+    protocol: PropTypes.oneOf(['http', 'https'])
   },
 
   getCleanedSrc: function() {
@@ -54,7 +57,7 @@ var VimeoVideo = React.createClass({
     }
     if (!vidID) throw 'Unable to extract Video ID from URL.';
    // Build URL parameters
-    var params = '', val;
+    var params = '';
     for (var k in DEFAULT_VIMEO_PARAMS) {
       if (this.props[k] !== DEFAULT_VIMEO_PARAMS[k]) {
         params += '&' + k + '=' + String(this.props[k]);
@@ -75,5 +78,6 @@ var VimeoVideo = React.createClass({
     );
   }
 });
+
 
 export default VimeoVideo;

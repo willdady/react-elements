@@ -2,7 +2,8 @@
 * Renamed React component file extensions from .js to .jsx.
 * Updated libraries.
 * Code linting.
-* Updated README
+* Updated README.
+* Updated/Added component PropTypes.
 
 ## v1.0.4
 * Removed css position entirely from LoadingSpinner.

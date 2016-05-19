@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import assign from 'lodash/assign';
+
 
 /* The following params are the defaults as documented at
    https://developers.google.com/youtube/player_parameters*/
@@ -29,6 +30,7 @@ const DEFAULT_YOUTUBE_PARAMS = {
   theme: null
 };
 
+
 var YouTubeVideo = React.createClass({
 
   getDefaultProps: function() {
@@ -45,7 +47,11 @@ var YouTubeVideo = React.createClass({
   },
 
   propTypes: {
-    protocol: React.PropTypes.oneOf(['http', 'https'])
+    src: PropTypes.string.isRequired,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    frameBorder: PropTypes.number,
+    protocol: PropTypes.oneOf(['http', 'https'])
   },
 
   getCleanedSrc: function() {
@@ -87,5 +93,6 @@ var YouTubeVideo = React.createClass({
     );
   }
 });
+
 
 export default YouTubeVideo;

@@ -29,10 +29,10 @@ var Switch = _react2.default.createClass({
 
 
   propTypes: {
-    name: _react2.default.PropTypes.string,
-    value: _react2.default.PropTypes.bool.isRequired,
-    size: _react2.default.PropTypes.oneOf((0, _values2.default)(SIZES)),
-    onClick: _react2.default.PropTypes.func
+    name: _react.PropTypes.string,
+    value: _react.PropTypes.bool.isRequired,
+    size: _react.PropTypes.oneOf((0, _values2.default)(SIZES)),
+    onClick: _react.PropTypes.func
   },
 
   onClick: function onClick() {

@@ -19,8 +19,9 @@ var Tab = _react2.default.createClass({
 
 
   propTypes: {
-    tabIndex: _react2.default.PropTypes.number,
-    onClick: _react2.default.PropTypes.func.isRequired
+    tabIndex: _react.PropTypes.number,
+    selected: _react.PropTypes.bool,
+    onClick: _react.PropTypes.func.isRequired
   },
 
   onClick: function onClick() {
@@ -46,10 +47,10 @@ var Tabs = _react2.default.createClass({
 
 
   propTypes: {
-    initialIndex: _react2.default.PropTypes.number,
-    block: _react2.default.PropTypes.bool,
-    onChange: _react2.default.PropTypes.func.isRequired,
-    children: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.element).isRequired
+    initialIndex: _react.PropTypes.number,
+    block: _react.PropTypes.bool,
+    onChange: _react.PropTypes.func.isRequired,
+    children: _react.PropTypes.arrayOf(_react.PropTypes.element).isRequired
   },
 
   getInitialState: function getInitialState() {

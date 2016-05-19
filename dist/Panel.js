@@ -58,6 +58,11 @@ var Panel = _react2.default.createClass({
   displayName: 'Panel',
 
 
+  propTypes: {
+    header: _react.PropTypes.element,
+    footer: _react.PropTypes.element
+  },
+
   render: function render() {
     var className = (0, _classnames2.default)('re-panel', this.props.className);
 

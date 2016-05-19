@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import LoadingSpinner from './LoadingSpinner';
 import omit from 'lodash/omit';
@@ -7,11 +7,11 @@ import omit from 'lodash/omit';
 var Button = React.createClass({
 
   propTypes: {
-    btnStyle: React.PropTypes.string,
-    block: React.PropTypes.bool,
-    processing: React.PropTypes.bool,
-    loadingSpinnerColor: React.PropTypes.string,
-    loadingSpinnerBackgroundColor: React.PropTypes.string
+    btnStyle: PropTypes.string,
+    block: PropTypes.bool,
+    processing: PropTypes.bool,
+    loadingSpinnerColor: PropTypes.string,
+    loadingSpinnerBackgroundColor: PropTypes.string
   },
 
   render: function() {
@@ -53,5 +53,6 @@ var Button = React.createClass({
   }
 
 });
+
 
 module.exports = Button;

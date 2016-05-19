@@ -19,7 +19,7 @@ var ProgressBar = _react2.default.createClass({
 
 
   propTypes: {
-    progress: _react2.default.PropTypes.number.isRequired
+    progress: _react.PropTypes.number.isRequired
   },
 
   render: function render() {

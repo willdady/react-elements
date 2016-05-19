@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
 
 var LoadingSpinner = React.createClass({
 
   propTypes: {
-    mini: React.PropTypes.bool,
-    small: React.PropTypes.bool,
-    slow: React.PropTypes.bool,
-    fast: React.PropTypes.bool,
-    color: React.PropTypes.string,
-    backgroundColor: React.PropTypes.string
+    mini: PropTypes.bool,
+    small: PropTypes.bool,
+    slow: PropTypes.bool,
+    fast: PropTypes.bool,
+    color: PropTypes.string,
+    backgroundColor: PropTypes.string
   },
 
   render: function() {

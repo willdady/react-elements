@@ -22,6 +22,12 @@ var PaginationItem = _react2.default.createClass({
   displayName: 'PaginationItem',
 
 
+  propTypes: {
+    onClick: _react.PropTypes.func.isRequired,
+    value: _react.PropTypes.node,
+    active: _react.PropTypes.bool
+  },
+
   onClick: function onClick(e) {
     e.preventDefault();
     this.props.onClick(this.props.value);
@@ -52,9 +58,11 @@ var Pagination = _react2.default.createClass({
 
 
   propTypes: {
-    totalPages: _react2.default.PropTypes.number.isRequired,
-    currentPage: _react2.default.PropTypes.number.isRequired,
-    onClick: _react2.default.PropTypes.func.isRequired
+    totalPages: _react.PropTypes.number.isRequired,
+    currentPage: _react.PropTypes.number.isRequired,
+    onClick: _react.PropTypes.func.isRequired,
+    onNext: _react.PropTypes.func,
+    onPrevious: _react.PropTypes.func
   },
 
   onPrevious: function onPrevious() {

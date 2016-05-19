@@ -36,9 +36,9 @@ var TwoStopGradient = _react2.default.createClass({
   },
 
   propTypes: {
-    color1: _react2.default.PropTypes.string.isRequired,
-    color2: _react2.default.PropTypes.string.isRequired,
-    horizontal: _react2.default.PropTypes.bool
+    color1: _react.PropTypes.string.isRequired,
+    color2: _react.PropTypes.string.isRequired,
+    horizontal: _react.PropTypes.bool
   },
 
   render: function render() {
@@ -66,9 +66,9 @@ var SaturationBrightnessCursor = _react2.default.createClass({
   },
 
   propTypes: {
-    position: _react2.default.PropTypes.shape({
-      x: _react2.default.PropTypes.number,
-      y: _react2.default.PropTypes.number
+    position: _react.PropTypes.shape({
+      x: _react.PropTypes.number,
+      y: _react.PropTypes.number
     }).isRequired
   },
 
@@ -107,10 +107,10 @@ var SaturationBrightnessPicker = _react2.default.createClass({
   },
 
   propTypes: {
-    onChange: _react2.default.PropTypes.func.isRequired,
-    hue: _react2.default.PropTypes.number.isRequired,
-    saturation: _react2.default.PropTypes.number,
-    brightness: _react2.default.PropTypes.number
+    onChange: _react.PropTypes.func.isRequired,
+    hue: _react.PropTypes.number.isRequired,
+    saturation: _react.PropTypes.number,
+    brightness: _react.PropTypes.number
   },
 
   onMouseDownHandler: function onMouseDownHandler(e) {
@@ -189,10 +189,12 @@ var HuePickerCursor = _react2.default.createClass({
   displayName: 'HuePickerCursor',
 
 
+  propTypes: {
+    position: _react.PropTypes.number
+  },
+
   getDefaultProps: function getDefaultProps() {
-    return {
-      position: 0
-    };
+    return { position: 0 };
   },
 
   render: function render() {
@@ -222,8 +224,8 @@ var HuePicker = _react2.default.createClass({
   },
 
   propTypes: {
-    hue: _react2.default.PropTypes.number.isRequired,
-    onChange: _react2.default.PropTypes.func.isRequired
+    hue: _react.PropTypes.number.isRequired,
+    onChange: _react.PropTypes.func.isRequired
   },
 
   onMouseDownHandler: function onMouseDownHandler(e) {
@@ -298,8 +300,8 @@ var ColorPicker = _react2.default.createClass({
   },
 
   propTypes: {
-    color: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.object]),
-    onChange: _react2.default.PropTypes.func.isRequired
+    color: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.object]),
+    onChange: _react.PropTypes.func.isRequired
   },
 
   saturationBrightnessChangeHandler: function saturationBrightnessChangeHandler(saturation, brightness) {

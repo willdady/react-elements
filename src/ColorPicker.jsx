@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import tinycolor from 'tinycolor2';
 import classNames from 'classnames';
 
@@ -20,9 +20,9 @@ var TwoStopGradient = React.createClass({
   },
 
   propTypes: {
-    color1: React.PropTypes.string.isRequired,
-    color2: React.PropTypes.string.isRequired,
-    horizontal: React.PropTypes.bool
+    color1: PropTypes.string.isRequired,
+    color2: PropTypes.string.isRequired,
+    horizontal: PropTypes.bool
   },
 
   render: function() {
@@ -51,9 +51,9 @@ var SaturationBrightnessCursor = React.createClass({
   },
 
   propTypes: {
-    position: React.PropTypes.shape({
-      x: React.PropTypes.number,
-      y: React.PropTypes.number
+    position: PropTypes.shape({
+      x: PropTypes.number,
+      y: PropTypes.number
     }).isRequired
   },
 
@@ -93,10 +93,10 @@ var SaturationBrightnessPicker = React.createClass({
   },
 
   propTypes: {
-    onChange: React.PropTypes.func.isRequired,
-    hue: React.PropTypes.number.isRequired,
-    saturation: React.PropTypes.number,
-    brightness: React.PropTypes.number
+    onChange: PropTypes.func.isRequired,
+    hue: PropTypes.number.isRequired,
+    saturation: PropTypes.number,
+    brightness: PropTypes.number
   },
 
   onMouseDownHandler: function(e) {
@@ -169,10 +169,12 @@ var SaturationBrightnessPicker = React.createClass({
 
 var HuePickerCursor = React.createClass({
 
+  propTypes: {
+    position: PropTypes.number
+  },
+
   getDefaultProps: function() {
-    return {
-      position: 0
-    };
+    return { position: 0 };
   },
 
   render: function() {
@@ -205,8 +207,8 @@ var HuePicker = React.createClass({
   },
 
   propTypes: {
-    hue: React.PropTypes.number.isRequired,
-    onChange: React.PropTypes.func.isRequired
+    hue: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired
   },
 
   onMouseDownHandler: function(e) {
@@ -262,6 +264,7 @@ var HuePicker = React.createClass({
 
 });
 
+
 var ColorPicker = React.createClass({
 
   getInitialState: function() {
@@ -274,11 +277,11 @@ var ColorPicker = React.createClass({
   },
 
   propTypes: {
-    color: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.object
+    color: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
     ]),
-    onChange: React.PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired
   },
 
   saturationBrightnessChangeHandler: function(saturation, brightness) {
