@@ -38,7 +38,7 @@ var Pagination = React.createClass({
   propTypes: {
     totalPages: React.PropTypes.number.isRequired,
     currentPage: React.PropTypes.number.isRequired,
-    onClick: React.PropTypes.func.isRequired,
+    onClick: React.PropTypes.func.isRequired
   },
 
   onPrevious: function () {

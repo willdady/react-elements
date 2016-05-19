@@ -6,7 +6,7 @@ var Tab = React.createClass({
 
   propTypes: {
     tabIndex: React.PropTypes.number,
-    onClick: React.PropTypes.func.isRequired,
+    onClick: React.PropTypes.func.isRequired
   },
 
   onClick: function () {
@@ -15,9 +15,9 @@ var Tab = React.createClass({
 
   render: function() {
     let className = classNames(
-      "re-tabs__tab",
+      're-tabs__tab',
       {
-        "re-tabs__tab--selected": this.props.selected
+        're-tabs__tab--selected': this.props.selected
       }
     );
     return (
@@ -37,7 +37,7 @@ var Tabs = React.createClass({
     initialIndex: React.PropTypes.number,
     block: React.PropTypes.bool,
     onChange: React.PropTypes.func.isRequired,
-    children: React.PropTypes.arrayOf(React.PropTypes.element).isRequired,
+    children: React.PropTypes.arrayOf(React.PropTypes.element).isRequired
   },
 
   getInitialState: function () {
@@ -59,9 +59,9 @@ var Tabs = React.createClass({
     });
 
     let className = classNames(
-      "re-tabs",
+      're-tabs',
       {
-        "re-tabs--block": this.props.block
+        're-tabs--block': this.props.block
       },
       this.props.className
     );

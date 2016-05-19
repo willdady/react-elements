@@ -7,7 +7,7 @@ const DEFAULT_VIMEO_PARAMS = {
   autoplay: 0,
   badge: 1,
   byline: 1,
-  color: "00adef",
+  color: '00adef',
   loop: 0,
   player_id: null,
   portrait: 1,
@@ -31,14 +31,14 @@ var VimeoVideo = React.createClass({
 
   propTypes: {
     src: React.PropTypes.string.isRequired,
-    protocol: React.PropTypes.oneOf(["http", "https"]),
+    protocol: React.PropTypes.oneOf(['http', 'https'])
   },
 
   getCleanedSrc: function() {
     var matches, vidID, src, protocol;
 
     src = this.props.src.trim();
-    protocol = this.props.protocol ? this.props.protocol + ":" : "";
+    protocol = this.props.protocol ? this.props.protocol + ':' : '';
 
     // Extract video id from src.
     var pageURLRegexp = /.*vimeo\.com\/(\w+)$/g;
@@ -52,17 +52,17 @@ var VimeoVideo = React.createClass({
         vidID = matches[1];
       }
     }
-    if (!vidID) throw "Unable to extract Video ID from URL.";
+    if (!vidID) throw 'Unable to extract Video ID from URL.';
    // Build URL parameters
-    var params = "", val;
+    var params = '', val;
     for (var k in DEFAULT_VIMEO_PARAMS) {
       if (this.props[k] !== DEFAULT_VIMEO_PARAMS[k]) {
-        params += "&" + k + "=" + String(this.props[k]);
+        params += '&' + k + '=' + String(this.props[k]);
       }
     }
-    params = params.replace("&", "?");
+    params = params.replace('&', '?');
 
-    return protocol + "//player.vimeo.com/video/" + vidID + params;
+    return protocol + '//player.vimeo.com/video/' + vidID + params;
   },
 
   render: function() {

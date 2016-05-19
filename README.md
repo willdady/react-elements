@@ -26,7 +26,7 @@ npm install --save react-elements
 To include a component in your project simply ```require``` the component.
 
 ```javascript
-import Switch from 'react-elements/dist/Switch';
+import Switch from 'react-elements';
 ```
 
 ### Component stylesheets

@@ -11,7 +11,7 @@ var Button = React.createClass({
     block: React.PropTypes.bool,
     processing: React.PropTypes.bool,
     loadingSpinnerColor: React.PropTypes.string,
-    loadingSpinnerBackgroundColor: React.PropTypes.string,
+    loadingSpinnerBackgroundColor: React.PropTypes.string
   },
 
   render: function() {
@@ -24,7 +24,7 @@ var Button = React.createClass({
         're-btn--danger': btnStyle === 'danger',
         're-btn--link': btnStyle === 'link',
         're-btn--block': this.props.block,
-        're-btn--processing': this.props.processing,
+        're-btn--processing': this.props.processing
       },
       this.props.className
     );

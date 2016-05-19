@@ -56,14 +56,14 @@ var YouTubeVideo = _react2.default.createClass({
   },
 
   propTypes: {
-    protocol: _react2.default.PropTypes.oneOf(["http", "https"])
+    protocol: _react2.default.PropTypes.oneOf(['http', 'https'])
   },
 
   getCleanedSrc: function getCleanedSrc() {
     // var matches, vidID, src, protocol;
     var vidID = void 0;
     var src = this.props.src.trim();
-    var protocol = this.props.protocol ? this.props.protocol + ":" : "";
+    var protocol = this.props.protocol ? this.props.protocol + ':' : '';
 
     // Extract video id from src.
     var pageURLRegexp = /.*watch\?v=(\w+)$/g;
@@ -80,10 +80,10 @@ var YouTubeVideo = _react2.default.createClass({
     var params = '';
     for (var k in DEFAULT_YOUTUBE_PARAMS) {
       if (this.props[k] !== DEFAULT_YOUTUBE_PARAMS[k]) {
-        params += "&" + k + "=" + String(this.props[k]);
+        params += '&' + k + '=' + String(this.props[k]);
       }
     }
-    params = params.replace("&", "?");
+    params = params.replace('&', '?');
 
     return protocol + '//www.youtube.com/embed/' + vidID + params;
   },

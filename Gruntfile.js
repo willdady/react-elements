@@ -15,11 +15,11 @@ module.exports = function(grunt) {
       },
       dist: {
         files: [{
-          "expand": true,
-          "cwd": "src/",
-          "src": ["**/*.js", "!**/main.js", "!**/stories/*.js"],
-          "dest": "dist/",
-          "ext": ".js"
+          'expand': true,
+          'cwd': 'src/',
+          'src': ['**/*.js', '**/*.jsx', '!**/main.js', '!**/stories/*.js'],
+          'dest': 'dist/',
+          'ext': '.js'
         }]
       }
     },
@@ -39,12 +39,12 @@ module.exports = function(grunt) {
     postcss: {
       options: {
         map: {
-            inline: false,
-            annotation: 'dist/css/'
+          inline: false,
+          annotation: 'dist/css/'
         },
 
         processors: [
-          require('autoprefixer')({browsers: 'last 3 versions'}),
+          require('autoprefixer')({browsers: 'last 3 versions'})
         ]
       },
       dist: {
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
           }
         ]
       }
-    },
+    }
 
   });
 

@@ -68,7 +68,7 @@ var Panel = _react2.default.createClass({
         null,
         this.props.header
       );
-    };
+    }
 
     var footer = void 0;
     if (this.props.footer) {

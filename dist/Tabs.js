@@ -28,8 +28,8 @@ var Tab = _react2.default.createClass({
   },
 
   render: function render() {
-    var className = (0, _classnames2.default)("re-tabs__tab", {
-      "re-tabs__tab--selected": this.props.selected
+    var className = (0, _classnames2.default)('re-tabs__tab', {
+      're-tabs__tab--selected': this.props.selected
     });
     return _react2.default.createElement(
       'li',
@@ -80,8 +80,8 @@ var Tabs = _react2.default.createClass({
       );
     });
 
-    var className = (0, _classnames2.default)("re-tabs", {
-      "re-tabs--block": this.props.block
+    var className = (0, _classnames2.default)('re-tabs', {
+      're-tabs--block': this.props.block
     }, this.props.className);
     return _react2.default.createElement(
       'ul',

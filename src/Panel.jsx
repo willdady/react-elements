@@ -43,7 +43,7 @@ var Panel = React.createClass({
     let header;
     if (this.props.header) {
       header = <PanelHeader>{this.props.header}</PanelHeader>;
-    };
+    }
 
     let footer;
     if (this.props.footer) {
