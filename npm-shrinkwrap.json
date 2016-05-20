@@ -1,6 +1,6 @@
 {
   "name": "react-elements",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "dependencies": {
     "@kadira/storybook": {
       "version": "1.27.0",
