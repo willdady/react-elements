@@ -19,18 +19,18 @@
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   overflow: hidden; }
-  .re-loading-spinner, .re-loading-spinner:after {
+  .re-loading-spinner, .re-loading-spinner::after {
     border-radius: 50%;
     height: 80px;
     width: 80px; }
   .re-loading-spinner--small {
     border-width: 8px; }
-    .re-loading-spinner--small, .re-loading-spinner--small:after {
+    .re-loading-spinner--small, .re-loading-spinner--small::after {
       height: 40px;
       width: 40px; }
   .re-loading-spinner--mini {
     border-width: 4px; }
-    .re-loading-spinner--mini, .re-loading-spinner--mini:after {
+    .re-loading-spinner--mini, .re-loading-spinner--mini::after {
       height: 20px;
       width: 20px; }
   .re-loading-spinner--slow {

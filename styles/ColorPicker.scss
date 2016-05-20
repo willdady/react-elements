@@ -7,6 +7,7 @@
   $re-color-picker-h-height: 128px !default;
   $re-color-picker-h-width: 26px !default;
   $re-color-picker-h-cursor-height: 3px !default;
+  $re-color-picker-h-cursor-border: 1px solid #fff !default;
 
   &__sb-picker {
     display: inline-block;
@@ -70,7 +71,7 @@
   &__h-picker-cursor {
     width: $re-color-picker-h-width;
     height: $re-color-picker-h-cursor-height;
-    border: 1px solid white;
+    border: $re-color-picker-h-cursor-border;
     background: transparent;
     position: absolute;
     top: 0;

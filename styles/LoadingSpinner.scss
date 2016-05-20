@@ -24,7 +24,7 @@
   overflow: hidden;
 
   &,
-  &:after {
+  &::after {
     border-radius: 50%;
     height: $re-loading-spinner-size;
     width: $re-loading-spinner-size;
@@ -36,7 +36,7 @@
     border-width: $re-loading-spinner-border-width;
 
     &,
-    &:after {
+    &::after {
       height: $re-loading-spinner-size;
       width: $re-loading-spinner-size;
     }
@@ -48,7 +48,7 @@
     border-width: $re-loading-spinner-border-width;
 
     &,
-    &:after {
+    &::after {
       height: $re-loading-spinner-size;
       width: $re-loading-spinner-size;
     }

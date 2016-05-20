@@ -6,6 +6,7 @@
   $re-pagination-item-link-background-active: #337ab7 !default;
   $re-pagination-item-link-color: #999 !default;
   $re-pagination-item-link-color-active: #fff !default;
+  $re-pagination-item-link-font-size: 14px !default;
 
   list-style: none;
   margin: 0;
@@ -29,7 +30,7 @@
     padding: $re-pagination-item-link-padding;
     font-family: Arial, serif;
     text-decoration: none;
-    font-size: 14px;
+    font-size: $re-pagination-item-link-font-size;
   }
 
   &__item--active &__item-link {
