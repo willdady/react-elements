@@ -25,11 +25,11 @@ var Button = _react2.default.createClass({
 
 
   propTypes: {
-    btnStyle: _react2.default.PropTypes.string,
-    block: _react2.default.PropTypes.bool,
-    processing: _react2.default.PropTypes.bool,
-    loadingSpinnerColor: _react2.default.PropTypes.string,
-    loadingSpinnerBackgroundColor: _react2.default.PropTypes.string
+    btnStyle: _react.PropTypes.string,
+    block: _react.PropTypes.bool,
+    processing: _react.PropTypes.bool,
+    loadingSpinnerColor: _react.PropTypes.string,
+    loadingSpinnerBackgroundColor: _react.PropTypes.string
   },
 
   render: function render() {

@@ -19,8 +19,9 @@ var Tab = _react2.default.createClass({
 
 
   propTypes: {
-    tabIndex: _react2.default.PropTypes.number,
-    onClick: _react2.default.PropTypes.func.isRequired
+    tabIndex: _react.PropTypes.number,
+    selected: _react.PropTypes.bool,
+    onClick: _react.PropTypes.func.isRequired
   },
 
   onClick: function onClick() {
@@ -28,8 +29,8 @@ var Tab = _react2.default.createClass({
   },
 
   render: function render() {
-    var className = (0, _classnames2.default)("re-tabs__tab", {
-      "re-tabs__tab--selected": this.props.selected
+    var className = (0, _classnames2.default)('re-tabs__tab', {
+      're-tabs__tab--selected': this.props.selected
     });
     return _react2.default.createElement(
       'li',
@@ -46,10 +47,10 @@ var Tabs = _react2.default.createClass({
 
 
   propTypes: {
-    initialIndex: _react2.default.PropTypes.number,
-    block: _react2.default.PropTypes.bool,
-    onChange: _react2.default.PropTypes.func.isRequired,
-    children: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.element).isRequired
+    initialIndex: _react.PropTypes.number,
+    block: _react.PropTypes.bool,
+    onChange: _react.PropTypes.func.isRequired,
+    children: _react.PropTypes.arrayOf(_react.PropTypes.element).isRequired
   },
 
   getInitialState: function getInitialState() {
@@ -80,8 +81,8 @@ var Tabs = _react2.default.createClass({
       );
     });
 
-    var className = (0, _classnames2.default)("re-tabs", {
-      "re-tabs--block": this.props.block
+    var className = (0, _classnames2.default)('re-tabs', {
+      're-tabs--block': this.props.block
     }, this.props.className);
     return _react2.default.createElement(
       'ul',

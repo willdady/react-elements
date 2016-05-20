@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import assign from 'lodash/assign';
+
 
 /* The following params are the defaults as documented at
    https://developers.google.com/youtube/player_parameters*/
@@ -29,6 +30,7 @@ const DEFAULT_YOUTUBE_PARAMS = {
   theme: null
 };
 
+
 var YouTubeVideo = React.createClass({
 
   getDefaultProps: function() {
@@ -45,14 +47,18 @@ var YouTubeVideo = React.createClass({
   },
 
   propTypes: {
-    protocol: React.PropTypes.oneOf(["http", "https"])
+    src: PropTypes.string.isRequired,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    frameBorder: PropTypes.number,
+    protocol: PropTypes.oneOf(['http', 'https'])
   },
 
   getCleanedSrc: function() {
     // var matches, vidID, src, protocol;
     let vidID;
     let src = this.props.src.trim();
-    let protocol = this.props.protocol ? this.props.protocol + ":" : "";
+    let protocol = this.props.protocol ? this.props.protocol + ':' : '';
 
     // Extract video id from src.
     let pageURLRegexp = /.*watch\?v=(\w+)$/g;
@@ -69,10 +75,10 @@ var YouTubeVideo = React.createClass({
     let params = '';
     for (let k in DEFAULT_YOUTUBE_PARAMS) {
       if (this.props[k] !== DEFAULT_YOUTUBE_PARAMS[k]) {
-        params += "&" + k + "=" + String(this.props[k]);
+        params += '&' + k + '=' + String(this.props[k]);
       }
     }
-    params = params.replace("&", "?");
+    params = params.replace('&', '?');
 
     return `${protocol}//www.youtube.com/embed/${vidID}${params}`;
   },
@@ -87,5 +93,6 @@ var YouTubeVideo = React.createClass({
     );
   }
 });
+
 
 export default YouTubeVideo;

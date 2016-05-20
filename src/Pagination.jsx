@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import range from 'lodash/range';
 import classNames from 'classnames';
 
 
 var PaginationItem = React.createClass({
+
+  propTypes: {
+    onClick: PropTypes.func.isRequired,
+    value: PropTypes.node,
+    active: PropTypes.bool
+  },
 
   onClick: function (e) {
     e.preventDefault();
@@ -36,9 +42,11 @@ var PaginationItem = React.createClass({
 var Pagination = React.createClass({
 
   propTypes: {
-    totalPages: React.PropTypes.number.isRequired,
-    currentPage: React.PropTypes.number.isRequired,
-    onClick: React.PropTypes.func.isRequired,
+    totalPages: PropTypes.number.isRequired,
+    currentPage: PropTypes.number.isRequired,
+    onClick: PropTypes.func.isRequired,
+    onNext: PropTypes.func,
+    onPrevious: PropTypes.func
   },
 
   onPrevious: function () {
@@ -116,5 +124,6 @@ var Pagination = React.createClass({
   }
 
 });
+
 
 export default Pagination;

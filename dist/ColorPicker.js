@@ -1,18 +1,18 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _tinycolor = require("tinycolor2");
+var _tinycolor = require('tinycolor2');
 
 var _tinycolor2 = _interopRequireDefault(_tinycolor);
 
-var _classnames = require("classnames");
+var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -26,7 +26,7 @@ var H_PICKER_HEIGHT = 128;
 var H_PICKER_CURSOR_HEIGHT = 3;
 
 var TwoStopGradient = _react2.default.createClass({
-  displayName: "TwoStopGradient",
+  displayName: 'TwoStopGradient',
 
 
   getDefaultProps: function getDefaultProps() {
@@ -36,24 +36,24 @@ var TwoStopGradient = _react2.default.createClass({
   },
 
   propTypes: {
-    color1: _react2.default.PropTypes.string.isRequired,
-    color2: _react2.default.PropTypes.string.isRequired,
-    horizontal: _react2.default.PropTypes.bool
+    color1: _react.PropTypes.string.isRequired,
+    color2: _react.PropTypes.string.isRequired,
+    horizontal: _react.PropTypes.bool
   },
 
   render: function render() {
-    var angle = this.props.horizontal ? "to right, " : "";
+    var angle = this.props.horizontal ? 'to right, ' : '';
     var styles = {
-      background: "linear-gradient(" + angle + this.props.color1 + ", " + this.props.color2 + ")"
+      background: 'linear-gradient(' + angle + this.props.color1 + ', ' + this.props.color2 + ')'
     };
-    return _react2.default.createElement("div", { className: this.props.className,
+    return _react2.default.createElement('div', { className: this.props.className,
       style: styles });
   }
 
 });
 
 var SaturationBrightnessCursor = _react2.default.createClass({
-  displayName: "SaturationBrightnessCursor",
+  displayName: 'SaturationBrightnessCursor',
 
 
   getDefaultProps: function getDefaultProps() {
@@ -66,9 +66,9 @@ var SaturationBrightnessCursor = _react2.default.createClass({
   },
 
   propTypes: {
-    position: _react2.default.PropTypes.shape({
-      x: _react2.default.PropTypes.number,
-      y: _react2.default.PropTypes.number
+    position: _react.PropTypes.shape({
+      x: _react.PropTypes.number,
+      y: _react.PropTypes.number
     }).isRequired
   },
 
@@ -78,14 +78,14 @@ var SaturationBrightnessCursor = _react2.default.createClass({
       left: this.props.position.x - Math.round(SB_PICKER_CURSOR_WIDTH * 0.5),
       top: this.props.position.y - Math.round(SB_PICKER_CURSOR_HEIGHT * 0.5)
     };
-    return _react2.default.createElement("div", { className: "re-color-picker__sb-picker-cursor",
+    return _react2.default.createElement('div', { className: 're-color-picker__sb-picker-cursor',
       style: style });
   }
 
 });
 
 var SaturationBrightnessPicker = _react2.default.createClass({
-  displayName: "SaturationBrightnessPicker",
+  displayName: 'SaturationBrightnessPicker',
 
 
   getInitialState: function getInitialState() {
@@ -107,22 +107,22 @@ var SaturationBrightnessPicker = _react2.default.createClass({
   },
 
   propTypes: {
-    onChange: _react2.default.PropTypes.func.isRequired,
-    hue: _react2.default.PropTypes.number.isRequired,
-    saturation: _react2.default.PropTypes.number,
-    brightness: _react2.default.PropTypes.number
+    onChange: _react.PropTypes.func.isRequired,
+    hue: _react.PropTypes.number.isRequired,
+    saturation: _react.PropTypes.number,
+    brightness: _react.PropTypes.number
   },
 
   onMouseDownHandler: function onMouseDownHandler(e) {
     e.preventDefault();
-    window.addEventListener("mouseup", this.onMouseUpHandler);
-    window.addEventListener("mousemove", this.onMouseMoveHandler);
+    window.addEventListener('mouseup', this.onMouseUpHandler);
+    window.addEventListener('mousemove', this.onMouseMoveHandler);
     this._update(e.nativeEvent.pageX, e.nativeEvent.pageY, true);
   },
 
   onMouseUpHandler: function onMouseUpHandler(e) {
-    window.removeEventListener("mouseup", this.onMouseUpHandler);
-    window.removeEventListener("mousemove", this.onMouseMoveHandler);
+    window.removeEventListener('mouseup', this.onMouseUpHandler);
+    window.removeEventListener('mousemove', this.onMouseMoveHandler);
     this._update(e.pageX, e.pageY, false);
   },
 
@@ -159,26 +159,26 @@ var SaturationBrightnessPicker = _react2.default.createClass({
     var _this2 = this;
 
     var className = (0, _classnames2.default)({
-      "re-color-picker__sb-picker": true,
-      "re-color-picker__sb-picker--dragging": this.state.mouseDown
+      're-color-picker__sb-picker': true,
+      're-color-picker__sb-picker--dragging': this.state.mouseDown
     });
 
-    var hue = "hsl(" + Math.round(360 * this.props.hue) + ", 100%, 50%)";
+    var hue = 'hsl(' + Math.round(360 * this.props.hue) + ', 100%, 50%)';
 
     return _react2.default.createElement(
-      "div",
+      'div',
       { className: className,
         ref: function ref(c) {
           return _this2._root = c;
         },
         onMouseDown: this.onMouseDownHandler },
-      _react2.default.createElement(TwoStopGradient, { className: "re-color-picker__sb-picker-layer",
-        color1: "white",
+      _react2.default.createElement(TwoStopGradient, { className: 're-color-picker__sb-picker-layer',
+        color1: 'white',
         color2: hue,
         horizontal: true }),
-      _react2.default.createElement(TwoStopGradient, { className: "re-color-picker__sb-picker-layer",
-        color1: "rgba(0, 0, 0, 0)",
-        color2: "black" }),
+      _react2.default.createElement(TwoStopGradient, { className: 're-color-picker__sb-picker-layer',
+        color1: 'rgba(0, 0, 0, 0)',
+        color2: 'black' }),
       _react2.default.createElement(SaturationBrightnessCursor, { position: this.state.cursorPosition })
     );
   }
@@ -186,13 +186,15 @@ var SaturationBrightnessPicker = _react2.default.createClass({
 });
 
 var HuePickerCursor = _react2.default.createClass({
-  displayName: "HuePickerCursor",
+  displayName: 'HuePickerCursor',
 
+
+  propTypes: {
+    position: _react.PropTypes.number
+  },
 
   getDefaultProps: function getDefaultProps() {
-    return {
-      position: 0
-    };
+    return { position: 0 };
   },
 
   render: function render() {
@@ -204,14 +206,14 @@ var HuePickerCursor = _react2.default.createClass({
     var styles = {
       top: y
     };
-    return _react2.default.createElement("div", { className: "re-color-picker__h-picker-cursor",
+    return _react2.default.createElement('div', { className: 're-color-picker__h-picker-cursor',
       style: styles });
   }
 
 });
 
 var HuePicker = _react2.default.createClass({
-  displayName: "HuePicker",
+  displayName: 'HuePicker',
 
 
   getInitialState: function getInitialState() {
@@ -222,20 +224,20 @@ var HuePicker = _react2.default.createClass({
   },
 
   propTypes: {
-    hue: _react2.default.PropTypes.number.isRequired,
-    onChange: _react2.default.PropTypes.func.isRequired
+    hue: _react.PropTypes.number.isRequired,
+    onChange: _react.PropTypes.func.isRequired
   },
 
   onMouseDownHandler: function onMouseDownHandler(e) {
     e.preventDefault();
-    window.addEventListener("mouseup", this.onMouseUpHandler);
-    window.addEventListener("mousemove", this.onMouseMoveHandler);
+    window.addEventListener('mouseup', this.onMouseUpHandler);
+    window.addEventListener('mousemove', this.onMouseMoveHandler);
     this._update(e.nativeEvent.pageY, true);
   },
 
   onMouseUpHandler: function onMouseUpHandler(e) {
-    window.removeEventListener("mouseup", this.onMouseUpHandler);
-    window.removeEventListener("mousemove", this.onMouseMoveHandler);
+    window.removeEventListener('mouseup', this.onMouseUpHandler);
+    window.removeEventListener('mousemove', this.onMouseMoveHandler);
     this._update(e.pageY, false);
   },
 
@@ -267,12 +269,12 @@ var HuePicker = _react2.default.createClass({
     var _this4 = this;
 
     var className = (0, _classnames2.default)({
-      "re-color-picker__h-picker": true,
-      "re-color-picker__h-picker--dragging": this.state.mouseDown
+      're-color-picker__h-picker': true,
+      're-color-picker__h-picker--dragging': this.state.mouseDown
     });
 
     return _react2.default.createElement(
-      "div",
+      'div',
       { className: className,
         onMouseDown: this.onMouseDownHandler,
         ref: function ref(c) {
@@ -285,7 +287,7 @@ var HuePicker = _react2.default.createClass({
 });
 
 var ColorPicker = _react2.default.createClass({
-  displayName: "ColorPicker",
+  displayName: 'ColorPicker',
 
 
   getInitialState: function getInitialState() {
@@ -298,8 +300,8 @@ var ColorPicker = _react2.default.createClass({
   },
 
   propTypes: {
-    color: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.object]),
-    onChange: _react2.default.PropTypes.func.isRequired
+    color: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.object]),
+    onChange: _react.PropTypes.func.isRequired
   },
 
   saturationBrightnessChangeHandler: function saturationBrightnessChangeHandler(saturation, brightness) {
@@ -335,7 +337,7 @@ var ColorPicker = _react2.default.createClass({
   render: function render() {
     var className = (0, _classnames2.default)('re-color-picker', this.props.className);
     return _react2.default.createElement(
-      "div",
+      'div',
       { className: className },
       _react2.default.createElement(SaturationBrightnessPicker, { onChange: this.saturationBrightnessChangeHandler,
         hue: this.state.hue,

@@ -1,3 +1,23 @@
+## v1.1.0
+* Renamed React component file extensions from .js to .jsx.
+* Updated libraries.
+* Code linting.
+* Updated README.
+* Updated/Added component PropTypes.
+* Added more scss variables.
+
+## v1.0.4
+* Removed css position entirely from LoadingSpinner.
+
+## v1.0.3
+* Added more variables to LoadingSpinner scss.
+
+## v1.0.2
+* Added more variables to Panel's scss.
+
+## v1.0.1
+* Tweaked README
+
 ## v1.0.0
 
 * MAJOR UPDATE. This release is not backwards compatible with older versions.

@@ -29,10 +29,10 @@ var Switch = _react2.default.createClass({
 
 
   propTypes: {
-    name: _react2.default.PropTypes.string,
-    value: _react2.default.PropTypes.bool.isRequired,
-    size: _react2.default.PropTypes.oneOf((0, _values2.default)(SIZES)),
-    onClick: _react2.default.PropTypes.func
+    name: _react.PropTypes.string,
+    value: _react.PropTypes.bool.isRequired,
+    size: _react.PropTypes.oneOf((0, _values2.default)(SIZES)),
+    onClick: _react.PropTypes.func
   },
 
   onClick: function onClick() {
@@ -42,11 +42,11 @@ var Switch = _react2.default.createClass({
 
   render: function render() {
     var className = (0, _classnames2.default)({
-      "re-switch": true,
-      "re-switch--on": this.props.value,
-      "re-switch--xs": this.props.size === SIZES.EXTRA_SMALL,
-      "re-switch--sm": this.props.size === SIZES.SMALL,
-      "re-switch--lg": this.props.size === SIZES.LARGE
+      're-switch': true,
+      're-switch--on': this.props.value,
+      're-switch--xs': this.props.size === SIZES.EXTRA_SMALL,
+      're-switch--sm': this.props.size === SIZES.SMALL,
+      're-switch--lg': this.props.size === SIZES.LARGE
     });
     return _react2.default.createElement(
       'span',

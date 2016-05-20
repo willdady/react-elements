@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
 
 var Tab = React.createClass({
 
   propTypes: {
-    tabIndex: React.PropTypes.number,
-    onClick: React.PropTypes.func.isRequired,
+    tabIndex: PropTypes.number,
+    selected: PropTypes.bool,
+    onClick: PropTypes.func.isRequired
   },
 
   onClick: function () {
@@ -15,9 +16,9 @@ var Tab = React.createClass({
 
   render: function() {
     let className = classNames(
-      "re-tabs__tab",
+      're-tabs__tab',
       {
-        "re-tabs__tab--selected": this.props.selected
+        're-tabs__tab--selected': this.props.selected
       }
     );
     return (
@@ -34,10 +35,10 @@ var Tab = React.createClass({
 var Tabs = React.createClass({
 
   propTypes: {
-    initialIndex: React.PropTypes.number,
-    block: React.PropTypes.bool,
-    onChange: React.PropTypes.func.isRequired,
-    children: React.PropTypes.arrayOf(React.PropTypes.element).isRequired,
+    initialIndex: PropTypes.number,
+    block: PropTypes.bool,
+    onChange: PropTypes.func.isRequired,
+    children: PropTypes.arrayOf(PropTypes.element).isRequired
   },
 
   getInitialState: function () {
@@ -59,9 +60,9 @@ var Tabs = React.createClass({
     });
 
     let className = classNames(
-      "re-tabs",
+      're-tabs',
       {
-        "re-tabs--block": this.props.block
+        're-tabs--block': this.props.block
       },
       this.props.className
     );
@@ -74,5 +75,6 @@ var Tabs = React.createClass({
 
 
 });
+
 
 export default Tabs;

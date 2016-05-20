@@ -35,7 +35,7 @@
 .re-color-picker__h-picker-cursor {
   width: 26px;
   height: 3px;
-  border: 1px solid white;
+  border: 1px solid #fff;
   background: transparent;
   position: absolute;
   top: 0;

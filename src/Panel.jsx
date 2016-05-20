@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import isString from 'lodash/isString';
 import classNames from 'classnames';
 
@@ -37,13 +37,18 @@ var PanelFooter = React.createClass({
 
 var Panel = React.createClass({
 
+  propTypes: {
+    header: PropTypes.element,
+    footer: PropTypes.element
+  },
+
   render: function() {
     let className = classNames('re-panel', this.props.className);
 
     let header;
     if (this.props.header) {
       header = <PanelHeader>{this.props.header}</PanelHeader>;
-    };
+    }
 
     let footer;
     if (this.props.footer) {
@@ -62,5 +67,6 @@ var Panel = React.createClass({
   }
 
 });
+
 
 export default Panel;

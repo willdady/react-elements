@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
 
 var ProgressBar = React.createClass({
 
   propTypes: {
-    progress: React.PropTypes.number.isRequired
+    progress: PropTypes.number.isRequired
   },
 
   render: function() {

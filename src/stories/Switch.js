@@ -28,4 +28,4 @@ function getComponent(size = null, value = false) {
             size={size}
             onClick={action('onClick')} />
   );
-};
+}

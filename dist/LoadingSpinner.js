@@ -19,12 +19,12 @@ var LoadingSpinner = _react2.default.createClass({
 
 
   propTypes: {
-    mini: _react2.default.PropTypes.bool,
-    small: _react2.default.PropTypes.bool,
-    slow: _react2.default.PropTypes.bool,
-    fast: _react2.default.PropTypes.bool,
-    color: _react2.default.PropTypes.string,
-    backgroundColor: _react2.default.PropTypes.string
+    mini: _react.PropTypes.bool,
+    small: _react.PropTypes.bool,
+    slow: _react.PropTypes.bool,
+    fast: _react.PropTypes.bool,
+    color: _react.PropTypes.string,
+    backgroundColor: _react.PropTypes.string
   },
 
   render: function render() {

@@ -2,20 +2,15 @@
 
 .re-btn {
   $re-btn-padding: 6px 12px !default;
-
+  $re-btn-border-radius: 4px !default;
   $re-btn-default-bg: #f7f7f7 !default;
   $re-btn-default-color: #444 !default;
-
   $re-btn-primary-bg: #337ab7 !default;
   $re-btn-primary-color: #fff !default;
-
   $re-btn-danger-bg: #d9534f !default;
   $re-btn-danger-color: #fff !default;
-
   $re-btn-link-bg: transparent !default;
   $re-btn-link-color: #000 !default;
-
-  $re-btn-border-radius: 4px !default;
 
   background-image: none;
   border: 1px solid transparent;

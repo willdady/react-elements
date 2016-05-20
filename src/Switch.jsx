@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import values from 'lodash/values';
 
@@ -13,10 +13,10 @@ const SIZES = {
 var Switch = React.createClass({
 
   propTypes: {
-    name: React.PropTypes.string,
-    value: React.PropTypes.bool.isRequired,
-    size: React.PropTypes.oneOf(values(SIZES)),
-    onClick: React.PropTypes.func
+    name: PropTypes.string,
+    value: PropTypes.bool.isRequired,
+    size: PropTypes.oneOf(values(SIZES)),
+    onClick: PropTypes.func
   },
 
   onClick: function () {
@@ -26,11 +26,11 @@ var Switch = React.createClass({
 
   render: function() {
     let className = classNames({
-      "re-switch": true,
-      "re-switch--on": this.props.value,
-      "re-switch--xs": this.props.size === SIZES.EXTRA_SMALL,
-      "re-switch--sm": this.props.size === SIZES.SMALL,
-      "re-switch--lg": this.props.size === SIZES.LARGE
+      're-switch': true,
+      're-switch--on': this.props.value,
+      're-switch--xs': this.props.size === SIZES.EXTRA_SMALL,
+      're-switch--sm': this.props.size === SIZES.SMALL,
+      're-switch--lg': this.props.size === SIZES.LARGE
     });
     return (
       <span className={className}>
@@ -45,5 +45,6 @@ var Switch = React.createClass({
     );
   }
 });
+
 
 export default Switch;
