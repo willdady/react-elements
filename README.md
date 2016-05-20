@@ -2,7 +2,7 @@
 
 A library of reusable React components consisting of the following:
 
-```
+```HTML
 <Button />
 <ColorPicker />
 <LoadingSpinner />
@@ -15,15 +15,17 @@ A library of reusable React components consisting of the following:
 <YoutubeVideo />
 ```
 
+**DEMO:** http://willdady.github.io/react-elements/
+
 ## Installation
 
-```
+```bash
 npm install --save react-elements
 ```
 
 ## Usage
 
-To include a component in your project simply ```require``` the component.
+To include a component in your project simply import the component.
 
 ```javascript
 import Switch from 'react-elements';
@@ -41,6 +43,6 @@ with ```re-```.
 Pre-built CSS files can be found in `dist/css`. Source SCSS can be found in
 the `styles` directory in the project's root.
 
-### Storybook
+#### Button
 
-This project uses the excellent [React Storybook](https://github.com/kadirahq/react-storybook) dev tool. From the project root first run `npm install` then launch storybook with `npm run storybook`.
+Please note the `<Button />` component composes the `<LoadingSpinner />` component so be sure to include both component's stylesheets.

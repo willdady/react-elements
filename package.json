@@ -9,7 +9,8 @@
     "url": "git@github.com:willdady/react-elements.git"
   },
   "scripts": {
-    "storybook": "start-storybook -p 9001"
+    "storybook": "start-storybook -p 9001",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "keywords": [
     "react",
@@ -38,6 +39,7 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^1.27.0",
+    "@kadira/storybook-deployer": "^1.0.0",
     "autoprefixer": "^6.0.3",
     "autoprefixer-loader": "^3.2.0",
     "babel-cli": "^6.7.5",

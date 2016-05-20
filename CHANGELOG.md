@@ -1,3 +1,7 @@
+## v1.1.1
+* Now deploying storybook to gh-pages with storybook-deployer.
+* Updated README.
+
 ## v1.1.0
 * Renamed React component file extensions from .js to .jsx.
 * Updated libraries.
