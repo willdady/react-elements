@@ -1,3 +1,6 @@
+## v1.2.0
+* Panel component now takes optional footerTextAlign and headerTextAlign properties. Valid values for are 'left', 'center' or 'right'.
+
 ## v1.1.1
 * Now deploying storybook to gh-pages with storybook-deployer.
 * Updated README.

@@ -1,9 +1,13 @@
 import React, { PropTypes } from 'react';
 import isString from 'lodash/isString';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 
-var PanelHeader = React.createClass({
+const PanelHeader = React.createClass({
+
+  propTypes: {
+    textAlign: PropTypes.oneOf(['left', 'center', 'right'])
+  },
 
   render: function() {
     let children = this.props.children;
@@ -12,8 +16,16 @@ var PanelHeader = React.createClass({
         <h3 className="re-panel__header-heading">{ children }</h3>
       );
     }
+    let className = classnames(
+      're-panel__header',
+      {
+        're-panel__header--text-left': this.props.textAlign === 'left',
+        're-panel__header--text-center': this.props.textAlign === 'center',
+        're-panel__header--text-right': this.props.textAlign === 'right'
+      }
+    );
     return (
-      <header className="re-panel__header">
+      <header className={className}>
         {children}
       </header>
     );
@@ -22,11 +34,23 @@ var PanelHeader = React.createClass({
 });
 
 
-var PanelFooter = React.createClass({
+const PanelFooter = React.createClass({
+
+  propTypes: {
+    textAlign: PropTypes.oneOf(['left', 'center', 'right'])
+  },
 
   render: function() {
+    let className = classnames(
+      're-panel__footer',
+      {
+        're-panel__footer--text-left': this.props.textAlign === 'left',
+        're-panel__footer--text-center': this.props.textAlign === 'center',
+        're-panel__footer--text-right': this.props.textAlign === 'right'
+      }
+    );
     return (
-      <footer className="re-panel__footer">
+      <footer className={className}>
         {this.props.children}
       </footer>
     );
@@ -35,24 +59,32 @@ var PanelFooter = React.createClass({
 });
 
 
-var Panel = React.createClass({
+const Panel = React.createClass({
 
   propTypes: {
-    header: PropTypes.element,
-    footer: PropTypes.element
+    header: PropTypes.node,
+    footer: PropTypes.node,
+    headerTextAlign: PropTypes.oneOf(['left', 'center', 'right']),
+    footerTextAlign: PropTypes.oneOf(['left', 'center', 'right'])
   },
 
   render: function() {
-    let className = classNames('re-panel', this.props.className);
+    let className = classnames('re-panel', this.props.className);
 
-    let header;
     if (this.props.header) {
-      header = <PanelHeader>{this.props.header}</PanelHeader>;
+      var header = (
+        <PanelHeader textAlign={this.props.headerTextAlign}>
+          {this.props.header}
+        </PanelHeader>
+      );
     }
 
-    let footer;
     if (this.props.footer) {
-      footer = <PanelFooter>{this.props.footer}</PanelFooter>;
+      var footer = (
+        <PanelFooter textAlign={this.props.footerTextAlign}>
+          {this.props.footer}
+        </PanelFooter>
+      );
     }
 
     return (

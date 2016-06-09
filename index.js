@@ -1,12 +1,10 @@
-module.exports = {
-  Button: require('./dist/Button'),
-  ColorPicker: require('./dist/ColorPicker'),
-  LoadingSpinner: require('./dist/LoadingSpinner'),
-  Pagination: require('./dist/Pagination'),
-  Panel: require('./dist/Panel'),
-  ProgressBar: require('./dist/ProgressBar'),
-  Switch: require('./dist/Switch'),
-  Tabs: require('./dist/Tabs'),
-  YoutubeVideo: require('./dist/YoutubeVideo'),
-  VimeoVideo: require('./dist/VimeoVideo')
-};
+exports.Button = require('./dist/Button');
+exports.ColorPicker = require('./dist/ColorPicker');
+exports.LoadingSpinner = require('./dist/LoadingSpinner');
+exports.Pagination = require('./dist/Pagination');
+exports.Panel = require('./dist/Panel');
+exports.ProgressBar = require('./dist/ProgressBar');
+exports.Switch = require('./dist/Switch');
+exports.Tabs = require('./dist/Tabs');
+exports.YoutubeVideo = require('./dist/YoutubeVideo');
+exports.VimeoVideo = require('./dist/VimeoVideo');

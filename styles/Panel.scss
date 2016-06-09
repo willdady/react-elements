@@ -22,6 +22,18 @@
     border-top-left-radius: $re-panel-border-radius;
     border-top-right-radius: $re-panel-border-radius;
     background: $re-panel-header-background;
+
+    &--text-left {
+      text-align: left;
+    }
+
+    &--text-center {
+      text-align: center;
+    }
+
+    &--text-right {
+      text-align: right;
+    }
   }
 
   &__header-heading {
@@ -47,6 +59,18 @@
     border-bottom-left-radius: $re-panel-border-radius;
     border-bottom-right-radius: $re-panel-border-radius;
     background: $re-panel-footer-background;
+
+    &--text-left {
+      text-align: left;
+    }
+
+    &--text-center {
+      text-align: center;
+    }
+
+    &--text-right {
+      text-align: right;
+    }
   }
 
 }
