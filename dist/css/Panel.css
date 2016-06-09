@@ -10,6 +10,12 @@
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     background: #e7e7e7; }
+    .re-panel__header--text-left {
+      text-align: left; }
+    .re-panel__header--text-center {
+      text-align: center; }
+    .re-panel__header--text-right {
+      text-align: right; }
   .re-panel__header-heading {
     margin: 0;
     padding: 0; }
@@ -25,5 +31,11 @@
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     background: #e7e7e7; }
+    .re-panel__footer--text-left {
+      text-align: left; }
+    .re-panel__footer--text-center {
+      text-align: center; }
+    .re-panel__footer--text-right {
+      text-align: right; }
 
 /*# sourceMappingURL=Panel.css.map */

@@ -1,3 +1,6 @@
+## v1.2.1
+* No longer creating shrinkwrap.json with -dev option.
+
 ## v1.2.0
 * Panel component now takes optional footerTextAlign and headerTextAlign properties. Valid values for are 'left', 'center' or 'right'.
 

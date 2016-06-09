@@ -22,6 +22,10 @@ var PanelHeader = _react2.default.createClass({
   displayName: 'PanelHeader',
 
 
+  propTypes: {
+    textAlign: _react.PropTypes.oneOf(['left', 'center', 'right'])
+  },
+
   render: function render() {
     var children = this.props.children;
     if ((0, _isString2.default)(children)) {
@@ -31,9 +35,14 @@ var PanelHeader = _react2.default.createClass({
         children
       );
     }
+    var className = (0, _classnames2.default)('re-panel__header', {
+      're-panel__header--text-left': this.props.textAlign === 'left',
+      're-panel__header--text-center': this.props.textAlign === 'center',
+      're-panel__header--text-right': this.props.textAlign === 'right'
+    });
     return _react2.default.createElement(
       'header',
-      { className: 're-panel__header' },
+      { className: className },
       children
     );
   }
@@ -44,10 +53,19 @@ var PanelFooter = _react2.default.createClass({
   displayName: 'PanelFooter',
 
 
+  propTypes: {
+    textAlign: _react.PropTypes.oneOf(['left', 'center', 'right'])
+  },
+
   render: function render() {
+    var className = (0, _classnames2.default)('re-panel__footer', {
+      're-panel__footer--text-left': this.props.textAlign === 'left',
+      're-panel__footer--text-center': this.props.textAlign === 'center',
+      're-panel__footer--text-right': this.props.textAlign === 'right'
+    });
     return _react2.default.createElement(
       'footer',
-      { className: 're-panel__footer' },
+      { className: className },
       this.props.children
     );
   }
@@ -59,27 +77,27 @@ var Panel = _react2.default.createClass({
 
 
   propTypes: {
-    header: _react.PropTypes.element,
-    footer: _react.PropTypes.element
+    header: _react.PropTypes.node,
+    footer: _react.PropTypes.node,
+    headerTextAlign: _react.PropTypes.oneOf(['left', 'center', 'right']),
+    footerTextAlign: _react.PropTypes.oneOf(['left', 'center', 'right'])
   },
 
   render: function render() {
     var className = (0, _classnames2.default)('re-panel', this.props.className);
 
-    var header = void 0;
     if (this.props.header) {
-      header = _react2.default.createElement(
+      var header = _react2.default.createElement(
         PanelHeader,
-        null,
+        { textAlign: this.props.headerTextAlign },
         this.props.header
       );
     }
 
-    var footer = void 0;
     if (this.props.footer) {
-      footer = _react2.default.createElement(
+      var footer = _react2.default.createElement(
         PanelFooter,
-        null,
+        { textAlign: this.props.footerTextAlign },
         this.props.footer
       );
     }
