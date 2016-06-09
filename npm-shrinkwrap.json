@@ -1,6 +1,6 @@
 {
   "name": "react-elements",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "dependencies": {
     "Base64": {
       "version": "0.2.1",
