@@ -34,8 +34,7 @@ var Tab = _react2.default.createClass({
     });
     return _react2.default.createElement(
       'li',
-      { className: className,
-        onClick: this.onClick },
+      { className: className, onClick: this.onClick },
       this.props.children
     );
   }
@@ -73,10 +72,12 @@ var Tabs = _react2.default.createClass({
     var tabs = this.props.children.map(function (child, i) {
       return _react2.default.createElement(
         Tab,
-        { key: i,
+        {
+          key: i,
           tabIndex: i,
           selected: i === _this2.state.selectedIndex,
-          onClick: _this2.onTabClick },
+          onClick: _this2.onTabClick
+        },
         child
       );
     });

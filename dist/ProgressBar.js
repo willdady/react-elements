@@ -31,8 +31,7 @@ var ProgressBar = _react2.default.createClass({
     return _react2.default.createElement(
       'div',
       { className: className },
-      _react2.default.createElement('div', { className: 're-progress-bar__bar',
-        style: innerStyle })
+      _react2.default.createElement('div', { className: 're-progress-bar__bar', style: innerStyle })
     );
   }
 

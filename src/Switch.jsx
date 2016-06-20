@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import values from 'lodash/values';
 
 
@@ -10,7 +10,7 @@ const SIZES = {
 };
 
 
-var Switch = React.createClass({
+const Switch = React.createClass({
 
   propTypes: {
     name: PropTypes.string,
@@ -25,7 +25,7 @@ var Switch = React.createClass({
   },
 
   render: function() {
-    let className = classNames({
+    let className = classnames({
       're-switch': true,
       're-switch--on': this.props.value,
       're-switch--xs': this.props.size === SIZES.EXTRA_SMALL,
@@ -34,13 +34,15 @@ var Switch = React.createClass({
     });
     return (
       <span className={className}>
-        <input type="checkbox"
-               name={this.props.name}
-               className="re-switch__checkbox"
-               checked={this.props.value}
-               onClick={this.onClick}
-               readOnly />
-             <span className="re-switch__switch"></span>
+        <input
+          type="checkbox"
+          name={this.props.name}
+          className="re-switch__checkbox"
+          checked={this.props.value}
+          onClick={this.onClick}
+          readOnly
+        />
+        <span className="re-switch__switch"></span>
       </span>
     );
   }

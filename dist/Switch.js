@@ -51,12 +51,14 @@ var Switch = _react2.default.createClass({
     return _react2.default.createElement(
       'span',
       { className: className },
-      _react2.default.createElement('input', { type: 'checkbox',
+      _react2.default.createElement('input', {
+        type: 'checkbox',
         name: this.props.name,
         className: 're-switch__checkbox',
         checked: this.props.value,
         onClick: this.onClick,
-        readOnly: true }),
+        readOnly: true
+      }),
       _react2.default.createElement('span', { className: 're-switch__switch' })
     );
   }

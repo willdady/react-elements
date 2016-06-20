@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 
-var Tab = React.createClass({
+const Tab = React.createClass({
 
   propTypes: {
     tabIndex: PropTypes.number,
@@ -15,15 +15,14 @@ var Tab = React.createClass({
   },
 
   render: function() {
-    let className = classNames(
+    let className = classnames(
       're-tabs__tab',
       {
         're-tabs__tab--selected': this.props.selected
       }
     );
     return (
-      <li className={className}
-          onClick={this.onClick}>
+      <li className={className} onClick={this.onClick}>
         {this.props.children}
       </li>
     );
@@ -32,7 +31,7 @@ var Tab = React.createClass({
 });
 
 
-var Tabs = React.createClass({
+const Tabs = React.createClass({
 
   propTypes: {
     initialIndex: PropTypes.number,
@@ -53,13 +52,19 @@ var Tabs = React.createClass({
 
   render: function () {
     let tabs = this.props.children.map((child, i) => {
-      return <Tab key={i}
-                  tabIndex={i}
-                  selected={i === this.state.selectedIndex}
-                  onClick={this.onTabClick}>{child}</Tab>;
+      return (
+        <Tab
+          key={i}
+          tabIndex={i}
+          selected={i === this.state.selectedIndex}
+          onClick={this.onTabClick}
+        >
+          {child}
+        </Tab>
+      );
     });
 
-    let className = classNames(
+    let className = classnames(
       're-tabs',
       {
         're-tabs--block': this.props.block

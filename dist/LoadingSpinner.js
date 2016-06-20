@@ -43,8 +43,7 @@ var LoadingSpinner = _react2.default.createClass({
     }
     return _react2.default.createElement(
       'div',
-      { className: className,
-        style: style },
+      { className: className, style: style },
       'Loading'
     );
   }

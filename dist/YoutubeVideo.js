@@ -93,11 +93,13 @@ var YouTubeVideo = _react2.default.createClass({
   },
 
   render: function render() {
-    return _react2.default.createElement('iframe', { width: this.props.width,
+    return _react2.default.createElement('iframe', {
+      width: this.props.width,
       height: this.props.height,
       src: this.getCleanedSrc(),
       frameBorder: this.props.frameBorder,
-      allowFullScreen: true });
+      allowFullScreen: true
+    });
   }
 });
 

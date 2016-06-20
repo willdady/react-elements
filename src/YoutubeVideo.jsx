@@ -31,7 +31,7 @@ const DEFAULT_YOUTUBE_PARAMS = {
 };
 
 
-var YouTubeVideo = React.createClass({
+const YouTubeVideo = React.createClass({
 
   getDefaultProps: function() {
     return assign(
@@ -85,11 +85,13 @@ var YouTubeVideo = React.createClass({
 
   render: function() {
     return (
-      <iframe width={this.props.width}
-              height={this.props.height}
-              src={this.getCleanedSrc()}
-              frameBorder={this.props.frameBorder}
-              allowFullScreen></iframe>
+      <iframe
+        width={this.props.width}
+        height={this.props.height}
+        src={this.getCleanedSrc()}
+        frameBorder={this.props.frameBorder}
+        allowFullScreen
+      />
     );
   }
 });

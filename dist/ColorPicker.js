@@ -46,8 +46,7 @@ var TwoStopGradient = _react2.default.createClass({
     var styles = {
       background: 'linear-gradient(' + angle + this.props.color1 + ', ' + this.props.color2 + ')'
     };
-    return _react2.default.createElement('div', { className: this.props.className,
-      style: styles });
+    return _react2.default.createElement('div', { className: this.props.className, style: styles });
   }
 
 });
@@ -78,8 +77,7 @@ var SaturationBrightnessCursor = _react2.default.createClass({
       left: this.props.position.x - Math.round(SB_PICKER_CURSOR_WIDTH * 0.5),
       top: this.props.position.y - Math.round(SB_PICKER_CURSOR_HEIGHT * 0.5)
     };
-    return _react2.default.createElement('div', { className: 're-color-picker__sb-picker-cursor',
-      style: style });
+    return _react2.default.createElement('div', { className: 're-color-picker__sb-picker-cursor', style: style });
   }
 
 });
@@ -171,14 +169,19 @@ var SaturationBrightnessPicker = _react2.default.createClass({
         ref: function ref(c) {
           return _this2._root = c;
         },
-        onMouseDown: this.onMouseDownHandler },
-      _react2.default.createElement(TwoStopGradient, { className: 're-color-picker__sb-picker-layer',
+        onMouseDown: this.onMouseDownHandler
+      },
+      _react2.default.createElement(TwoStopGradient, {
+        className: 're-color-picker__sb-picker-layer',
         color1: 'white',
         color2: hue,
-        horizontal: true }),
-      _react2.default.createElement(TwoStopGradient, { className: 're-color-picker__sb-picker-layer',
+        horizontal: true
+      }),
+      _react2.default.createElement(TwoStopGradient, {
+        className: 're-color-picker__sb-picker-layer',
         color1: 'rgba(0, 0, 0, 0)',
-        color2: 'black' }),
+        color2: 'black'
+      }),
       _react2.default.createElement(SaturationBrightnessCursor, { position: this.state.cursorPosition })
     );
   }
@@ -206,8 +209,7 @@ var HuePickerCursor = _react2.default.createClass({
     var styles = {
       top: y
     };
-    return _react2.default.createElement('div', { className: 're-color-picker__h-picker-cursor',
-      style: styles });
+    return _react2.default.createElement('div', { className: 're-color-picker__h-picker-cursor', style: styles });
   }
 
 });
@@ -275,11 +277,13 @@ var HuePicker = _react2.default.createClass({
 
     return _react2.default.createElement(
       'div',
-      { className: className,
+      {
+        className: className,
         onMouseDown: this.onMouseDownHandler,
         ref: function ref(c) {
           return _this4._root = c;
-        } },
+        }
+      },
       _react2.default.createElement(HuePickerCursor, { position: this.state.cursorPosition })
     );
   }
@@ -339,12 +343,13 @@ var ColorPicker = _react2.default.createClass({
     return _react2.default.createElement(
       'div',
       { className: className },
-      _react2.default.createElement(SaturationBrightnessPicker, { onChange: this.saturationBrightnessChangeHandler,
+      _react2.default.createElement(SaturationBrightnessPicker, {
+        onChange: this.saturationBrightnessChangeHandler,
         hue: this.state.hue,
         saturation: this.state.saturation,
-        brightness: this.state.brightness }),
-      _react2.default.createElement(HuePicker, { onChange: this.hueChangeHandler,
-        hue: this.state.hue })
+        brightness: this.state.brightness
+      }),
+      _react2.default.createElement(HuePicker, { onChange: this.hueChangeHandler, hue: this.state.hue })
     );
   }
 

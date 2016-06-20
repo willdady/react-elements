@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import LoadingSpinner from './LoadingSpinner';
 import omit from 'lodash/omit';
 
 
-var Button = React.createClass({
+const Button = React.createClass({
 
   propTypes: {
     btnStyle: PropTypes.string,
@@ -16,7 +16,7 @@ var Button = React.createClass({
 
   render: function() {
     let btnStyle = this.props.btnStyle;
-    let className = classNames(
+    let className = classnames(
       're-btn',
       {
         're-btn--default': !btnStyle || btnStyle === 'default',
@@ -34,16 +34,17 @@ var Button = React.createClass({
     let spinner;
     if (this.props.processing) {
       spinner = (
-        <LoadingSpinner className="re-btn__spinner"
-                        color={this.props.loadingSpinnerColor || '#fff'}
-                        backgroundColor={this.props.loadingSpinnerBackgroundColor}
-                        mini />
+        <LoadingSpinner
+          className="re-btn__spinner"
+          color={this.props.loadingSpinnerColor || '#fff'}
+          backgroundColor={this.props.loadingSpinnerBackgroundColor}
+          mini
+        />
       );
     }
 
     return (
-      <button {...props}
-              className={className}>
+      <button {...props} className={className}>
         {spinner}
         <span className="re-btn__content">
           {this.props.children}
@@ -55,4 +56,4 @@ var Button = React.createClass({
 });
 
 
-module.exports = Button;
+export default Button;

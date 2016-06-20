@@ -15,7 +15,7 @@ const DEFAULT_VIMEO_PARAMS = {
 };
 
 
-var VimeoVideo = React.createClass({
+const VimeoVideo = React.createClass({
 
   getDefaultProps: function() {
     return assign(
@@ -70,11 +70,13 @@ var VimeoVideo = React.createClass({
 
   render: function() {
     return (
-      <iframe width={this.props.width}
-              height={this.props.height}
-              src={this.getCleanedSrc()}
-              frameBorder={this.props.frameBorder}
-              allowFullScreen></iframe>
+      <iframe
+        width={this.props.width}
+        height={this.props.height}
+        src={this.getCleanedSrc()}
+        frameBorder={this.props.frameBorder}
+        allowFullScreen
+      />
     );
   }
 });

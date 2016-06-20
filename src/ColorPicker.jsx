@@ -11,7 +11,7 @@ const H_PICKER_HEIGHT = 128;
 const H_PICKER_CURSOR_HEIGHT = 3;
 
 
-var TwoStopGradient = React.createClass({
+const TwoStopGradient = React.createClass({
 
   getDefaultProps: function() {
     return {
@@ -31,15 +31,14 @@ var TwoStopGradient = React.createClass({
       background: `linear-gradient(${angle}${this.props.color1}, ${this.props.color2})`
     };
     return (
-      <div className={this.props.className}
-           style={styles}></div>
+      <div className={this.props.className} style={styles}></div>
     );
   }
 
 });
 
 
-var SaturationBrightnessCursor = React.createClass({
+const SaturationBrightnessCursor = React.createClass({
 
   getDefaultProps: function() {
     return {
@@ -64,15 +63,14 @@ var SaturationBrightnessCursor = React.createClass({
       top: this.props.position.y - Math.round(SB_PICKER_CURSOR_HEIGHT * 0.5)
     };
     return (
-      <div className="re-color-picker__sb-picker-cursor"
-           style={style}></div>
+      <div className="re-color-picker__sb-picker-cursor" style={style}></div>
     );
   }
 
 });
 
 
-var SaturationBrightnessPicker = React.createClass({
+const SaturationBrightnessPicker = React.createClass({
 
   getInitialState: function() {
     return {
@@ -151,14 +149,19 @@ var SaturationBrightnessPicker = React.createClass({
     return(
       <div className={className}
            ref={(c) => this._root = c}
-           onMouseDown={this.onMouseDownHandler}>
-        <TwoStopGradient className="re-color-picker__sb-picker-layer"
-                         color1="white"
-                         color2={hue}
-                         horizontal={true}/>
-                       <TwoStopGradient className="re-color-picker__sb-picker-layer"
-                         color1="rgba(0, 0, 0, 0)"
-                         color2="black" />
+           onMouseDown={this.onMouseDownHandler}
+      >
+        <TwoStopGradient
+          className="re-color-picker__sb-picker-layer"
+          color1="white"
+          color2={hue}
+          horizontal={true}
+        />
+        <TwoStopGradient
+          className="re-color-picker__sb-picker-layer"
+          color1="rgba(0, 0, 0, 0)"
+          color2="black"
+        />
         <SaturationBrightnessCursor position={this.state.cursorPosition} />
       </div>
     );
@@ -167,7 +170,7 @@ var SaturationBrightnessPicker = React.createClass({
 });
 
 
-var HuePickerCursor = React.createClass({
+const HuePickerCursor = React.createClass({
 
   propTypes: {
     position: PropTypes.number
@@ -189,15 +192,14 @@ var HuePickerCursor = React.createClass({
       top: y
     };
     return (
-      <div className="re-color-picker__h-picker-cursor"
-           style={styles}></div>
+      <div className="re-color-picker__h-picker-cursor" style={styles}></div>
     );
   }
 
 });
 
 
-var HuePicker = React.createClass({
+const HuePicker = React.createClass({
 
   getInitialState: function() {
     return {
@@ -254,9 +256,11 @@ var HuePicker = React.createClass({
     });
 
     return (
-      <div className={className}
-           onMouseDown={this.onMouseDownHandler}
-           ref={(c) => this._root = c}>
+      <div
+        className={className}
+        onMouseDown={this.onMouseDownHandler}
+        ref={(c) => this._root = c}
+      >
         <HuePickerCursor position={this.state.cursorPosition} />
       </div>
     );
@@ -265,7 +269,7 @@ var HuePicker = React.createClass({
 });
 
 
-var ColorPicker = React.createClass({
+const ColorPicker = React.createClass({
 
   getInitialState: function() {
     let hsv = tinycolor(this.props.color).toHsv();
@@ -316,12 +320,13 @@ var ColorPicker = React.createClass({
     let className = classNames('re-color-picker', this.props.className);
     return(
       <div className={className}>
-        <SaturationBrightnessPicker onChange={this.saturationBrightnessChangeHandler}
-                                    hue={this.state.hue}
-                                    saturation={this.state.saturation}
-                                    brightness={this.state.brightness} />
-        <HuePicker onChange={this.hueChangeHandler}
-                   hue={this.state.hue} />
+        <SaturationBrightnessPicker
+          onChange={this.saturationBrightnessChangeHandler}
+          hue={this.state.hue}
+          saturation={this.state.saturation}
+          brightness={this.state.brightness}
+        />
+        <HuePicker onChange={this.hueChangeHandler} hue={this.state.hue} />
       </div>
     );
   }

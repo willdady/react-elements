@@ -1,3 +1,7 @@
+## v1.3.0
+* Added ButtonGroup component.
+* Buttons are no longer outlined when focused.
+
 ## v1.2.1
 * No longer creating shrinkwrap.json with -dev option.
 

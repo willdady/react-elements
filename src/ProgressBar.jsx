@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 
-var ProgressBar = React.createClass({
+const ProgressBar = React.createClass({
 
   propTypes: {
     progress: PropTypes.number.isRequired
@@ -11,7 +11,7 @@ var ProgressBar = React.createClass({
   render: function() {
     let percentage = this.props.progress * 100;
     let innerStyle = { width: `${percentage}%` };
-    let className = classNames(
+    let className = classnames(
       're-progress-bar',
       this.props.className,
       {
@@ -20,8 +20,7 @@ var ProgressBar = React.createClass({
     );
     return (
       <div className={className}>
-        <div className="re-progress-bar__bar"
-             style={innerStyle}></div>
+        <div className="re-progress-bar__bar" style={innerStyle}></div>
       </div>
     );
   }
