@@ -19,6 +19,8 @@
           user-select: none;
   vertical-align: middle;
   white-space: nowrap; }
+  .re-btn:focus {
+    outline: none; }
   .re-btn__spinner {
     left: 50%;
     margin-left: -10px;

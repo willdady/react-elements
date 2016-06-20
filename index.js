@@ -1,4 +1,5 @@
 exports.Button = require('./dist/Button');
+exports.ButtonGroup = require('./dist/ButtonGroup');
 exports.ColorPicker = require('./dist/ColorPicker');
 exports.LoadingSpinner = require('./dist/LoadingSpinner');
 exports.Pagination = require('./dist/Pagination');
