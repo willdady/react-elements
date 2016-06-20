@@ -10,13 +10,11 @@
 
     .re-btn {
       border-radius: 0;
-      border-right-width: 0;
     }
   }
 
   &__item:last-child {
     .re-btn {
-      border-right-width: 1px;
       border-top-right-radius: $re-btn-group-border-radius;
       border-bottom-right-radius: $re-btn-group-border-radius;
     }
@@ -34,8 +32,6 @@
 
     .re-btn {
       border-radius: 0;
-      border-bottom-width: 0;
-      border-right-width: 1px;
       display: block;
       width: 100%;
     }
@@ -43,7 +39,6 @@
 
   &--stacked &__item:last-child {
     .re-btn {
-      border-bottom-width: 1px;
       border-bottom-left-radius: $re-btn-group-border-radius;
       border-bottom-right-radius: $re-btn-group-border-radius;
     }
