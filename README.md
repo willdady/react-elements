@@ -4,6 +4,7 @@ A library of reusable React components consisting of the following:
 
 ```HTML
 <Button />
+<ButtonGroup />
 <ColorPicker />
 <LoadingSpinner />
 <Pagination />
