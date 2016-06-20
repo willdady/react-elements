@@ -12,10 +12,6 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _Button = require('./Button');
-
-var _Button2 = _interopRequireDefault(_Button);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ButtonGroup = _react2.default.createClass({
@@ -23,7 +19,6 @@ var ButtonGroup = _react2.default.createClass({
 
 
   propTypes: {
-    children: _react.PropTypes.arrayOf(_react.PropTypes.instanceOf(_Button2.default)),
     stacked: _react.PropTypes.bool
   },
 
@@ -32,10 +27,10 @@ var ButtonGroup = _react2.default.createClass({
     return _react2.default.createElement(
       'ul',
       { className: className },
-      this.props.children.map(function (child) {
+      this.props.children.map(function (child, i) {
         return _react2.default.createElement(
           'li',
-          { className: 're-btn-group__item' },
+          { className: 're-btn-group__item', key: 'item-' + i },
           child
         );
       })
