@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 
-var LoadingSpinner = React.createClass({
+const LoadingSpinner = React.createClass({
 
   propTypes: {
     mini: PropTypes.bool,
@@ -14,7 +14,7 @@ var LoadingSpinner = React.createClass({
   },
 
   render: function() {
-    let className = classNames(
+    let className = classnames(
       're-loading-spinner',
       {
         're-loading-spinner--mini': this.props.mini,
@@ -32,8 +32,7 @@ var LoadingSpinner = React.createClass({
       style.borderTopColor = this.props.backgroundColor;
     }
     return(
-      <div className={className}
-           style={style}>Loading</div>
+      <div className={className} style={style}>Loading</div>
     );
   }
 

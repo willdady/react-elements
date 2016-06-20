@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import range from 'lodash/range';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 
-var PaginationItem = React.createClass({
+const PaginationItem = React.createClass({
 
   propTypes: {
     onClick: PropTypes.func.isRequired,
@@ -17,7 +17,7 @@ var PaginationItem = React.createClass({
   },
 
   render: function() {
-    let className = classNames(
+    let className = classnames(
       're-pagination__item',
       {
         're-pagination__item--active': this.props.active
@@ -25,11 +25,12 @@ var PaginationItem = React.createClass({
       this.props.className
     );
     return (
-      <li className={className}
-          key={this.props.value}>
-        <a className="re-pagination__item-link"
-           href="#"
-           onClick={this.onClick}>
+      <li className={className} key={this.props.value}>
+        <a
+          className="re-pagination__item-link"
+          href="#"
+          onClick={this.onClick}
+        >
           {Array.isArray(this.props.value) ? '\u2026' : this.props.value}
         </a>
       </li>
@@ -39,7 +40,7 @@ var PaginationItem = React.createClass({
 });
 
 
-var Pagination = React.createClass({
+const Pagination = React.createClass({
 
   propTypes: {
     totalPages: PropTypes.number.isRequired,
@@ -93,29 +94,35 @@ var Pagination = React.createClass({
 
     let items = pageNumbers.map((value) => {
       return (
-        <PaginationItem value={value}
-                        key={value}
-                        active={this.props.currentPage === value}
-                        onClick={this.props.onClick} />
+        <PaginationItem
+          value={value}
+          key={value}
+          active={this.props.currentPage === value}
+          onClick={this.props.onClick}
+        />
       );
     });
 
     if (this.props.onPrevious && this.props.currentPage !== 1) {
       items.unshift(
-        <PaginationItem value="«"
-                        key="«"
-                        onClick={this.onPrevious} />
+        <PaginationItem
+          value="«"
+          key="«"
+          onClick={this.onPrevious}
+        />
       );
     }
     if (this.props.onNext && this.props.currentPage !== this.props.totalPages) {
       items.push(
-        <PaginationItem value="»"
-                        key="»"
-                        onClick={this.onNext} />
+        <PaginationItem
+          value="»"
+          key="»"
+          onClick={this.onNext}
+        />
       );
     }
 
-    let className = classNames('re-pagination', this.props.className);
+    let className = classnames('re-pagination', this.props.className);
     return (
       <ul className={className}>
         {items}

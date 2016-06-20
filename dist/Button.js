@@ -1,5 +1,9 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _react = require('react');
@@ -47,16 +51,17 @@ var Button = _react2.default.createClass({
 
     var spinner = void 0;
     if (this.props.processing) {
-      spinner = _react2.default.createElement(_LoadingSpinner2.default, { className: 're-btn__spinner',
+      spinner = _react2.default.createElement(_LoadingSpinner2.default, {
+        className: 're-btn__spinner',
         color: this.props.loadingSpinnerColor || '#fff',
         backgroundColor: this.props.loadingSpinnerBackgroundColor,
-        mini: true });
+        mini: true
+      });
     }
 
     return _react2.default.createElement(
       'button',
-      _extends({}, props, {
-        className: className }),
+      _extends({}, props, { className: className }),
       spinner,
       _react2.default.createElement(
         'span',
@@ -68,4 +73,4 @@ var Button = _react2.default.createClass({
 
 });
 
-module.exports = Button;
+exports.default = Button;

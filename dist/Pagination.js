@@ -39,13 +39,14 @@ var PaginationItem = _react2.default.createClass({
     }, this.props.className);
     return _react2.default.createElement(
       'li',
-      { className: className,
-        key: this.props.value },
+      { className: className, key: this.props.value },
       _react2.default.createElement(
         'a',
-        { className: 're-pagination__item-link',
+        {
+          className: 're-pagination__item-link',
           href: '#',
-          onClick: this.onClick },
+          onClick: this.onClick
+        },
         Array.isArray(this.props.value) ? '…' : this.props.value
       )
     );
@@ -98,21 +99,27 @@ var Pagination = _react2.default.createClass({
     }
 
     var items = pageNumbers.map(function (value) {
-      return _react2.default.createElement(PaginationItem, { value: value,
+      return _react2.default.createElement(PaginationItem, {
+        value: value,
         key: value,
         active: _this.props.currentPage === value,
-        onClick: _this.props.onClick });
+        onClick: _this.props.onClick
+      });
     });
 
     if (this.props.onPrevious && this.props.currentPage !== 1) {
-      items.unshift(_react2.default.createElement(PaginationItem, { value: '«',
+      items.unshift(_react2.default.createElement(PaginationItem, {
+        value: '«',
         key: '«',
-        onClick: this.onPrevious }));
+        onClick: this.onPrevious
+      }));
     }
     if (this.props.onNext && this.props.currentPage !== this.props.totalPages) {
-      items.push(_react2.default.createElement(PaginationItem, { value: '»',
+      items.push(_react2.default.createElement(PaginationItem, {
+        value: '»',
         key: '»',
-        onClick: this.onNext }));
+        onClick: this.onNext
+      }));
     }
 
     var className = (0, _classnames2.default)('re-pagination', this.props.className);
