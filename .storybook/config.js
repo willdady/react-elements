@@ -3,6 +3,7 @@ import '../styles/ColorPicker.scss';
 import '../styles/Switch.scss';
 import '../styles/LoadingSpinner.scss';
 import '../styles/Button.scss';
+import '../styles/ButtonGroup.scss';
 import '../styles/Pagination.scss';
 import '../styles/Panel.scss';
 import '../styles/ProgressBar.scss';
@@ -15,6 +16,7 @@ function loadStories() {
   require('../src/stories/ColorPicker');
   require('../src/stories/LoadingSpinner');
   require('../src/stories/Button');
+  require('../src/stories/ButtonGroup');
   require('../src/stories/Pagination');
   require('../src/stories/Panel');
   require('../src/stories/ProgressBar');

@@ -1,6 +1,7 @@
 @import 'mixins';
 
 .re-btn {
+  $re-btn-focus-outline: none !default;
   $re-btn-padding: 6px 12px !default;
   $re-btn-border-radius: 4px !default;
   $re-btn-default-bg: #f7f7f7 !default;
@@ -28,6 +29,10 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+
+  &:focus {
+    outline: $re-btn-focus-outline;
+  }
 
   &__spinner {
     left: 50%;
